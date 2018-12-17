@@ -1,0 +1,191 @@
+<template>
+  <div class="modal-wrapper">
+    <h1 class="header-title">{{currentTitle}}</h1>
+    <div :class="{'content-wrapper': activePage === 1, 'guide-wrapper': activePage > 1}" v-html="currentContent"></div>
+    <div class="right-arrow" @click="nextClicked" v-if="activePage >= 1 && activePage < 4"><i class="fas fa-chevron-right fa-2x" style="color:white;"></i></div>
+    <div class="left-arrow" @click="backClicked" v-if="activePage > 1 && activePage <= 4"><i class="fas fa-chevron-left fa-2x" style="color:white;"></i></div>
+    <div class="bottom-dots">
+      <i :class="{'fas fa-circle': activePage === 1, 'far fa-circle': activePage != 1}" style="color:#ccc;"></i>
+      <i :class="{'fas fa-circle': activePage === 2, 'far fa-circle': activePage != 2}" style="color:#ccc;"></i>
+      <i :class="{'fas fa-circle': activePage === 3, 'far fa-circle': activePage != 3}" style="color:#ccc;"></i>
+      <i :class="{'fas fa-circle': activePage === 4, 'far fa-circle': activePage != 4}" style="color:#ccc;"></i>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      activePage: 1
+    }
+  },
+  computed: {
+    currentTitle() {
+      switch (this.activePage) {
+        case 1: return 'How to choose great photos for your experience';
+        case 2: return 'People';
+        case 3: return 'Composition';
+        case 4: return 'Technical requirements';
+        default: return '';
+      }
+    },
+    currentContent() {
+      switch (this.activePage) {
+        case 1:
+          return `
+            <div>
+              <p>When guests are looking for experiences, photos are the first thing they notice. They want to get a sense of what they’ll be doing with you!</p>
+              <p>These guidelines will help you showcase what you have to offer. We’ll review each photo before they are displayed on your experience page.</p>
+            </div>
+            <div>
+              <img src="/images/photoguide-img.png">
+            </div>
+          `;
+        case 2:
+          return `
+            <p style="width:60%;text-align:center;">
+              Make sure to include a human element, like hands making something or a person laughing.
+            </p>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-column-gap:20px;margin-top:20px;margin-bottom:20px;">
+              <div style="width:200px;">
+                <img src="images/example1.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Highlight yourself connecting with guests</p>
+              </div>
+              <div style="width:200px;">
+                <img src="images/example2.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Show guests having fun and engaging with one another</p>
+              </div>
+              <div style="width:200px;">
+                <img src="images/example3.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Feature interactions with details of the activity</p>
+              </div>
+            </div>
+          `;
+        case 3:
+          return `
+            <p style="width:60%;text-align:center;">
+              Focus on the setting, or what guests will do or make.
+            </p>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-column-gap:20px;margin-top:20px;margin-bottom:20px;">
+              <div style="width:200px;">
+                <img src="images/photo-example-3.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Highlight the activity</p>
+              </div>
+              <div style="width:200px;">
+                <img src="images/photo-example-5.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Feature the space where the activity will take place</p>
+              </div>
+              <div style="width:200px;">
+                <img src="images/photo-example-6.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Capture close-up details and textures</p>
+              </div>
+            </div>
+          `;
+        case 4:
+          return `
+            <p style="width:60%;text-align:center;">
+              A few simple tricks to help you meet our standards and take a great shot.
+            </p>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-column-gap:20px;margin-top:20px;margin-bottom:20px;">
+              <div style="width:200px;">
+                <img src="images/photo-example-1-dark.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Don’t use dark images</p>
+              </div>
+              <div style="width:200px;">
+                <img src="images/photo-example-1-filtered.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Don’t use stylized filters</p>
+              </div>
+              <div style="width:200px;">
+                <img src="images/photo-example-1-blur.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Don’t use blurry images</p>
+              </div>
+            </div>
+          `;
+        default: return '';
+      }
+    }
+  },
+  methods: {
+    nextClicked() {
+      if (this.activePage >= 1 && this.activePage < 4) {
+        this.activePage++;
+      }
+    },
+    backClicked() {
+      if (this.activePage > 1 && this.activePage <= 4) {
+        this.activePage--;
+      }
+    }
+  }
+}
+</script>
+
+<style scoped>
+.modal-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.header-title {
+  top: 0;
+  height: 45px;
+  margin: auto;
+  text-align: center;
+}
+.content-wrapper {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+  margin: 80px auto auto auto;
+  align-items: center;
+}
+.guide-wrapper {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.right-arrow {
+  position: absolute;
+  right: 50px;
+  top: calc(50% - 40px);
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  background-color: rgba(8, 192, 255, 0.5);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+  padding-left: 5px;
+}
+.right-arrow:hover {
+  background-color: rgba(8, 192, 255, 1);
+}
+.left-arrow {
+  position: absolute;
+  left: 50px;
+  top: calc(50% - 40px);
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  background-color: rgba(8, 192, 255, 0.5);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+  padding-right: 5px;
+}
+.left-arrow:hover {
+  background-color: rgba(8, 192, 255, 1);
+}
+.bottom-dots {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 25px 25px 25px 25px;
+  justify-content: center;
+}
+</style>
