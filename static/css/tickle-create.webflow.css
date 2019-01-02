@@ -97,6 +97,7 @@ a:hover {
   font-weight: 600;
   text-decoration: none;
   outline: none;
+  background: #fff;
 }
 
 .link:hover {

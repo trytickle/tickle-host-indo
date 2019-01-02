@@ -10,7 +10,7 @@
           <div class="text-block-4">{{$store.state.tagline ? $store.state.tagline : 'Tagline'}}</div>
           <div class="text-block-4">{{$store.state.language ? $store.state.language : 'Language'}}</div>
         </div>
-        <div class="image-wrapper" v-if="this.photos[currentPhoto] !== null"><img v-if="!this.photos[currentPhoto].includes('.mp4')" :src="this.photos[currentPhoto]" alt="photo"> <video  class="video" v-if="this.photos[currentPhoto].includes('.mp4')" ref="videoRef" :src="$store.state.photos[1]" id="video-container" muted loop autoplay></video></div>ß
+        <div class="image-wrapper" v-if="this.photos[currentPhoto] !== null"><img v-if="!this.photos[currentPhoto].includes('.mp4')" :src="this.photos[currentPhoto]" alt="photo"> <video  class="video" v-if="this.photos[currentPhoto].includes('.mp4')" ref="videoRef" :src="$store.state.photos[1]" id="video-container" muted loop autoplay></video></div>
         <div class="image-gallery-arrow-left" @click="galleryLeftClicked" v-if="showLeftArrow"><i class="fas fa-chevron-left fa-2x"></i></div>
         <div class="image-gallery-arrow-right" @click="galleryRightClicked" v-if="showRightArrow"><i class="fas fa-chevron-right fa-2x"></i></div>
       </div>

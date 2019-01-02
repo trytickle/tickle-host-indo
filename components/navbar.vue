@@ -2,7 +2,7 @@
   <div>
     <div class="navbar">
       <div class="logo-wrapper">
-        <button @click="openHome" target="_blank" style="outline:none;">
+        <button @click="openHome" target="_blank" style="outline:none;background:#fff;">
           <img src="images/tickleIcon.png" width="60" alt="Tickle logo" class="logo-img">
         </button>
       </div>
@@ -18,8 +18,8 @@
           <div v-for="submission in this.$store.state.submissions" :key="submission.submissionId" :submission="submission">
             <hr>
             <div class="menu-item-cell">
-              <button class="link menu-item" @click.prevent="openSubmission(submission)">{{submission.title}}<div style="margin-top:10px;"><span :class="{'status-label-draft': submission.status.isDraft, 'status-label-live': submission.status.isApproved, 'status-label-rejected': submission.status.isRejected }" >{{submission.status.isDraft ? "Draft" : (submission.status.inReview ? "In Review": (submission.status.isApproved ? "Live": "Rejected"))}}</span></div></button>
-              <button title="Remove experience" style="outline:none;" @click.prevent="showdeleteExperience(submission.title, submission)"><i class="fas fa-minus-circle" style="color:red;"></i></button>
+              <button class="link menu-item" @click.prevent="openSubmission(submission)">{{submission.title}}<div style="margin-top:10px;"><span :class="{'status-label-draft': submission.status.isDraft, 'status-label-live': submission.status.isApproved, 'status-label-rejected': submission.status.isRejected, 'status-label-review': submission.status.inReview }" >{{submission.status.isDraft ? "Draft" : (submission.status.inReview ? "In Review": (submission.status.isApproved ? "Live": "Rejected"))}}</span></div></button>
+              <button title="Remove experience" style="outline:none;background: #fff;" @click.prevent="showdeleteExperience(submission.title, submission)"><i class="fas fa-minus-circle" style="color:red;"></i></button>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div>
-        <a v-if="this.$store.state.user && !this.$store.state.user.settings.payoutMethods" target="_blank" rel="noopener noreferrer" :href=stripeUrl><button class="text-block link">Connect Stripe</button></a>
+        <!-- <a v-if="this.$store.state.user && !this.$store.state.user.settings.payoutMethods" target="_blank" rel="noopener noreferrer" :href=stripeUrl><button class="text-block link">Connect Stripe</button></a> -->
       </div>
       <div v-if="$store.state.user && !$store.state.user.isVerified">
         <button class="text-block link"  @click.prevent="showVerifyModel=true">Verify Account</button>
@@ -265,6 +265,13 @@ export default {
   font-size: 12px;
   color: white;
   background: rgb(218, 34, 34);
+  border-radius: 4px;
+}
+.status-label-review {
+  padding: 5px 8px 5px 8px;
+  font-size: 12px;
+  color: white;
+  background: rgb(216, 166, 30);
   border-radius: 4px;
 }
 .modal-overlay {

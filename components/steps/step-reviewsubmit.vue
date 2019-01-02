@@ -9,7 +9,7 @@
       </p>
       <div class="text-block-2">Service fees</div>
       <p class="paragraph-3">
-        Tickle takes 20% of each booking. Read more about our <a target="_blank" href="https://trytickle.com/service-fee" class="link" style="padding:0;">service fee</a>.
+        Tickle takes 20% of each booking. Read more about our <a target="_blank" href="https://trytickle.com/service-fee" class="link" style="padding:0;background:#eee">service fee</a>.
       </p>
     </div>
     <div class="text-block-2" style="margin-top:40px;">By submitting, I confirm the following is true:</div>
