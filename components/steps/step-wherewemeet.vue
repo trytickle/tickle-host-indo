@@ -12,25 +12,25 @@
       </p>
       <div class="text-block-2" style="margin-bottom:10px;">Street address</div>
       <p class="paragraph-3" style="margin-bottom:10px;">
-        <input type="text" maxlength="50" name="streetAddress" placeholder="E.g. Blk 35, Mandalay Road" class="text-field" style="color:#000;" autocomplete="off" v-model="$store.state.whereWeMeet.streetAddress">
+        <input type="text" maxlength="50" name="streetAddress" placeholder="E.g. Blk 35, Mandalay Road" class="text-field" style="color:#000;background:#fff" autocomplete="off" v-model="$store.state.whereWeMeet.streetAddress">
       </p>
       <div class="text-block-2" style="margin-bottom:10px;">Apt, Suite, Bldg. (optional)</div>
       <p class="paragraph-3" style="margin-bottom:10px;">
-        <input type="text" maxlength="50" name="aptSuiteBuilding" placeholder="E.g. #13-37, Mandalay Towers" class="text-field" style="color:#000;" autocomplete="off" v-model="$store.state.whereWeMeet.aptSuiteBuilding">
+        <input type="text" maxlength="50" name="aptSuiteBuilding" placeholder="E.g. #13-37, Mandalay Towers" class="text-field" style="color:#000;background:#fff" autocomplete="off" v-model="$store.state.whereWeMeet.aptSuiteBuilding">
       </p>
       <div class="city-zipcode-wrapper" style="margin-bottom:10px;">
         <div>
           <div class="text-block-2" style="margin-bottom:10px;">City</div>
-          <input type="text" maxlength="50" name="city" placeholder="E.g. Singapore" class="text-field" autocomplete="off" style="color:#000;" v-model="$store.state.whereWeMeet.city" readonly>
+          <input type="text" maxlength="50" name="city" placeholder="E.g. Singapore" class="text-field" autocomplete="off" style="color:#000;background:#fff" v-model="$store.state.whereWeMeet.city" readonly>
         </div>
         <div>
           <div class="text-block-2" style="margin-bottom:10px;">Zipcode</div>
-          <input type="text" maxlength="50" name="zipcode" placeholder="E.g. 739013" class="text-field" autocomplete="off" style="color:#000;" v-model="$store.state.whereWeMeet.zipcode">
+          <input type="text" maxlength="50" name="zipcode" placeholder="E.g. 739013" class="text-field" autocomplete="off" style="color:#000;background:#fff" v-model="$store.state.whereWeMeet.zipcode">
         </div>
       </div>
       <div class="text-block-2" style="margin-bottom:10px;">Location name</div>
       <p class="paragraph-3" style="margin-bottom:0px;">
-        <input type="text" maxlength="50" name="locationName" placeholder="E.g. My home studio @ Khatib" class="text-field" style="color:#000;" autocomplete="off" v-model="$store.state.whereWeMeet.locationName">
+        <input type="text" maxlength="50" name="locationName" placeholder="E.g. My home studio @ Khatib" class="text-field" style="color:#000;background:#fff" autocomplete="off" v-model="$store.state.whereWeMeet.locationName">
       </p>
     </div>
     <div>

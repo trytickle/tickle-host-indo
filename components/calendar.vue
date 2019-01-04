@@ -91,7 +91,7 @@
    <div class="modal-overlay" :hidden="!showEditModel">
       <div class="modal-edit-availability">
         <h4>Edit availability</h4>
-        <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;" @click.prevent="showEditModel=false"></button>
+        <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;background:#fff" @click.prevent="showEditModel=false"></button>
         <hr>
         <form v-on:submit.prevent="" style="margin-top:20px;">
           <div>What time does it start?</div>

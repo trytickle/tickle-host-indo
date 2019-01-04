@@ -49,7 +49,7 @@
       </div>
     </div>
     <input style="display:none" ref ="picker" type="file" name="pic" accept="image/*" @change="onFileChange">
-    <input style="display:none" ref ="videoPicker" type="file" name="pic" accept="video/*" @change="onVideoFileChange">
+    <input style="display:none" ref ="videoPicker" type="file" name="pic" accept="video/mp4,video/x-m4v,video/*" @change="onVideoFileChange">
     <section style="margin-top: 40px;">
       <h4 class="content-heading">Cover photo</h4>
       <p>Choose a photo that represents your experience. This is the first photo that will appear when guests browse for things to do.</p>
