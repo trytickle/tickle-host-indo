@@ -153,7 +153,7 @@ export default {
   methods: {
     checkIfDateExists(date, month, year) {
         let match = false;
-        let now = moment(year+"-"+month+"-"+ date);
+        let now = moment(year+"-"+month+"-"+ date, "YYYY-MMM-DD");
         this.$store.state.selectedDates.forEach(d => {
             if (d.valueOf() == now.valueOf()) { match = true}
         })
@@ -161,7 +161,7 @@ export default {
     },
     getAvailabilitiesOnDate(date, month, year) {
         this.hoverdAvails = []
-        let now = moment(year+"-"+month+"-"+ date).format("YYYY/MM/DD");
+        let now = moment(year+"-"+month+"-"+ date,  "YYYY-MMM-DD").format("YYYY/MM/DD");
         this.$store.state.currentAvailabilties.forEach(d => {
             if (d.date == now) {
               this.hoverdAvails.push(d)
@@ -170,7 +170,7 @@ export default {
     },
     checkIfAvailabilityExists(date, month, year) {
         let match = false;
-        let now = moment(year+"-"+month+"-"+ date).format("YYYY/MM/DD");
+        let now = moment(year+"-"+month+"-"+ date,  "YYYY-MMM-DD").format("YYYY/MM/DD");
         this.$store.state.currentAvailabilties.forEach(d => {
             if (d.date == now) { match = true}
         })
@@ -257,7 +257,7 @@ export default {
       }
     },
     dateSelected(date) {
-      const momentDate = moment(this.year + "-" + this.month + "-" + date);
+      const momentDate = moment(this.year + "-" + this.month + "-" + date,  "YYYY-MMM-DD");
       if (this.checkIfDateExists(date, this.month, this.year)) {
         this.$store.commit('removeSelectedDate', momentDate);
       } else {
@@ -265,7 +265,7 @@ export default {
       }
     },
     dateSelectedOneMonth(date) {
-    const momentDate = moment(this.year1 + "-" + this.month1 + "-" + date);
+    const momentDate = moment(this.year1 + "-" + this.month1 + "-" + date,  "YYYY-MMM-DD");
       if (this.checkIfDateExists(date, this.month1, this.year1)) {
         this.$store.commit('removeSelectedDate', momentDate);
       } else {
@@ -273,7 +273,7 @@ export default {
       }
     },
     dateSelectedTwoMonth(date) {
-      const momentDate = moment(this.year2 + "-" + this.month2 + "-" + date);
+      const momentDate = moment(this.year2 + "-" + this.month2 + "-" + date,  "YYYY-MMM-DD");
       if (this.checkIfDateExists(date, this.month2, this.year2)) {
         this.$store.commit('removeSelectedDate', momentDate);
       } else {
