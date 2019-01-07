@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ThankyouModal v-if="showThankyouModal" :title="THanks"></ThankyouModal>
+    <ThankyouModal v-if="showThankyouModal" :title="Thanks"></ThankyouModal>
     <InfoModal v-if="showInfoModal" :title="infoModalTitle"></InfoModal>
     <div>
       <NavBar/>

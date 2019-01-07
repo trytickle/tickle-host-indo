@@ -176,6 +176,7 @@ export default {
         }
         console.log(body);
         await this.$axios.$post(process.env.functionsUrl + 'sendSubmissionInReviewEmail', body);
+        this.buttonTitle = "Submit Experience";
         this.$parent.toggleThankyouModal();
 
       } catch (error) {
