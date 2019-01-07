@@ -230,6 +230,9 @@ export default {
           process.env.functionsUrl + "/deleteSubmissionAvailability",
           body
         );
+        if (localStorage.isApproved) {
+          await this.$store.dispatch('saveSubmissionAndExperience')
+        }
         this.deleteText = "Remove"
         location.reload();
       } catch (error) {

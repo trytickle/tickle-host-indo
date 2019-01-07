@@ -3,6 +3,9 @@ import {auth, db, storage, storagePath } from '~/plugins/firebase';
 export const updateSubmissionField = async (name, value, submissionId) => {
   const updateObj = {};
   updateObj[name] = value;
+  if (localStorage.isApproved) {
+    await db.collection("experiences").doc(submissionId).update(updateObj);
+  }
   return await db.collection("submissions").doc(submissionId).set(updateObj, { merge: true });
 }
 

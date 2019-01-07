@@ -189,6 +189,7 @@ const store = () => {
             //   };
             //   await this.$axios.$post(process.env.functionsUrl + "/createSubmission", body);
                localStorage.submissionId = undefined;
+               localStorage.isApproved = false;
             //   location.reload();
             // } catch (error) {
             //   console.error(error);
@@ -203,6 +204,7 @@ const store = () => {
               }
             });
             localStorage.submissionId = submissionData.submissionId;
+            localStorage.isApproved = submissionData.status.isApproved;
             context.commit('setSubmissions', submissions);
             context.commit('setSubmissionId', submissionData.submissionId);
             context.commit('setStatus', submissionData.status);
@@ -266,6 +268,7 @@ const store = () => {
           };
           await this.$axios.$post(process.env.functionsUrl + "/createSubmission", body);
           localStorage.submissionId = undefined;
+          localStorage.isApproved = false;
           location.reload();
         } catch (error) {
           console.error(error);
@@ -326,6 +329,39 @@ const store = () => {
             context.commit('setUserData', userDoc.data());
             context.commit('setName', userDoc.data().firstName);
           }
+        }
+      },
+      async saveSubmissionAndExperience(context) {
+        try {
+          const body = {
+            submissionId: context.state.submissionId,
+            title : context.state.title,
+            subtitle : context.state.label,
+            tagline : context.state.tagline,
+            maxDuration : context.state.maxDuration,
+            minDuration : 0,
+            languages : [context.state.language],
+            whatWeDo : context.state.whatWeDo,
+            whatIProvide : context.state.whatIProvide,
+            whereWeBe : context.state.whereWeBe,
+            maxGuestCount : context.state.maxGuestCount,
+            minGuestCount : 0,
+            notes : context.state.notes,
+            bookingOptions : context.state.bookingOptions,
+            cancellationPolicy : context.state.cancellationPolicy,
+            categoryPrimary : context.state.categoryPrimary,
+            categorySecondary : context.state.categorySecondary,
+            currency : context.state.currency,
+            guestRequirements : context.state.guestRequirements,
+            media : context.state.photos,
+            pricePerPax : context.state.pricePerPax,
+            whereWeMeet : context.state.whereWeMeet,
+            aboutHost : {description:context.state.about,hostId: auth.currentUser.uid}
+          };
+          console.log(body);
+           await this.$axios.$post(process.env.functionsUrl + "/updateSubmissionAndExperience", body);
+        } catch (error) {
+          console.error(error);
         }
       }
     }
