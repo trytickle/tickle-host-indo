@@ -328,6 +328,7 @@ const store = () => {
           if (userDoc.exists) {
             context.commit('setUserData', userDoc.data());
             context.commit('setName', userDoc.data().firstName);
+            context.commit('setEmail', userDoc.data().email);
           }
         }
       },

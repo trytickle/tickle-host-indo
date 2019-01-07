@@ -230,7 +230,7 @@ export default {
           process.env.functionsUrl + "/deleteSubmissionAvailability",
           body
         );
-        if (localStorage.isApproved) {
+        if (localStorage.isApproved === 'true') {
           await this.$store.dispatch('saveSubmissionAndExperience')
         }
         this.deleteText = "Remove"

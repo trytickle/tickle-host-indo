@@ -155,7 +155,7 @@ export default {
           process.env.functionsUrl + "/createSubmissionAvailability",
           body
         );
-        if (localStorage.isApproved) {
+        if (localStorage.isApproved === 'true') {
           await this.$store.dispatch('saveSubmissionAndExperience')
         }
         location.reload();
