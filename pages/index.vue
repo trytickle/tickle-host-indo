@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       buttonTitle: "Sign in",
-      signupButtonText: "Sing up",
+      signupButtonText: "Sign up",
       emailString: "",
       passwordString: "",
       firstNameString: "",
