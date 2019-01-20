@@ -1,9 +1,9 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Give your experience a title</h3>
-    <p class="paragraph-4">Make it short, descriptive, and exciting.</p>
+    <h3 class="heading-3">Beri judul pengalaman Anda</h3>
+    <p class="paragraph-4">Buatlah singkat, deskriptif, dan menarik.</p>
     <div class="div-block-4">
-      <p class="paragraph-3">Think about writing a title that describes your main activity so guests get a sense of what they’ll be doing. Consider using action verbs and making it unique to set your experience apart.</p>
+      <p class="paragraph-3">Pikirkan tentang judul yang menggambarkan aktivitas utama Anda sehingga tamu dapat memahami apa yang akan mereka lakukan. Pertimbangkan untuk menggunakan kata kerja tindakan dan buat seunik mungkin untuk membedakan pengalaman Anda dengan yang lain.</p>
       <div class="text-block-2">Examples</div>
       <div class="div-block-5">
         <div class="example-wrapper">
@@ -16,9 +16,9 @@
     </div>
     <div>
       <form>
-        <label style="margin-bottom:10px;">What's the title of your experience?</label>
+        <label style="margin-bottom:10px;">Apa judul pengalaman Anda?</label>
         <input type="text" :maxlength= "maxCount" name="title" placeholder="Your title" class="text-field" autocomplete="off" v-model="$store.state.title">
-        <p><strong :class="{'bold-text': $store.state.title.length >= 50}" v-text="characterCountLeft + ' characters remaining'"></strong></p>
+        <p><strong :class="{'bold-text': $store.state.title.length >= 50}" v-text="characterCountLeft + ' Sisa karakter'"></strong></p>
         <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.title.length <= 10">
       </form>
     </div>

@@ -19,7 +19,7 @@ const store = () => {
       submissionId: '',
       title: '',
       tagline: '',
-      label:'Dinner party',
+      label:'Pesta makan malam',
       photos: [null, null, null, null, null, null, null, null, null],
       photoFiles: [null, null, null, null, null, null, null, null, null],
       coverThumbnail: null,
@@ -31,10 +31,10 @@ const store = () => {
       notes: '',
       status: null,
       whereWeMeet: {
-        city: 'Singapore',
-        country: 'Singapore',
-        lat: 1.2879,
-        lng: 103.8517
+        city: 'Jakarta',
+        country: 'Indonesia',
+        lat: -6.21462,
+        lng: 106.84513
       },
       categoryPrimary: null,
       categorySecondary: null,
@@ -49,7 +49,7 @@ const store = () => {
       bookingOptions: {
         bookBefore: null
       },
-      currency: 'sgd',
+      currency: 'idr',
       pricePerPax: null,
       cancellationPolicy: null,
       language: null,
@@ -210,7 +210,7 @@ const store = () => {
             context.commit('setStatus', submissionData.status);
             context.commit('setTitle', submissionData.title ? submissionData.title : '');
             context.commit('setTagline', submissionData.tagline ? submissionData.tagline : '');
-            context.commit('setLabel', submissionData.subtitle ? submissionData.subtitle : 'Dinner party');
+            context.commit('setLabel', submissionData.subtitle ? submissionData.subtitle : 'Pesta makan malam');
             context.commit('setAbout', submissionData.aboutHost.description ? submissionData.aboutHost.description : '');
             context.commit('setWhatWeDo', submissionData.whatWeDo ? submissionData.whatWeDo : '');
             context.commit('setWhatIProvide', submissionData.whatIProvide ? submissionData.whatIProvide : '');
@@ -263,7 +263,7 @@ const store = () => {
       async createExperience(context, payload) {
         try {
           const body = {
-            title: "A new experience with " + context.state.user.firstName,
+            title: "Pengalaman baru dengan " + context.state.user.firstName,
             userId: auth.currentUser.uid
           };
           await this.$axios.$post(process.env.functionsUrl + "/createSubmission", body);

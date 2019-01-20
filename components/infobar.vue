@@ -15,27 +15,27 @@
         <div class="image-gallery-arrow-right" @click="galleryRightClicked" v-if="showRightArrow"><i class="fas fa-chevron-right fa-2x"></i></div>
       </div>
       <div class="content-section" id="about">
-        <h4 class="content-heading">About host</h4>
+        <h4 class="content-heading">Tentang saya</h4>
         <p class="paragraph-5" style="margin-top:-10px;white-space:pre-wrap;">{{$store.state.about ? $store.state.about : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.'}}</p>
         <div class="div-block-8"></div>
       </div>
       <div class="content-section" id="whatWeDo">
-        <h4 class="content-heading">What we&#x27;ll do</h4>
+        <h4 class="content-heading">Apa yang akan kami lakukan</h4>
         <p class="paragraph-5" style="margin-top:-10px;white-space:pre-wrap;">{{$store.state.whatWeDo ? $store.state.whatWeDo : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.'}}</p>
         <div class="div-block-8"></div>
       </div>
       <div class="content-section" id="whatIProvide">
-        <h4 class="content-heading">What I&#x27;ll provide</h4>
+        <h4 class="content-heading">Apa yang akan saya sediakan</h4>
         <p class="paragraph-5" style="margin-top:-10px;white-space:pre-wrap;">{{$store.state.whatIProvide ? $store.state.whatIProvide : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.'}}</p>
         <div class="div-block-8"></div>
       </div>
       <div class="content-section" id="notes">
-        <h4 class="content-heading">Notes</h4>
+        <h4 class="content-heading">Catatan</h4>
         <p class="paragraph-5" style="margin-top:-10px;white-space:pre-wrap;">{{$store.state.notes ? $store.state.notes : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.'}}</p>
         <div class="div-block-8"></div>
       </div>
       <div class="content-section" id="whereWeBe">
-        <h4 class="content-heading">Where we&#x27;ll be</h4>
+        <h4 class="content-heading">Di mana kami berada</h4>
         <p class="paragraph-5" style="margin-top:-10px;white-space:pre-wrap;">{{$store.state.whereWeBe ? $store.state.whereWeBe : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.'}}</p>
         <div class="div-block-8"></div>
       </div>
@@ -199,9 +199,9 @@ export default {
         return 'Description of selected policy.';
       } else {
         switch (this.$store.state.cancellationPolicy) {
-          case 0: return 'This experience can be canceled and fully refunded up to 24 hours before it starts.'; break;
-          case 1: return 'This experience can be canceled and fully refunded up to 5 days before it starts.'; break;
-          case 2: return 'This experience can be canceled and fully refunded up to 7 days before it starts. 50% will be refunded if cancellation is made within 7 days.'; break;
+          case 0: return 'Pengalaman ini dapat dibatalkan dan uang dikembalikan sepenuhnya hingga 24 jam sebelum dimulai.'; break;
+          case 1: return 'Pengalaman ini dapat dibatalkan dan uang dikembalikan sepenuhnya hingga 5 hari sebelum dimulai.'; break;
+          case 2: return 'Pengalaman ini dapat dibatalkan dan uang dikembalikan sepenuhnya hingga 7 hari sebelumnya. Pengembalian sebesar 50% apabila pembatalan dilakukan dalam 7 hari.'; break;
         }
       }
     },

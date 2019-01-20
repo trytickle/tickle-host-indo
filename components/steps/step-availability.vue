@@ -1,11 +1,11 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Availability dates</h3>
+    <h3 class="heading-3">Tanggal ketersediaan</h3>
     <div class="availability-content">
       <Calendar></Calendar>
       <div style="padding-left:30px;">
-        <div><h4>Select dates</h4></div>
-        <div v-if="this.$store.state.selectedDates.length <= 0" style="color:#888;margin-top:15px;">Please select some dates on the calendar</div>
+        <div><h4>Pilih tanggal</h4></div>
+        <div v-if="this.$store.state.selectedDates.length <= 0" style="color:#888;margin-top:15px;">Silakan pilih tanggal di kalender</div>
         <div style="margin-top:10px;">
           <li class="date-tag" v-for="date in this.$store.state.selectedDates" @click="dateClicked(date)" :key="date">
             {{convertDateToString(date)}}
@@ -14,23 +14,23 @@
         </div>
         <div v-if="this.$store.state.selectedDates.length > 0" style="margin-top:30px;">
           <hr>
-          <h4>Set availability details</h4>
+          <h4>Tetapkan detail ketersediaan</h4>
           <form v-on:submit.prevent="" style="margin-top:20px;">
-            <div>What time does it start?</div>
+            <div>Jam berapa itu mulai?</div>
             <select v-model="startTime" class="menu-dropdown">
               <option v-for="time in times" :key="time">
                 {{ time }}
               </option>
             </select>
-            <div style="margin-top:5px;">What time does it end?</div>
+            <div style="margin-top:5px;">Jam berapa ini berakhir?</div>
             <select v-model="endTime" class="menu-dropdown">
               <option v-for="time in times" :key="time">
                 {{ time }}
               </option>
             </select>
-            <div style="margin-top:5px;">How much does it cost for each guest?</div>
-            <input type="number" min="10" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57"  v-model="price" class="text-field" style="margin-top:5px;" placeholder="SGD" spellcheck="false"/>
-            <div style="margin-top:5px;">How many guests can you accommodate in this session?</div>
+            <div style="margin-top:5px;">Berapa biayanya untuk setiap tamu?</div>
+            <input type="number" min="10" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57"  v-model="price" class="text-field" style="margin-top:5px;" placeholder="IDR" spellcheck="false"/>
+            <div style="margin-top:5px;">Berapa banyak tamu yang dapat Anda akomodasi di sesi ini?</div>
             <select v-model="guestCount" class="menu-dropdown">
               <option v-for="guest in guests" :key="guest">
                 {{ guest }}
@@ -44,25 +44,25 @@
     </div>
     <div class="modal-overlay" :hidden="!showEditModal">
       <div class="modal-edit-availability">
-        <h4>Edit availability</h4>
+        <h4>Edit ketersediaan</h4>
         <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;" @click.prevent="editAvail=undefined"></button>
         <hr>
         <form v-on:submit.prevent="" style="margin-top:20px;">
-          <div>What time does it start?</div>
+          <div>Jam berapa itu mulai?</div>
           <select v-model="startTime" class="menu-dropdown">
             <option v-for="time in times" :key="time">
               {{ time }}
             </option>
           </select>
-          <div style="margin-top:5px;">What time does it end?</div>
+          <div style="margin-top:5px;">Jam berapa ini berakhir?</div>
           <select v-model="endTime" class="menu-dropdown">
             <option v-for="time in times" :key="time">
               {{ time }}
             </option>
           </select>
-          <div style="margin-top:5px;">How much does it cost for each guest?</div>
-          <input type="number" min="10" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57" v-model="price" class="text-field" style="margin-top:5px;" placeholder="SGD"/>
-          <div style="margin-top:5px;">How many guests can you accommodate in this session?</div>
+          <div style="margin-top:5px;">Berapa biayanya untuk setiap tamu?</div>
+          <input type="number" min="10" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57" v-model="price" class="text-field" style="margin-top:5px;" placeholder="IDR"/>
+          <div style="margin-top:5px;">Berapa banyak tamu yang dapat Anda akomodasi di sesi ini?</div>
           <select v-model="guestCount" class="menu-dropdown">
             <option v-for="guest in guests" :key="guest">
               {{ guest }}
@@ -93,7 +93,7 @@ export default {
       price : undefined,
       errorMessage : "",
       showError : false,
-      addAvailabilityButtonText : "Add Availability",
+      addAvailabilityButtonText : "Tambahkan ketersediaan",
       guests: ["1","2","3","4","5","6","7","8","9","10", "11", "12", "13", "14", "15", "16","17", "18", "19", "20"],
       times: ["12:00 AM", "12:30 AM", "01:00 AM", "01:30 AM", "02:00 AM", "02:30 AM", "03:00 AM", "03:30 AM", "04:00 AM", "04:30 AM", "05:00 AM", "05:30 AM", "06:00 AM", "06:30 AM", "07:00 AM", "07:30 AM", "08:00 AM", "08:30 AM", "09:00 AM", "09:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM","12:00 PM", "12:30 PM", "01:00 PM", "01:30 PM", "02:00 PM", "02:30 PM", "03:00 PM", "03:30 PM", "04:00 PM", "04:30 PM", "05:00 PM", "05:30 PM", "06:00 PM", "06:30 PM", "07:00 PM", "07:30 PM", "08:00 PM", "08:30 PM", "09:00 PM", "09:30 PM", "10:00 PM", "10:30 PM", "11:00 PM", "11:30 PM"],
       timeFormat : ["00:00", "00:30", "01:00", "01:30", "02:00", "02:30", "03:00", "03:30", "04:00", "04:30", "05:00", "05:30", "06:00", "06:30", "07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00", "23:30"],
@@ -150,7 +150,7 @@ export default {
         submissionId: localStorage.submissionId
       };
       try {
-        this.addAvailabilityButtonText = "Adding...";
+        this.addAvailabilityButtonText = "Menambahkan...";
         await this.$axios.$post(
           process.env.functionsUrl + "/createSubmissionAvailability",
           body
@@ -160,7 +160,7 @@ export default {
         }
         location.reload();
       } catch (error) {
-        this.addAvailabilityButtonText = "Add Availability";
+        this.addAvailabilityButtonText = "Tambahkan ketersediaan";
         this.errorMessage = error.message;
         this.showError = true;
       }

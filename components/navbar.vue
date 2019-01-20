@@ -8,13 +8,13 @@
       </div>
       <div class="menu-wrapper">
         <a href="#" class="link" @click="$parent.toggleInfoModal('tickleExperience')">
-          What&#x27;s a Tickle experience?
+         Apa itu pengalaman Tickle?
         </a>
       </div>
       <div class="menu-button">
-        <button class="text-block link" style="height:100%;">My Experiences</button>
+        <button class="text-block link" style="height:100%;">Pengalaman saya</button>
         <div class="menu">
-          <button class="link" @click="createExperience">Create new experience<i class="fas fa-plus-circle" style="position:absolute;right:28px;padding-top:2px;"></i></button>
+          <button class="link" @click="createExperience">Ciptakan Pengalaman Anda<i class="fas fa-plus-circle" style="position:absolute;right:28px;padding-top:2px;"></i></button>
           <div v-for="submission in this.$store.state.submissions" :key="submission.submissionId" :submission="submission">
             <hr>
             <div class="menu-item-cell">
@@ -26,9 +26,9 @@
       </div>
        <input style="display:none" ref ="picker" type="file" name="pic" accept="image/*" @change="onFileChange">
       <div class="menu-button">
-        <button class="text-block link" style="height:100%;">My Bookings</button>
+        <button class="text-block link" style="height:100%;">Pemesanan saya</button>
         <div class="menu">
-          <div v-if="this.$store.state.bookingExperiences.length <= 0" style="color:#ccc;padding-left:15px;">No bookings yet</div>
+          <div v-if="this.$store.state.bookingExperiences.length <= 0" style="color:#ccc;padding-left:15px;">Belum ada pemesanan</div>
           <div v-for="(booking, index) in this.$store.state.bookingExperiences" :key="booking.experienceId" :booking="booking">
             <hr v-if="index != 0">
             <div class="menu-item-cell">
@@ -47,7 +47,7 @@
       </div>
       <div class="email-wrapper">
         <span class="text-block">{{this.$store.state.user && this.$store.state.user.email}}</span>
-        <button class="link" style="color:red;margin-left:-5px;" @click="signOut">Sign out</button>
+        <button class="link" style="color:red;margin-left:-5px;" @click="signOut">Keluar</button>
       </div>
     </div>
     <div class="modal-overlay" :hidden="!showDeleteModal">

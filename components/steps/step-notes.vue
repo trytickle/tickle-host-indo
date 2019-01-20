@@ -1,12 +1,12 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Notes (optional)</h3>
-    <p class="paragraph-4">Put yourself in a guest’s shoes. Some information may seem obvious, but be detailed so guests are over-prepared.</p>
+    <h3 class="heading-3">Catatan (opsional)</h3>
+    <p class="paragraph-4">Tempatkan diri Anda pada posisi tamu. Beberapa informasi mungkin tampak jelas, tetapi harus spesifik sehingga para tamu akan siap.</p>
     <div>
       <form>
-        <label style="margin-bottom:10px;">Try addressing any concerns guests might have about booking your experience</label>
+        <label style="margin-bottom:10px;">Coba atasi masalah yang mungkin tamu miliki sebelum pemesanan pengalaman Anda</label>
         <textarea name="notes" class="textarea-field" maxlength="1500" v-model="$store.state.notes"></textarea>
-        <p><strong :class="{'bold-text': $store.state.notes.length >= 1500}" v-text="characterCountLeft + ' characters remaining'"></strong></p>
+        <p><strong :class="{'bold-text': $store.state.notes.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
         <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.notes.length <= 10">
         <input type="submit" value="Skip" class="submit-button" style="margin-left:20px;" @click.prevent="nextClicked">
       </form>

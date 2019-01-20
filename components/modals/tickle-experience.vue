@@ -23,7 +23,7 @@ export default {
   computed: {
     currentTitle() {
       switch (this.activePage) {
-        case 1: return "What's a Tickle experience?";
+        case 1: return "Apa itu pengalaman Tickle?";
         case 2: return 'Story';
         case 3: return 'Activity';
         case 4: return 'Social';

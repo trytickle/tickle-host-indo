@@ -1,15 +1,15 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">About me</h3>
-    <p class="paragraph-4">Mentioning all the things that make you a great person to host this experience will make you more credible to guests. This could include personal qualities, qualifications, accomplishments, awards, or even the length of time you’ve been practicing or studying your craft.</p>
+    <h3 class="heading-3">Tentang saya</h3>
+    <p class="paragraph-4">Menyebutkan semua hal yang menunjukkan bahwa Anda orang tepat untuk menjadi tuan rumah dalam pengalaman ini akan membuat Anda lebih dipercaya oleh tamu. Hal ini dapat mencakup kualitas pribadi, kualifikasi, prestasi, penghargaan, atau bahkan lamanya waktu Anda berlatih atau mempelajari keahlian Anda.</p>
     <div class="div-block-4">
-      <div class="text-block-2">Highlight your expertise</div>
+      <div class="text-block-2">Sorot keahlian Anda</div>
       <p class="paragraph-3">
-        Show off why you’re qualified to host. Mention any unique skills, credentials, or even life experience that make you a credible host.
+       Tunjukkan mengapa Anda memenuhi syarat untuk menjadi tuan rumah. Sebutkan keterampilan, kredensial, atau bahkan pengalaman hidup unik yang menjadikan Anda tuan rumah yang kredibel.
       </p>
-      <div class="text-block-2">Sound personable</div>
+      <div class="text-block-2">Terdengar menarik</div>
       <p class="paragraph-3">
-        Let your personality shine through. Try ending with a fun fact or interesting personal detail to avoid sounding too formal.
+       Biarkan kepribadian Anda bersinar. Coba akhiri dengan fakta yang menyenangkan atau detail pribadi yang menarik untuk menghindari kesan formal.
       </p>
       <div class="text-block-2" style="margin-bottom:20px;">Examples</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
@@ -26,9 +26,9 @@
     </div>
     <div>
       <form>
-        <label style="margin-bottom:10px;">So tell us about yourself?</label>
+        <label style="margin-bottom:10px;">Jadi, ceritakan tentang diri Anda?</label>
         <textarea name="about" class="textarea-field" maxlength="1500" v-model="$store.state.about"></textarea>
-        <p><strong :class="{'bold-text': $store.state.about.length >= 1500}" v-text="characterCountLeft + ' characters remaining'"></strong></p>
+        <p><strong :class="{'bold-text': $store.state.about.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
         <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.about.length <= 10">
       </form>
     </div>

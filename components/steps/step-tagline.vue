@@ -1,7 +1,7 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
     <h3 class="heading-3">Tagline</h3>
-    <p class="paragraph-4">The tagline is an extension of your title. Describe your experience a bit more or tell guests what you want them to feel when they join you on your experience.</p>
+    <p class="paragraph-4">Tagline adalah perpanjangan dari judul Anda. Jelaskan pengalaman Anda sedikit lebih banyak atau beri tahu tamu apa yang Anda ingin mereka rasakan ketika bergabung dengan pengalaman Anda.</p>
     <div class="div-block-4" style="padding-bottom:25px;">
       <div class="text-block-2" style="margin-bottom:20px;">Examples</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
@@ -16,9 +16,9 @@
     </div>
     <div>
       <form>
-        <label style="margin-bottom:10px;">What's your experience tagline?</label>
+        <label style="margin-bottom:10px;">Apa tagline pengalaman Anda?</label>
         <input type="text" maxlength="80" name="tagline" placeholder="Your Tagline" class="text-field" autocomplete="off" v-model="$store.state.tagline">
-        <p><strong :class="{'bold-text': $store.state.tagline.length >= 80}" v-text="characterCountLeft + ' characters remaining'"></strong></p>
+        <p><strong :class="{'bold-text': $store.state.tagline.length >= 80}" v-text="characterCountLeft + ' Sisa karakter'"></strong></p>
         <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.tagline.length <= 10">
       </form>
     </div>

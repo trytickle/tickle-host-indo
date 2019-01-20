@@ -3,16 +3,16 @@
     <div class="bg"></div>
     <div class="header-img"><img class="icon-image" src="/images/intro-header.png"></div>
     <div class="container">
-      <h3 class="heading-3" style="margin-bottom:25px;margin:auto;margin-bottom:20px;">Welcome, Tickle hosts!</h3>
-      <p>Sign in to your account to create, edit and manage your Tickle bookings and experiences. If you're new to Tickle and would like to sign up as a host, <a href="#" @click.prevent="showSignupModal=true">please click here</a>.</p>
+      <h3 class="heading-3" style="margin-bottom:25px;margin:auto;margin-bottom:20px;">Selamat datang, Tickle hosts!</h3>
+      <p>Masuk ke akun Anda untuk membuat, mengubah, dan mengelola pemesanan serta pengalaman Tickle Anda. Jika Anda baru di Tickle dan ingin mendaftar sebagai tuan rumah, <a href="#" @click.prevent="showSignupModal=true">silakan klik di sini</a>.</p>
       <form v-on:submit.prevent="emailLogin" class="email-wrapper">
-        <input type="text" class="text-field" placeholder="Your email" spellcheck="false" v-model="emailString"/>
-        <input type="password" class="text-field" placeholder="Your password" spellcheck="false" v-model="passwordString"/>
+        <input type="text" class="text-field" placeholder="email" spellcheck="false" v-model="emailString"/>
+        <input type="password" class="text-field" placeholder="kata sandi" spellcheck="false" v-model="passwordString"/>
         <button class="submit-button" @click.prevent="emailLogin">{{buttonTitle}}</button>
       </form>
       <div class="error-wrapper" style="margin-bottom:20px;" v-if="showError">{{errorMessage}}</div>
       <div style="margin:auto;margin-bottom:10px;padding-left:20px;">
-        <span style="align:center;font-size:12px;font-weight:600;color:#aaa;">OR CONTINUE WITH</span>
+        <span style="align:center;font-size:12px;font-weight:600;color:#aaa;">ATAU LANJUTKAN DENGAN</span>
       </div>
       <div style="margin:auto;">
         <button class="fb-button" style="margin-right:10px;" @click.prevent="fbLogin">Facebook</button>
@@ -22,17 +22,17 @@
 
     <div class="overlay" :hidden="!showSignupModal">
       <div class="signup-modal">
-        <h3 style="margin-top:-5px;padding-bottom:20px;">Sign up as a Tickle host</h3>
+        <h3 style="margin-top:-5px;padding-bottom:20px;">Mendaftar sebagai Host Tickle</h3>
         <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;" @click.prevent="showSignupModal=false"></button>
         <form v-on:submit.prevent="emailSignup">
           <span>Email</span>
-          <input type="text" class="text-field" style="margin-top:5px;" placeholder="Your email" spellcheck="false" v-model="emailString"/>
-          <span>Password</span>
-          <input type="password" class="text-field" style="margin-top:5px;" placeholder="Your password" spellcheck="false" v-model="passwordString"/>
-          <span>First name</span>
-          <input type="text" class="text-field" style="margin-top:5px;" placeholder="Your first name" spellcheck="false" v-model="firstNameString"/>
-          <span>Last name</span>
-          <input type="text" class="text-field" style="margin-top:5px;" placeholder="Your last name" spellcheck="false" v-model="lastNameString"/>
+          <input type="text" class="text-field" style="margin-top:5px;" placeholder="email" spellcheck="false" v-model="emailString"/>
+          <span>Kata sandi</span>
+          <input type="password" class="text-field" style="margin-top:5px;" placeholder="kata sandi" spellcheck="false" v-model="passwordString"/>
+          <span>Nama Depan</span>
+          <input type="text" class="text-field" style="margin-top:5px;" placeholder="Nama Depan" spellcheck="false" v-model="firstNameString"/>
+          <span>Nama Keluarga</span>
+          <input type="text" class="text-field" style="margin-top:5px;" placeholder="Nama Keluarga" spellcheck="false" v-model="lastNameString"/>
           <p style="padding-top:10px;color:#222;">By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>
           <button class="submit-button" style="margin-top:20px;" @click.prevent="emailSignup">{{signupButtonText}}</button>
         </form>
@@ -59,7 +59,7 @@ export default {
       firstNameString: "",
       lastNameString: "",
       showError: false,
-      errorMessage: "Invalid email address",
+      errorMessage: "email tidak valid",
       googleAuth: null,
       showSignupModal: false
     };
@@ -84,18 +84,18 @@ export default {
           }
         } catch (error) {
           this.errorMessage =
-            "Sign in failed. Please check your email and password.";
+            "Gagal masuk. Silakan periksa email dan kata sandi Anda.";
           this.showError = true;
           this.buttonTitle = "Sign in";
         }
       } else {
         if (!this.validateEmail(this.emailString)) {
-          this.errorMessage = "Enter a valid email.";
+          this.errorMessage = "Masukkan email yang valid.";
           this.showError = true;
           return;
         }
         if (this.passwordString.length < 5) {
-          this.errorMessage = "Enter a valid password.";
+          this.errorMessage = "Masukkan kata sandi yang valid.";
           this.showError = true;
           return;
         }
@@ -129,7 +129,7 @@ export default {
           return;
         }
         this.errorMessage =
-          "Sign in failed. Please check your email and password.";
+          "Gagal masuk. Silakan periksa email dan kata sandi Anda.";
         this.showError = true;
         this.buttonTitle = "Sign in";
       }

@@ -1,30 +1,30 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Add your photos</h3>
+    <h3 class="heading-3">Tambahkan foto Anda</h3>
     <p class="paragraph-4">
-      If you don’t have the perfect photo right now, don’t worry. Use the best one you have on hand. You can add more or change it later.
+     Jika Anda tidak memiliki foto yang sempurna saat ini, jangan khawatir. Gunakan yang terbaik yang Anda miliki. Anda dapat menambahkan lebih dari satu atau mengubahnya nanti.
       <br/><br/>
-      <button class="pagelink" @click="$parent.toggleInfoModal('photoStandards')">Review our photo standards</button>
+      <button class="pagelink" @click="$parent.toggleInfoModal('photoStandards')">Tinjau standar foto kami</button>
     </p>
     
     <div class="div-block-4">
       <p class="desc-title" style="margin-bottom:20px;">
-        What makes a great photo:
+       Apa yang membuat foto menjadi luar biasa:
       </p>
       <ul class="photo-list-dos">
-        <li class="photo-list-item">Shows you and your guests</li>
-        <li class="photo-list-item">Good composition (e.g. shows where your experience is located, actions guests take, or objects involved)</li>
-        <li class="photo-list-item">Candid scenes</li>
-        <li class="photo-list-item">High resolution and natural lighting</li>
+        <li class="photo-list-item">Tampilkan Anda dan tamu Anda</li>
+        <li class="photo-list-item">Komposisi yang baik (misal menunjukkan di mana pengalaman Anda berada, tindakan yang dilakukan tamu, atau objek/alat yang terlibat)</li>
+        <li class="photo-list-item">Adegan tersembunyi</li>
+        <li class="photo-list-item">Resolusi tinggi dan cahaya natural</li>
       </ul>
       <p class="desc-title" style="margin-bottom:20px;">
-        What we can’t accept in photos:
+       Apa yang tidak dapat kami terima di foto:
       </p>
       <ul class="photo-list-donts">
-        <li class="photo-list-item">People are posed, staged, looking directly at the camera, or taking selfies</li>
-        <li class="photo-list-item">Photo is in black and white</li>
-        <li class="photo-list-item">Filters added</li>
-        <li class="photo-list-item">Text overlaid on image</li>
+        <li class="photo-list-item">Orang-orang berpose, diatur, menatap langsung ke kamera, atau selfie</li>
+        <li class="photo-list-item">Foto hitam putih</li>
+        <li class="photo-list-item">Menggunakan filter </li>
+        <li class="photo-list-item">Teks overlay pada gambar</li>
       </ul>
       <div class="text-block-2">Examples</div>
       <div class="photo-grid">
@@ -51,14 +51,14 @@
     <input style="display:none" ref ="picker" type="file" name="pic" accept="image/*" @change="onFileChange">
     <input style="display:none" ref ="videoPicker" type="file" name="pic" accept="video/mp4,video/x-m4v,video/*" @change="onVideoFileChange">
     <section style="margin-top: 40px;">
-      <h4 class="content-heading">Cover photo</h4>
-      <p>Choose a photo that represents your experience. This is the first photo that will appear when guests browse for things to do.</p>
+      <h4 class="content-heading">Foto sampul</h4>
+      <p>Pilih foto yang mewakili pengalaman Anda. Ini adalah foto pertama yang akan muncul ketika tamu mencari aktivitas yang dapat dilakukan.</p>
       <div class="cover-photo-wrapper">
         <div :class="{'photo-image': $store.state.photos[0], 'photo-element': !$store.state.photos[0]}" @click="pickPhoto(0, 'add')">
           <div class="image-wrapper">
             <div class="buttons-wrapper">
-              <div class="photo-action-button" @click.stop="pickPhoto(0, 'remove')">Remove</div>
-              <div class="photo-action-button" @click.stop="pickPhoto(0, 'replace')">Replace</div>
+              <div class="photo-action-button" @click.stop="pickPhoto(0, 'remove')">Menghapus</div>
+              <div class="photo-action-button" @click.stop="pickPhoto(0, 'replace')">Perubahan</div>
             </div>
             <img :src="$store.state.photos[0]">
           </div>
@@ -84,8 +84,8 @@
       </div>
     </section>
      <section style="margin-top: 40px;">
-      <h4 class="content-heading">Add Video</h4>
-      <p style="margin-bottom: 30px;">Choose a video that represents your experience. This is the first video that will appear when guests browse for things to do.</p>
+      <h4 class="content-heading">Tambahkan Video</h4>
+      <p style="margin-bottom: 30px;">Pilih Video yang mewakili pengalaman Anda. Ini adalah foto pertama yang akan muncul ketika tamu mencari aktivitas yang dapat dilakukan.</p>
       <div class="cover-photo-wrapper">
         <div :class="{'photo-image': $store.state.photos[1], 'photo-element': !$store.state.photos[1]}" @click="pickVideo()">
           <div class="image-wrapper">
@@ -100,8 +100,8 @@
     </section>
 
     <section style="margin-top: 90px;">
-      <h4 class="content-heading">Gallery photos (optional)</h4>
-      <p>Add up to 9 additional photos that paint a picture of what you’ll be doing during your experience. Your photo gallery slides will be in this order from first to last (after your cover photo).</p>
+      <h4 class="content-heading">Foto galeri (opsional)</h4>
+      <p>Tambahkan hingga 9 foto yang menggambarkan apa yang akan Anda lakukan selama pengalaman Anda. Galeri foto Anda akan berada d dalami sini, berurutan dari pertama hingga terakhir (setelah foto sampul Anda).</p>
       <div class="gallery-grid">
         <!-- <div>
           <div :class="{'photo-image': $store.state.photos[1], 'photo-element': !$store.state.photos[1]}" @click="pickPhoto(1, 'add')">
@@ -119,8 +119,8 @@
           <div :class="{'photo-image': $store.state.photos[2], 'photo-element': !$store.state.photos[2]}" @click="pickPhoto(2, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(2, 'remove')">Remove</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(2, 'replace')">Replace</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(2, 'remove')">Menghapus</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(2, 'replace')">Perubahan</div>
               </div>
               <img :src="$store.state.photos[2]">
             </div>
@@ -131,8 +131,8 @@
           <div :class="{'photo-image': $store.state.photos[3], 'photo-element': !$store.state.photos[3]}" @click="pickPhoto(3, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(3, 'remove')">Remove</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(3, 'replace')">Replace</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(3, 'remove')">Menghapus</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(3, 'replace')">Perubahan</div>
               </div>
               <img :src="$store.state.photos[3]">
             </div>
@@ -143,8 +143,8 @@
           <div :class="{'photo-image': $store.state.photos[4], 'photo-element': !$store.state.photos[4]}" @click="pickPhoto(4, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(4, 'remove')">Remove</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(4, 'replace')">Replace</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(4, 'remove')">Menghapus</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(4, 'replace')">Perubahan</div>
               </div>
               <img :src="$store.state.photos[4]">
             </div>
@@ -155,8 +155,8 @@
           <div :class="{'photo-image': $store.state.photos[5], 'photo-element': !$store.state.photos[5]}" @click="pickPhoto(5, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(5, 'remove')">Remove</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(5, 'replace')">Replace</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(5, 'remove')">Menghapus</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(5, 'replace')">Perubahan</div>
               </div>
               <img :src="$store.state.photos[5]">
             </div>
@@ -167,8 +167,8 @@
           <div :class="{'photo-image': $store.state.photos[6], 'photo-element': !$store.state.photos[6]}" @click="pickPhoto(6, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(6, 'remove')">Remove</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(6, 'replace')">Replace</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(6, 'remove')">Menghapus</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(6, 'replace')">Perubahan</div>
               </div>
               <img :src="$store.state.photos[6]">
             </div>
@@ -179,8 +179,8 @@
           <div :class="{'photo-image': $store.state.photos[7], 'photo-element': !$store.state.photos[7]}" @click="pickPhoto(7, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(7, 'remove')">Remove</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(7, 'replace')">Replace</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(7, 'remove')">Menghapus</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(7, 'replace')">Perubahan</div>
               </div>
               <img :src="$store.state.photos[7]">
             </div>
@@ -191,8 +191,8 @@
           <div :class="{'photo-image': $store.state.photos[8], 'photo-element': !$store.state.photos[8]}" @click="pickPhoto(8, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(8, 'remove')">Remove</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(8, 'replace')">Replace</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(8, 'remove')">Menghapus</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(8, 'replace')">Perubahan</div>
               </div>
               <img :src="$store.state.photos[8]">
             </div>
@@ -203,8 +203,8 @@
           <div :class="{'photo-image': $store.state.photos[9], 'photo-element': !$store.state.photos[9]}" @click="pickPhoto(9, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(9, 'remove')">Remove</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(9, 'replace')">Replace</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(9, 'remove')">Menghapus</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(9, 'replace')">Perubahan</div>
               </div>
               <img :src="$store.state.photos[9]">
             </div>

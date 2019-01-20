@@ -1,7 +1,7 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Category</h3>
-    <p class="paragraph-4">Choose the category that best describes your experience. Add a second so it also appears to guests browsing in that category.</p>
+    <h3 class="heading-3">Kategori</h3>
+    <p class="paragraph-4">Pilih kategori yang paling menggambarkan pengalaman Anda sehingga muncul untuk tamu yang menelusuri kategori itu..</p>
     <div class="content-wrapper">
       <div>
         <div class="text-block-2" style="margin-bottom:10px;">Primary Category</div>
@@ -21,7 +21,7 @@
       </div>
     </div>
     <h3 class="heading-3">Label</h3>
-    <p class="paragraph-4">Choose the Label that best describes your experience.</p>
+    <p class="paragraph-4">Pilih Label yang paling menggambarkan pengalaman Anda.</p>
     <div class="content-wrapper">
       <div>
         <div class="text-block-2" style="margin-bottom:10px;">Label</div>
@@ -44,62 +44,63 @@ export default {
   data() {
     return {
       categories: [],
+      
       labels: [
-        "Dinner party",
-        "Photo class",
-        "Craft class",
-        "Cooking class",
-        "Food tasting",
-        "Bike ride",
-        "Day trip",
-        "Bar crawl",
-        "Tea tasting",
-        "Meditation",
-        "Spirits tasting",
-        "Beer tasting",
-        "Boat ride",
-        "Lunch party",
-        "Food walk",
-        "Art class",
-        "Guided hike",
-        "Surf lesson",
-        "Culture walk",
-        "Dance party",
-        "Workshop",
-        "Market visit",
-        "Intimate concert",
-        "Dessert tasting",
-        "Wine tasting",
-        "Vineyard visit",
-        "Social gathering",
-        "Photo shoot",
-        "Video shoot",
-        "Scavenger hunt",
-        "Baking class",
-        "History walk",
-        "Office visit",
-        "Art walk",
-        "Tea ceremony",
-        "Entertainment",
-        "Dance lesson",
-        "Kayaking",
-        "Nature walk",
-        "Sanctuary visit",
-        "Food & drink",
-        "Farm visit",
-        "Music lesson",
-        "Dance recital",
-        "Music",
-        "Museum visit",
-        "Shopping",
-        "Live music",
-        "Ziplining",
-        "Polo lesson",
-        "Offroading",
-        "Yoga class",
-        "Design walk",
+        "Pesta makan malam",
+       "Kelas foto",
+        "Kelas kerajinan",
+        "Kelas memasak",
+        "Mencicipi makanan",
+        "Mengendarai sepeda",
+        "Perjalanan sehari",
+       "Mengunjungi bar",
+       " Mencicipi teh",
+       " Meditasi",
+        "Mencicipi alkohol",
+       "Mencicipi bir",
+       " Mengendarai kapal",
+        "Pesta makan siang",
+       " Mencicipi makanan sambil jalan",
+        "Kelas seni",
+       " Hiking dengan pemandu",
+       " Belajar berselancar",
+        "Jalan-jalan budaya",
+       "Pesta dansa",
+       "Lokakarya",
+        "Mengunjungi pasar",
+        "Konser intim",
+        "Mencicipi hidangan manis / kueh",
+        "Mencicipi wine",
+        "Mengunjungi kebun anggur",
+        "Perkumpulan sosial",
+        "Sesi foto",
+       "Sesi video",
+        "Perburuan",
+       "Kelas membuat kue",
+        "Jalan-jalan sejarah",
+       "Mengunjungi kantor",
+        "Jalan-jalan seni",
+        "Upacara minum teh",
+        "Hiburan",
+        "Pelajaran dansa",
+        "Kayak",
+        "Jalan-jalan alam",
+        "Kunjungan cagar alam",
+       " Makanan & minuman",
+        "Mengunjungi pertanian",
+        "Pelajaran musik",
+        "Pertunjukkan dansa",
+       " Musik",
+        "Mengunjungi museum",
+        "Belanja",
+        "Pagelaran musik",
+       " Ziplining",
+       " Pelajaran polo",
+        "Berkendara off road",
+       "Kelas yoga",
+        "Jalan-jalan desain",
         "Skateboarding",
-        "Scenic run"
+       " Berlari di alam"
       ]
     };
   },

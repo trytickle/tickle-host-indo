@@ -1,15 +1,15 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">What I'll provide</h3>
-    <p class="paragraph-4">It’s important to let guests know what you’ll provide because it helps them understand what they’re paying for.</p>
+    <h3 class="heading-3">Apa yang akan saya sediakan</h3>
+    <p class="paragraph-4">Penting untuk memberi tahu tamu apa yang akan Anda berikan karena hal tersebut membantu mereka memahami apa yang mereka bayar.</p>
     <div class="div-block-4">
-      <div class="text-block-2">Specify what’s included</div>
+      <div class="text-block-2">Tentukan apa yang termasuk</div>
       <p class="paragraph-3">
-        Describe the unique things you’ll provide in detail so guests know what to expect.
+       Jelaskan hal-hal unik yang akan Anda berikan secara detail sehingga para tamu tahu apa yang diharapkan.
       </p>
-      <div class="text-block-2">Accommodate different guests</div>
+      <div class="text-block-2">Mengakomodasi tamu yang berbeda</div>
       <p class="paragraph-3">
-        Some guests might have dietary restrictions or physical limitations. Let them know if you can adapt to meet their needs.
+     Beberapa tamu mungkin memiliki keterbatasan fisik atau karena diet. Beri tahu mereka jika Anda dapat menyesuaikan untuk memenuhi kebutuhan mereka.
       </p>
       <div class="text-block-2" style="margin-bottom:20px;text-decoration:underline;">Examples</div>
       <p class="div-block-5" style="color:#222;">
@@ -38,9 +38,9 @@
     </div>
     <div>
       <form>
-        <label style="margin-bottom:10px;">What will you provide for guests?</label>
+        <label style="margin-bottom:10px;">Apa yang akan Anda berikan untuk tamu?</label>
         <textarea name="whatIProvide" class="textarea-field" placeholder="• A bottle of water" maxlength="1500" v-model="$store.state.whatIProvide"></textarea>
-        <p><strong :class="{'bold-text': $store.state.whatIProvide.length >= 1500}" v-text="characterCountLeft + ' characters remaining'"></strong></p>
+        <p><strong :class="{'bold-text': $store.state.whatIProvide.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
         <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.whatIProvide.length <= 10">
       </form>
     </div>

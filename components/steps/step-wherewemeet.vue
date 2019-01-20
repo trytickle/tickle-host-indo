@@ -1,40 +1,40 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Where we'll meet</h3>
-    <p class="paragraph-4">Tell guests exactly where to meet you at the start of the experience. Make sure the location is easy to find. The exact address won’t be shared until the guest’s reservation is confirmed.</p>
+    <h3 class="heading-3">Di mana kami akan bertemu</h3>
+    <p class="paragraph-4">Beri tahu tamu persisnya tempat untuk bertemu Anda di awal pengalaman. Pastikan lokasi mudah ditemukan. Alamat pasti tidak akan dibagikan sampai reservasi tamu dikonfirmasi.</p>
     <div class="div-block-4">
-      <div class="text-block-2" style="margin-bottom:30px;">Step 1: Provide an address</div>
+      <div class="text-block-2" style="margin-bottom:30px;">Langkah 1: Berikan alamat</div>
       <div class="text-block-2" style="margin-bottom:10px;">Country</div>
       <p class="paragraph-3">
         <select name="country" class="menu-dropdown">
-          <option value="0">Singapore</option>
+          <option value="0">JAKARTA</option>
         </select>
       </p>
-      <div class="text-block-2" style="margin-bottom:10px;">Street address</div>
+      <div class="text-block-2" style="margin-bottom:10px;">Alamat jalan</div>
       <p class="paragraph-3" style="margin-bottom:10px;">
         <input type="text" maxlength="50" name="streetAddress" placeholder="E.g. Blk 35, Mandalay Road" class="text-field" style="color:#000;background:#fff" autocomplete="off" v-model="$store.state.whereWeMeet.streetAddress">
       </p>
-      <div class="text-block-2" style="margin-bottom:10px;">Apt, Suite, Bldg. (optional)</div>
+      <div class="text-block-2" style="margin-bottom:10px;">Apt, Suite, Gedung (opsional)</div>
       <p class="paragraph-3" style="margin-bottom:10px;">
         <input type="text" maxlength="50" name="aptSuiteBuilding" placeholder="E.g. #13-37, Mandalay Towers" class="text-field" style="color:#000;background:#fff" autocomplete="off" v-model="$store.state.whereWeMeet.aptSuiteBuilding">
       </p>
       <div class="city-zipcode-wrapper" style="margin-bottom:10px;">
         <div>
           <div class="text-block-2" style="margin-bottom:10px;">City</div>
-          <input type="text" maxlength="50" name="city" placeholder="E.g. Singapore" class="text-field" autocomplete="off" style="color:#000;background:#fff" v-model="$store.state.whereWeMeet.city" readonly>
+          <input type="text" maxlength="50" name="city" placeholder="E.g. Jakarta" class="text-field" autocomplete="off" style="color:#000;background:#fff" v-model="$store.state.whereWeMeet.city" readonly>
         </div>
         <div>
           <div class="text-block-2" style="margin-bottom:10px;">Zipcode</div>
           <input type="text" maxlength="50" name="zipcode" placeholder="E.g. 739013" class="text-field" autocomplete="off" style="color:#000;background:#fff" v-model="$store.state.whereWeMeet.zipcode">
         </div>
       </div>
-      <div class="text-block-2" style="margin-bottom:10px;">Location name</div>
+      <div class="text-block-2" style="margin-bottom:10px;">Nama lokasi</div>
       <p class="paragraph-3" style="margin-bottom:0px;">
         <input type="text" maxlength="50" name="locationName" placeholder="E.g. My home studio @ Khatib" class="text-field" style="color:#000;background:#fff" autocomplete="off" v-model="$store.state.whereWeMeet.locationName">
       </p>
     </div>
     <div>
-      <div class="text-block-2" style="margin-bottom:10px;padding-top:20px;">Step 2: Confirm location on the map</div>
+      <div class="text-block-2" style="margin-bottom:10px;padding-top:20px;">Langkah 2: Konfirmasi lokasi pada peta</div>
       <div class="map-wrapper" id="map-wrapper"></div>
     </div>
     <div>

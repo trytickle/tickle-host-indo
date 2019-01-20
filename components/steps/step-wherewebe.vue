@@ -1,15 +1,15 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Where we'll be</h3>
-    <p class="paragraph-4">Tell guests where you’ll go, why each location is special, or why they will love it. It’s ok if it’s just one location.</p>
+    <h3 class="heading-3">Di mana kami berada</h3>
+    <p class="paragraph-4">Beri tahu tamu ke mana Anda akan pergi, mengapa setiap lokasi istimewa, atau mengapa mereka akan menyukainya. Tidak apa-apa jika hanya satu lokasi.</p>
     <div class="div-block-4">
-      <div class="text-block-2">List every place</div>
+      <div class="text-block-2">Buat daftar tempat yang akan dikunjungie</div>
       <p class="paragraph-3">
-        Mention any places you’ll visit and hint at why they’re meaningful to you and the overall experience.
+       Sebutkan tempat yang akan Anda kunjungi dan beri petunjuk mengapa tempat itu bermakna bagi Anda dan keseluruhan pengalaman yang akan dirasakan.
       </p>
-      <div class="text-block-2">Don’t give an address</div>
+      <div class="text-block-2">Jangan memberikan alamat</div>
       <p class="paragraph-3">
-        Guests will see the exact address once they book. It’s more important to explain what the place is and why it’s worthwhile.
+       Para tamu akan melihat alamat yang tepat setelah mereka memesan. Lebih penting untuk menjelaskan secara deskriptif mengapa tempat tersebut menarik.
       </p>
       <div class="text-block-2" style="margin-bottom:20px;">Examples</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
@@ -22,9 +22,9 @@
     </div>
     <div>
       <form>
-        <label style="margin-bottom:10px;">Add details about where you’ll be</label>
+        <label style="margin-bottom:10px;">Tambahkan detail tentang di mana Anda akan berada</label>
         <textarea name="whereWeBe" class="textarea-field" maxlength="1500" v-model="$store.state.whereWeBe"></textarea>
-        <p><strong :class="{'bold-text': $store.state.whereWeBe.length >= 1500}" v-text="characterCountLeft + ' characters remaining'"></strong></p>
+        <p><strong :class="{'bold-text': $store.state.whereWeBe.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
         <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.whereWeBe.length <= 10">
       </form>
     </div>

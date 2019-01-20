@@ -1,7 +1,7 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Cancellation policy</h3>
-    <p class="paragraph-4">Hosts who offer a flexible cancellation policy get 37% more bookings than hosts who set a strict policy. If you're unsure, we recommend you start out with the flexible policy.</p>
+    <h3 class="heading-3">Kebijakan pembatalan</h3>
+    <p class="paragraph-4">Tuan rumah yang menawarkan kebijakan pembatalan fleksibel mendapatkan pemesanan 37% lebih banyak daripada host yang menetapkan kebijakan ketat. Jika Anda tidak yakin, kami sarankan Anda memulai dengan kebijakan yang fleksibel.</p>
     <div class="content-wrapper" style="margin-top:30px;">
       <div>
         <div class="text-block-2" style="margin-bottom:10px;">Select policy</div>
@@ -32,9 +32,9 @@ export default {
       this.$store.commit('setCancellationPolicy', 0);
     }
     switch (this.$store.state.cancellationPolicy) {
-      case 0: this.policyDescription = 'This experience can be canceled and fully refunded up to 24 hours before it starts.'; break;
-      case 1: this.policyDescription = 'This experience can be canceled and fully refunded up to 5 days before it starts.'; break;
-      case 2: this.policyDescription = 'This experience can be canceled and fully refunded up to 7 days before it starts. 50% will be refunded if cancellation is made within 7 days.'; break;
+      case 0: this.policyDescription = 'Pengalaman ini dapat dibatalkan dan uang dikembalikan sepenuhnya hingga 24 jam sebelum dimulai.'; break;
+      case 1: this.policyDescription = 'Pengalaman ini dapat dibatalkan dan uang dikembalikan sepenuhnya hingga 5 hari sebelum dimulai.'; break;
+      case 2: this.policyDescription = 'Pengalaman ini dapat dibatalkan dan uang dikembalikan sepenuhnya hingga 7 hari sebelumnya. Pengembalian sebesar 50% apabila pembatalan dilakukan dalam 7 hari.'; break;
     }
   },
   methods: {

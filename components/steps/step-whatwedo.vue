@@ -1,15 +1,15 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">What we'll do</h3>
-    <p class="paragraph-4">Get guests excited with a fun, detailed description of the itinerary.</p>
+    <h3 class="heading-3">Apa yang akan kami lakukan</h3>
+    <p class="paragraph-4">Membuat para tamu senang dengan deskripsi rencana perjalanan yang menyenangkan dan terperinci.</p>
     <div class="div-block-4">
-      <div class="text-block-2">Set expectations</div>
+      <div class="text-block-2">Menetapkan ekspektasi</div>
       <p class="paragraph-3">
-        It’s important guests know what they’re getting into. Let them know if they have to be prepared for any particular adventures.
+       Para tamu penting tahu apa yang mereka hadapi. Biarkan mereka tahu jika mereka harus siap untuk petualangan tertentu.
       </p>
-      <div class="text-block-2">Be specific</div>
+      <div class="text-block-2">Lebih spesifik</div>
       <p class="paragraph-3">
-        If your experience is technical, like a workshop or tutorial, don’t be afraid to get into the weeds. Guests want to know exactly what they’re paying for.
+       Jika pengalaman Anda bersifat teknis, seperti lokakarya atau tutorial, jangan takut untuk dirinci secara detail. Para tamu ingin tahu persis apa yang mereka bayar.
       </p>
       <div class="text-block-2" style="margin-bottom:20px;">Examples</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
@@ -22,9 +22,9 @@
     </div>
     <div>
       <form>
-        <label style="margin-bottom:10px;">Write about each activity in the order you'll do them</label>
+        <label style="margin-bottom:10px;">Tuliskan setiap aktivitas dalam urutan yang akan Anda lakukan</label>
         <textarea name="whatWeDo" class="textarea-field" maxlength="1500" v-model="$store.state.whatWeDo"></textarea>
-        <p><strong :class="{'bold-text': $store.state.whatWeDo.length >= 1500}" v-text="characterCountLeft + ' characters remaining'"></strong></p>
+        <p><strong :class="{'bold-text': $store.state.whatWeDo.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
         <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.whatWeDo.length <= 10">
       </form>
     </div>

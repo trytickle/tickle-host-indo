@@ -1,7 +1,7 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Booking options</h3>
-    <p class="paragraph-4">Some final settings. Set how long you plan for your experience to last, the number of guests you can accomodate at one time, and how long before it starts that a guest would have to book.</p>
+    <h3 class="heading-3">Opsi pemesanan</h3>
+    <p class="paragraph-4">Beberapa pengaturan akhir. Tetapkan berapa lama Anda merencanakan pengalaman Anda untuk bertahan, jumlah tamu yang dapat Anda tampung pada satu waktu, dan berapa lama sebelum pengalaman dimulai, seorang tamu harus memesan.</p>
     <div class="content-wrapper" style="margin-top:30px;">
       <div>
         <div class="text-block-2" style="margin-bottom:10px;">Duration</div>
@@ -17,7 +17,7 @@
         </p>
       </div>
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Guest count</div>
+        <div class="text-block-2" style="margin-bottom:10px;">Jumlah tamu</div>
         <p class="paragraph-3">
           <select name="guestCount" class="menu-dropdown" v-model="$store.state.maxGuestCount">
             <option v-for="(count, index) in guests" :key="index" :value="count">{{count}}</option>
@@ -25,7 +25,7 @@
         </p>
       </div>
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Latest booking time</div>
+        <div class="text-block-2" style="margin-bottom:10px;">Waktu Pemesanan terbaru</div>
         <p class="paragraph-3">
           <select name="bookBefore" class="menu-dropdown" v-model="$store.state.bookingOptions.bookBefore">
             <option :value="1">1 hour before</option>

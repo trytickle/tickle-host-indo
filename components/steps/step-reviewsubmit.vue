@@ -1,38 +1,38 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Review & Submit</h3>
-    <p class="paragraph-4">You're all done! We'll review the experience you’re about to submit, so make sure you’re happy with it. You can still go back and fine-tune your descriptions at any time.</p>
+    <h3 class="heading-3">Tinjau &amp; Kirim</h3>
+    <p class="paragraph-4">Anda sudah selesai! Kami akan meninjau pengalaman yang akan Anda kirim, jadi pastikan Anda senang dengan hal tersebut. Anda masih dapat kembali dan menyempurnakan deskripsi pengalaman Anda kapan saja.</p>
     <div class="div-block-4" style="padding-top:40px;padding-bottom:25px;">
-      <div class="text-block-2">Minimum guests</div>
+      <div class="text-block-2">Jumlah minimum tamu</div>
       <p class="paragraph-3">
-        Experiences on Tickle have a 1 guest minimum. That means if one person books your experience, you’ll still be expected to host them.
+       Pengalaman di Tickle memiliki kebijakan minimum 1 tamu. Itu berarti jika satu orang memesan pengalaman Anda, Anda wajib diharapkan untuk menjadi tuan rumah bagi mereka.
       </p>
-      <div class="text-block-2">Service fees</div>
+      <div class="text-block-2">Biaya layanan</div>
       <p class="paragraph-3">
-        Tickle takes 20% of each booking. Read more about our <a target="_blank" href="https://trytickle.com/service-fee" class="link" style="padding:0;background:#eee">service fee</a>.
+        Tickle mengambil 30% dari setiap pemesanan. Baca lebih lanjut tentang biaya layanan kami. <a target="_blank" href="https://trytickle.com/service-fee" class="link" style="padding:0;background:#eee">service fee</a>.
       </p>
     </div>
-    <div class="text-block-2" style="margin-top:40px;">By submitting, I confirm the following is true:</div>
+    <div class="text-block-2" style="margin-top:40px;">Dengan mengirimkan, saya jamin bahwa ini benar:</div>
     <div class="checkitem-wrapper">
       <label class=container>
         <input type="checkbox" class="default-checkbox" v-model="check1">
         <span class="checkmark"></span>
       </label>
-      <div>My experience complies with local laws. Learn more about other laws (like business licensing) that may apply.</div>
+      <div>Pengalaman saya sesuai dengan hukum setempat. Pelajari lebih lanjut tentang undang-undang lain (seperti lisensi bisnis) yang mungkin berlaku.</div>
     </div>
     <div class="checkitem-wrapper">
       <label class=container>
         <input type="checkbox" class="default-checkbox" v-model="check2">
         <span class="checkmark"></span>
       </label>
-      <div>I agree to Tickle's <a target="_blank" href="https://trytickle.com/terms-of-service" class="link" style="padding:0;">Terms of Service</a> and <a target="_blank" href="https://trytickle.com/guest-refund-policy" class="link" style="padding:0;">Guest Refund Policy</a>.</div>
+      <div>Saya setuju dengan Ketentuan Layanan Tickle dan Kebijakan Pengembalian Uang Tamu. <a target="_blank" href="https://trytickle.com/terms-of-service" class="link" style="padding:0;">Terms of Service</a> and <a target="_blank" href="https://trytickle.com/guest-refund-policy" class="link" style="padding:0;">Guest Refund Policy</a>.</div>
     </div>
     <div class="checkitem-wrapper">
       <label class=container>
         <input type="checkbox" class="default-checkbox" v-model="check3">
         <span class="checkmark"></span>
       </label>
-      <div>I confirm that my descriptions and photos are my own, and accurately reflect my experience.</div>
+      <div>Saya mengonfirmasi bahwa uraian dan foto saya adalah milik saya, dan secara akurat mencerminkan pengalaman saya.</div>
     </div>
     <div v-if="showError" style="margin-top:20px;margin-bottom:-20px;color:red;">These details are missing: {{errorMessage}}</div>
     <input type="submit" :value= buttonTitle class="submit-button" @click.prevent="submitExperience" :disabled="validateChecks">
@@ -51,7 +51,7 @@ export default {
       check3: false,
       errorMessage: null,
       showError: false,
-      buttonTitle: "Submit Experience"
+      buttonTitle: "Kirim Pengalaman"
     };
   },
   methods: {
@@ -60,25 +60,25 @@ export default {
       this.showError = false;
 
       if (this.$store.state.title.length < 10) {
-        errorStrings.push("Title");
+        errorStrings.push("Judul");
       }
       if (this.$store.state.tagline.length < 10) {
         errorStrings.push("Tagline");
       }
       if (this.$store.state.photos[0] === null) {
-        errorStrings.push("Cover photo");
+        errorStrings.push("Foto");
       }
       if (this.$store.state.about.length < 10) {
-        errorStrings.push("About");
+        errorStrings.push("Tentang saya");
       }
       if (this.$store.state.whatWeDo.length < 10) {
-        errorStrings.push("What we'll do");
+        errorStrings.push("Apa yang akan kami lakukan");
       }
       if (this.$store.state.whatIProvide.length < 10) {
-        errorStrings.push("What I'll provide");
+        errorStrings.push("Apa yang akan saya sediakan");
       }
       if (this.$store.state.whereWeBe.length < 10) {
-        errorStrings.push("Where we'll be");
+        errorStrings.push("Di mana kami berada");
       }
       if (
         this.$store.state.whereWeMeet &&
@@ -88,10 +88,10 @@ export default {
         this.$store.state.whereWeMeet.zipcode === null ||
         this.$store.state.whereWeMeet.locationName === null
       ) {
-        errorStrings.push("Where we'll meet");
+        errorStrings.push("Di mana kami akan bertemu");
       }
       if (this.$store.state.categoryPrimary === null) {
-        errorStrings.push("Category");
+        errorStrings.push("Kategori");
       }
       if (
         this.$store.state.guestRequirements &&
@@ -101,13 +101,13 @@ export default {
         this.$store.state.guestRequirements.requireVerified === null ||
         this.$store.state.language === null
       ) {
-        errorStrings.push("Guest requirements");
+        errorStrings.push("Persyaratan tamu");
       }
       if (this.$store.state.pricePerPax === null) {
-        errorStrings.push("Price");
+        errorStrings.push("Harga");
       }
       if (this.$store.state.cancellationPolicy === null) {
-        errorStrings.push("Cancellation policy");
+        errorStrings.push("Kebijakan pembatalan");
       }
       if (
         this.$store.state.bookingOptions && 
@@ -115,7 +115,7 @@ export default {
         this.$store.state.maxGuestCount === null ||
         this.$store.state.maxDuration === null
       ) {
-        errorStrings.push("Booking options");
+        errorStrings.push("Opsi pemesanan");
       }
 
       this.errorMessage = errorStrings.join(', ');
@@ -128,7 +128,7 @@ export default {
           this.showError = true;
           return;
         }
-        this.buttonTitle = "Submitting...";
+        this.buttonTitle = "Mengirimkan...";
         const status = {
           isDraft: false,
           inReview: true,
@@ -176,7 +176,7 @@ export default {
         }
         console.log(body);
         await this.$axios.$post(process.env.functionsUrl + 'sendSubmissionInReviewEmail', body);
-        this.buttonTitle = "Submit Experience";
+        this.buttonTitle = "Kirim Pengalaman";
         this.$parent.toggleThankyouModal();
 
       } catch (error) {
