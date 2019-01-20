@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <span v-if="$store.state.status" :class="{'status-label-draft': $store.state.status.isDraft, 'status-label-live': $store.state.status.isApproved, 'status-label-rejected': $store.state.status.isRejected, 'status-label-review': $store.state.status.inReview  }" >{{$store.state.status && ($store.state.status.isDraft ? "Draft" : ($store.state.status.inReview ? "In Review": ($store.state.status.isApproved ? "Live": "Rejected")))}}</span>
-    <h1 class="heading-2" style="margin-top:15px;">Personalize your experience</h1>
+    <h1 class="heading-2" style="margin-top:15px;">Personalisasikan pengalaman Anda</h1>
     <div class="div-block-3">
       <div class="step-line"></div>
       <div class="step-dot">1</div>
