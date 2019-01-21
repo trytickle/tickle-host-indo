@@ -34,7 +34,7 @@
       </label>
       <div>Saya mengonfirmasi bahwa uraian dan foto saya adalah milik saya, dan secara akurat mencerminkan pengalaman saya.</div>
     </div>
-    <div v-if="showError" style="margin-top:20px;margin-bottom:-20px;color:red;">These details are missing: {{errorMessage}}</div>
+    <div v-if="showError" style="margin-top:20px;margin-bottom:-20px;color:red;">Detail ini tidak ada: {{errorMessage}}</div>
     <input type="submit" :value= buttonTitle class="submit-button" @click.prevent="submitExperience" :disabled="validateChecks">
   </div>
 </template>

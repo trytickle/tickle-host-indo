@@ -5,10 +5,10 @@
         <div class="header-text-wrapper">
           <div class="text-block-4">{{$store.state.label.toUpperCase() ? $store.state.label.toUpperCase() : 'Label'}}</div>
           <h2 class="heading-4">{{$store.state.title ? $store.state.title : 'A new experience'}}</h2>
-          <div class="text-block-4">{{$store.state.whereWeMeet.locationName ? $store.state.whereWeMeet.locationName : "Where we&#x27;ll meet"}}</div>
-          <div class="text-block-4">{{$store.state.maxDuration ? durationString : 'Duration'}}</div>
+          <div class="text-block-4">{{$store.state.whereWeMeet.locationName ? $store.state.whereWeMeet.locationName : "Di mana kami akan bertemu"}}</div>
+          <div class="text-block-4">{{$store.state.maxDuration ? durationString : 'Lamanya'}}</div>
           <div class="text-block-4">{{$store.state.tagline ? $store.state.tagline : 'Tagline'}}</div>
-          <div class="text-block-4">{{$store.state.language ? $store.state.language : 'Language'}}</div>
+          <div class="text-block-4">{{$store.state.language ? $store.state.language : 'Bahasa'}}</div>
         </div>
         <div class="image-wrapper" v-if="this.photos[currentPhoto] !== null"><img v-if="!this.photos[currentPhoto].includes('.mp4')" :src="this.photos[currentPhoto]" alt="photo"> <video  class="video" v-if="this.photos[currentPhoto].includes('.mp4')" ref="videoRef" :src="$store.state.photos[1]" id="video-container" muted loop autoplay></video></div>
         <div class="image-gallery-arrow-left" @click="galleryLeftClicked" v-if="showLeftArrow"><i class="fas fa-chevron-left fa-2x"></i></div>
@@ -188,9 +188,9 @@ export default {
         return 'Cancellation policy';
       } else {
         switch (this.$store.state.cancellationPolicy) {
-          case 0: return 'Flexible cancellation policy'; break;
-          case 1: return 'Moderate cancellation policy'; break;
-          case 2: return 'Strict cancellation policy'; break;
+          case 0: return 'Kebijakan pembatalan fleksibel'; break;
+          case 1: return 'Kebijakan pembatalan moderat'; break;
+          case 2: return 'Kebijakan pembatalan ketat'; break;
         }
       }
     },

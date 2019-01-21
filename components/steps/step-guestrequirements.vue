@@ -1,10 +1,10 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Guest requirements</h3>
-    <p class="paragraph-4">Keep in mind that someone booking your experience might book spots for other guests. If there are strict requirements around age, skill level, or certifications, include them here.</p>
+    <h3 class="heading-3">Persyaratan Tamu</h3>
+    <p class="paragraph-4">Ingatlah bahwa seseorang yang memesan pengalaman Anda mungkin memesan tempat untuk tamu lain. Jika ada persyaratan ketat seputar usia, tingkat keterampilan, atau sertifikasi, sertakan di sini.</p>
     <div class="content-wrapper">
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Language</div>
+        <div class="text-block-2" style="margin-bottom:10px;">Bahasa</div>
         <p class="paragraph-3">
           <select name="language" class="menu-dropdown" v-model="$store.state.language">
             <option  v-for="(language, index) in languages" :key="index" :value="language">{{language}}</option>
@@ -14,7 +14,7 @@
     </div>
     <div class="content-wrapper" style="margin-top:20px;">
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Minimum age</div>
+        <div class="text-block-2" style="margin-bottom:10px;">Usia minimum</div>
         <p class="paragraph-3">
           <select name="minimumAge" class="menu-dropdown" v-model="$store.state.guestRequirements.minimumAge">
             <option v-for="(age, index) in ages" :key="index" :value="age">{{age}}</option>
@@ -22,7 +22,7 @@
         </p>
       </div>
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Are kids allowed?</div>
+        <div class="text-block-2" style="margin-bottom:10px;">Apakah anak-anak diperbolehkan?</div>
         <p class="paragraph-3">
           <select name="kidsAllowed" class="menu-dropdown" v-model="$store.state.guestRequirements.kidsAllowed">
             <option :value="true">Yes</option>
@@ -33,7 +33,7 @@
     </div>
     <div class="content-wrapper" style="margin-top:20px;">
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Will alcohol be served?</div>
+        <div class="text-block-2" style="margin-bottom:10px;">Apakah alkohol akan disajikan?</div>
         <p class="paragraph-3">
           <select name="servesAlcohol" class="menu-dropdown" v-model="$store.state.guestRequirements.servesAlcohol">
             <option :value="false">No</option>
@@ -42,7 +42,7 @@
         </p>
       </div>
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Verified guests only?</div>
+        <div class="text-block-2" style="margin-bottom:10px;">Hanya tamu yang diverifikasi?</div>
         <p class="paragraph-3">
           <select name="requireVerified" class="menu-dropdown" v-model="$store.state.guestRequirements.requireVerified">
             <option :value="false">No</option>
@@ -52,11 +52,11 @@
       </div>
     </div>
     <div style="margin-top:20px;">
-      <label style="margin-bottom:10px;">Additional requirements (optional)</label>
+      <label style="margin-bottom:10px;">Persyaratan tambahan (opsional)</label>
       <textarea name="additionalRequirements" class="textarea-field" maxlength="1500" v-model="$store.state.guestRequirements.additionalRequirements"></textarea>
     </div>
     <div style="margin-top:20px;">
-      <label style="margin-bottom:10px;">Special certifications (optional)</label>
+      <label style="margin-bottom:10px;">Sertifikasi khusus (opsional)</label>
       <textarea name="specialCertifications" class="textarea-field" maxlength="1500" v-model="$store.state.guestRequirements.specialCertifications"></textarea>
     </div>
     <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="!$store.state.guestRequirements">

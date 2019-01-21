@@ -90,25 +90,25 @@
   </div>
    <div class="modal-overlay" :hidden="!showEditModel">
       <div class="modal-edit-availability">
-        <h4>Edit availability</h4>
+        <h4>Tetapkan detail ketersediaan</h4>
         <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;background:#fff" @click.prevent="showEditModel=false"></button>
         <hr>
         <form v-on:submit.prevent="" style="margin-top:20px;">
-          <div>What time does it start?</div>
+          <div>Jam berapa itu mulai?</div>
           <select v-model="editAvailabilityStarttime" class="menu-dropdown">
             <option v-for="time in times" :key="time">
               {{ time }}
             </option>
           </select>
-          <div style="margin-top:5px;">What time does it end?</div>
+          <div style="margin-top:5px;">Jam berapa ini berakhir?</div>
           <select v-model="editAvailabilityEndTime" class="menu-dropdown">
             <option v-for="time in times" :key="time">
               {{ time }}
             </option>
           </select>
-          <div style="margin-top:5px;">How much does it cost for each guest?</div>
+          <div style="margin-top:5px;">Berapa biayanya untuk setiap tamu?</div>
           <input type="number" min="10" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57" v-model="editAvailabilityPrice" class="text-field" style="margin-top:5px;" placeholder="SGD"/>
-          <div style="margin-top:5px;">How many guests can you accommodate in this session?</div>
+          <div style="margin-top:5px;">Berapa banyak tamu yang dapat Anda akomodasi di sesi ini?</div>
           <select v-model="editAvailabilityGuestCount" class="menu-dropdown">
             <option v-for="guest in guests" :key="guest">
               {{ guest }}
@@ -140,7 +140,7 @@ export default {
       editAvailabilityEndTime: undefined,
       editAvailabilityGuestCount: undefined,
       editAvailabilityPrice: undefined,
-      deleteText: "Remove",
+      deleteText: "Menghapus",
       nextOneMonthContext: moment().add(1, "months"),
       nextTwoMonthContext: moment().add(2, "months"),
       hoverdAvails: [],
@@ -225,7 +225,7 @@ export default {
         availabilityIds : [this.editAvailabilityId]
       }
        try {
-        this.deleteText = "Removing..."
+        this.deleteText = "Menghapus..."
         await this.$axios.$post(
           process.env.functionsUrl + "/deleteSubmissionAvailability",
           body
@@ -233,10 +233,10 @@ export default {
         if (localStorage.isApproved === 'true') {
           await this.$store.dispatch('saveSubmissionAndExperience')
         }
-        this.deleteText = "Remove"
+        this.deleteText = "Menghapus"
         location.reload();
       } catch (error) {
-        this.deleteText = "Remove"
+        this.deleteText = "Menghapus"
         this.errorMessage = error.message;
         this.showError = true;
       }

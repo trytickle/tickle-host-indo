@@ -4,7 +4,7 @@
     <p class="paragraph-4">Beberapa pengaturan akhir. Tetapkan berapa lama Anda merencanakan pengalaman Anda untuk bertahan, jumlah tamu yang dapat Anda tampung pada satu waktu, dan berapa lama sebelum pengalaman dimulai, seorang tamu harus memesan.</p>
     <div class="content-wrapper" style="margin-top:30px;">
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Duration</div>
+        <div class="text-block-2" style="margin-bottom:10px;">Lamanya</div>
         <p class="paragraph-3">
           <select name="duration" class="menu-dropdown" v-model="$store.state.maxDuration">
             <option :value="1">1 hour</option>

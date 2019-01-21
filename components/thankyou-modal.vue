@@ -4,11 +4,10 @@
     <button class="close-button" @click="$parent.showThankyouModal = false"><i class="fas fa-times fa-2x"></i></button>
     <div class="header-img"><img class="icon-image" src="/images/thankyou-header.png"></div>
       <div class="title-grid">
-        <h1 class="heading1" style="margin:0; text-align:center; align:center;">Thank You</h1>
+        <h1 class="heading1" style="margin:0; text-align:center; align:center;">Terima kasih</h1>
       </div>
       <div class="content-wrapper">
-        <p>We'll review your submission as soon as we can. In the meantime, please download the Tickle mobile app and sign up. You'll need an account before you can host an experience.</p>
-        <p>Note: When you sign up on Tickle, please make sure you use the same email you used here.</p>
+        <p>Kami akan meninjau kiriman Anda sesegera mungkin. Sementara itu, silakan unduh aplikasi seluler Tickle dan daftar.</p>
         <div style="margin-top:40px;">
         <a class="submit-button" style="width:300px;margin-left:0px;" target="_blank" href="https://tickle.app.link/qaBW2t6k9M">Download Tickle</a>
         <a class="submit-button" style="width:300px;margin-left:20px;" target="_blank" @click="createExperience">Create New Experience</a>
