@@ -55,7 +55,7 @@
         <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;" @click.prevent="showDeleteModal=false"></button>
         <div>
           <h4>{{showDeleteExperienceTitle}}</h4>
-          This experience will be permanently removed. Are you sure?
+          Pengalaman ini akan dihapus secara permanen. Apakah kamu yakin?
         </div>
         <p v-if="showError" style="color: red; margin-top:10px">{{errorMessage}}</p>
         <div><button class="delete-button" style="outline:none;margin-top:30px;margin-bottom:10px;" @click.prevent="deleteExperience()">{{removeButtonTitle}}</button></div>
@@ -93,10 +93,10 @@ export default {
       showVerifyModel: false,
       showVerifyError: false,
       verifyErrorMessage: "",
-      verifyButtonText: "Save and Verify",
+      verifyButtonText: "Simpan dan Verifikasi",
       showDeleteExperienceTitle: null,
       deleteSubmission: null,
-      removeButtonTitle: "Remove",
+      removeButtonTitle: "Menghapus",
       showError: false,
       errorMessage: "Error",
       verifyPhotoSide: 0,
@@ -140,11 +140,11 @@ export default {
     },
     async saveAndVerify() {
       if (!this.frontVerifyFile || !this.backVerifyFile) {
-        this.verifyErrorMessage= "Please upload both sides."
+        this.verifyErrorMessage= "Unggah kedua belah pihak."
         this.showVerifyError = true;
         return;
       }
-      this.verifyButtonText = "Saving..."
+      this.verifyButtonText = "Penghematan..."
       await uploadImageToVerification("front", this.frontVerifyFile);
       await uploadImageToVerification("back", this.backVerifyFile);
       await db.collection("users").doc(this.$store.state.user.userId).update({"isVerified": true});
@@ -174,7 +174,7 @@ export default {
     async deleteExperience() {
       if (this.deleteSubmission) {
           this.showError = false
-          this.removeButtonTitle =  "Removing..."
+          this.removeButtonTitle =  "Menghapus..."
         if (!this.deleteSubmission.status.isApproved) {
           await this.deleteSubmissionCF()
         } else {

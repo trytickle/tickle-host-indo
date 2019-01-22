@@ -20,7 +20,7 @@
         </p>
       </div>
     </div>
-    <h3 class="heading-3">Label</h3>
+    <h3 padding-top:100px; class="heading-3">Label</h3>
     <p class="paragraph-4">Pilih Label yang paling menggambarkan pengalaman Anda.</p>
     <div class="content-wrapper">
       <div>
