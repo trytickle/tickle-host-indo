@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="content-section">
-        <h4 class="heading-5">Group size{{guestCountString}}</h4>
+        <h4 class="heading-5">Ukuran grup {{guestCountString}}</h4>
         <div class="div-block-8"></div>
       </div>
       <div class="content-section">
@@ -185,7 +185,7 @@ export default {
     },
     cancellationPolicyTitle() {
       if (this.$store.state.cancellationPolicy === null) {
-        return 'Cancellation policy';
+        return 'Kebijakan pembatalan';
       } else {
         switch (this.$store.state.cancellationPolicy) {
           case 0: return 'Kebijakan pembatalan fleksibel'; break;
@@ -196,7 +196,7 @@ export default {
     },
     cancellationPolicyDescription() {
       if (this.$store.state.cancellationPolicy === null) {
-        return 'Description of selected policy.';
+        return 'Deskripsi kebijakan yang dipilih.';
       } else {
         switch (this.$store.state.cancellationPolicy) {
           case 0: return 'Pengalaman ini dapat dibatalkan dan uang dikembalikan sepenuhnya hingga 24 jam sebelum dimulai.'; break;
