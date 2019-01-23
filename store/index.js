@@ -182,18 +182,19 @@ const store = () => {
         if (auth.currentUser) {
           const submissionDocs = await db.collection("submissions").where('aboutHost.hostId', '==', auth.currentUser.uid).orderBy("lastEdited", "desc").get();
           if (submissionDocs.empty) {
-            // try {
-            //   const body = {
-            //     title: "A new experience with " + context.state.user.firstName,
-            //     userId: auth.currentUser.uid
-            //   };
-            //   await this.$axios.$post(process.env.functionsUrl + "/createSubmission", body);
-               localStorage.submissionId = undefined;
-               localStorage.isApproved = false;
-            //   location.reload();
-            // } catch (error) {
-            //   console.error(error);
-            // }
+               try {
+                const body = {
+                  title: "Pengalaman baru dengan " + context.state.user.firstName,
+                  userId: auth.currentUser.uid
+                };
+                await this.$axios.$post(process.env.functionsUrl + "/createSubmission", body);
+                localStorage.submissionId = undefined;
+                localStorage.isApproved = false;
+                location.reload();
+              } catch (error) {
+                console.error(error);
+              }
+           
           } else {
             let submissions = [];
             let submissionData = submissionDocs.docs[0].data();

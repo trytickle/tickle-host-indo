@@ -107,7 +107,7 @@
             </option>
           </select>
           <div style="margin-top:5px;">Berapa biayanya untuk setiap tamu?</div>
-          <input type="number" min="10" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57" v-model="editAvailabilityPrice" class="text-field" style="margin-top:5px;" placeholder="SGD"/>
+          <input type="number" min="10" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57" v-model="editAvailabilityPrice" class="text-field" style="margin-top:5px;" placeholder="IDR"/>
           <div style="margin-top:5px;">Berapa banyak tamu yang dapat Anda akomodasi di sesi ini?</div>
           <select v-model="editAvailabilityGuestCount" class="menu-dropdown">
             <option v-for="guest in guests" :key="guest">

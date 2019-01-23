@@ -70,7 +70,7 @@
           </select>
           <div style="margin-top:20px;color:red;" v-if="showError">{{errorMessage}}</div>
           <div>
-            <button class="submit-button" style="outline:none;margin-top:30px;" @click.prevent="">Save</button>
+            <button class="submit-button" style="outline:none;margin-top:30px;" @click.prevent="">Menyimpan</button>
             <button class="delete-button" style="outline:none;margin-top:30px;margin-left:20px;" @click.prevent="">Remove</button>
           </div>
         </form>
@@ -83,6 +83,7 @@
 import Calendar from "@/components/calendar.vue";
 import { db } from "~/plugins/firebase";
 import moment from "moment";
+import { log } from 'util';
 
 export default {
   data() {
@@ -112,7 +113,8 @@ export default {
       );
     },
     convertDateToString(date) {
-      return moment(date).format("D MMM");
+    
+      return moment(date).locale("id").format("D MMM");
     },
     async addAvailabilities() {
       let dates = [];
@@ -122,22 +124,22 @@ export default {
         dates.push(date.format("YYYY/MM/DD"));
       });
       if (this.startTime.length <= 0) {
-        this.errorMessage = "Enter a valid start time.";
+        this.errorMessage = "Masukkan waktu mulai yang valid.";
         this.showError = true;
         return;
       }
      if (this.endTime.length <= 0) {
-        this.errorMessage = "Enter a valid end time.";
+        this.errorMessage = "Masukkan waktu akhir yang valid.";
         this.showError = true;
         return;
       }  
      if (this.times.indexOf(this.startTime) >= this.times.indexOf(this.endTime)) {
-        this.errorMessage = "End time must be ahead of start time.";
+        this.errorMessage = "Waktu akhir harus lebih awal dari waktu mulai.";
         this.showError = true;
         return;
       }
-     if (!this.price || this.price.length < 2) {
-         this.errorMessage = "Price must be $10 or above.";
+     if (!this.price || this.price.length < 6) {
+         this.errorMessage = "Harga harus IDR 100000 atau lebih.";
          this.showError = true;
         return;
       }

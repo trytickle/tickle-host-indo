@@ -4,22 +4,22 @@
     <p class="paragraph-4">Buatlah singkat, deskriptif, dan menarik.</p>
     <div class="div-block-4">
       <p class="paragraph-3">Pikirkan tentang judul yang menggambarkan aktivitas utama Anda sehingga tamu dapat memahami apa yang akan mereka lakukan. Pertimbangkan untuk menggunakan kata kerja tindakan dan buat seunik mungkin untuk membedakan pengalaman Anda dengan yang lain.</p>
-      <div class="text-block-2">Examples</div>
+      <div class="text-block-2">Contohnya</div>
       <div class="div-block-5">
         <div class="example-wrapper">
-          <div class="text-block-3">Shibori Resist-Dyeing with Dora</div><img src="images/example1.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
+          <div class="text-block-3">Shibori Menolak-Mewarnai dengan Dora</div><img src="images/example1.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
         <div class="example-wrapper">
-          <div class="text-block-3">Paint A Porcelain Beauty with Yueshi</div><img src="images/example2.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
+          <div class="text-block-3">Cat Kecantikan Porcelain dengan Yueshi</div><img src="images/example2.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
         <div class="example-wrapper">
-          <div class="text-block-3">Surviving A Zombie Apocalypse with Nachos</div><img src="images/example3.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
+          <div class="text-block-3">Surviving A Zombie Apocalypse dengan Nachos</div><img src="images/example3.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
       </div>
     </div>
     <div>
       <form>
         <label style="margin-bottom:10px;">Apa judul pengalaman Anda?</label>
-        <input type="text" :maxlength= "maxCount" name="title" placeholder="Your title" class="text-field" autocomplete="off" v-model="$store.state.title">
+        <input type="text" :maxlength= "maxCount" name="title" placeholder="Judul Anda" class="text-field" autocomplete="off" v-model="$store.state.title">
         <p><strong :class="{'bold-text': $store.state.title.length >= 50}" v-text="characterCountLeft + ' Sisa karakter'"></strong></p>
-        <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.title.length <= 10">
+        <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.title.length <= 10">
       </form>
     </div>
   </div>

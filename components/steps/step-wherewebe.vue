@@ -11,13 +11,13 @@
       <p class="paragraph-3">
        Para tamu akan melihat alamat yang tepat setelah mereka memesan. Lebih penting untuk menjelaskan secara deskriptif mengapa tempat tersebut menarik.
       </p>
-      <div class="text-block-2" style="margin-bottom:20px;">Examples</div>
+      <div class="text-block-2" style="margin-bottom:20px;">Contohnya</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
-        "We will conduct our workshop in our tiny house on wheels, a school bus we converted into a beautiful home. Everything in the house is sustainable. It’s a special place to see and experience."
+        "Kami akan melakukan workshop kami di rumah mungil kami di atas roda, bus sekolah yang kami konversi menjadi rumah yang indah. Segala sesuatu di rumah ini berkelanjutan. Ini adalah tempat khusus untuk dilihat dan dialami."
       </p>
       <hr>
       <p class="div-block-5" style="font-style:italic;color:#222;">
-        "We’ll most likely go up to Kloof Corner Ridge, a superb ridge line scramble towards the upper Cabbleway. However, we could do a slightly different version of this run, depending on the weather and ability of the group. After we descend and clean up, we’ll enjoy dinner at one of my favourite restaurants."
+       "Kami kemungkinan besar akan naik ke Kloof Corner Ridge, garis punggungan yang luar biasa menuju Cabbleway atas. Namun, kami bisa melakukan versi yang sedikit berbeda dari lari ini, tergantung pada cuaca dan kemampuan grup. Setelah kami turun dan bersihkan, kami akan menikmati makan malam di salah satu restoran favorit saya. "
       </p>
     </div>
     <div>
@@ -25,7 +25,7 @@
         <label style="margin-bottom:10px;">Tambahkan detail tentang di mana Anda akan berada</label>
         <textarea name="whereWeBe" class="textarea-field" maxlength="1500" v-model="$store.state.whereWeBe"></textarea>
         <p><strong :class="{'bold-text': $store.state.whereWeBe.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
-        <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.whereWeBe.length <= 10">
+        <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.whereWeBe.length <= 10">
       </form>
     </div>
   </div>

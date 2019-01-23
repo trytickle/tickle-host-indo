@@ -11,17 +11,17 @@
       <p class="paragraph-3">
        Biarkan kepribadian Anda bersinar. Coba akhiri dengan fakta yang menyenangkan atau detail pribadi yang menarik untuk menghindari kesan formal.
       </p>
-      <div class="text-block-2" style="margin-bottom:20px;">Examples</div>
+      <div class="text-block-2" style="margin-bottom:20px;">Contohnya</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
-        "I’m co-founder of the Amazing Brewing Company and one of seven certified cicerones (beer sommeliers) in Korea. I’ve lived in Asia, Europe, and the US and tasted beer at over 100 breweries worldwide."
+        "Saya adalah salah satu pendiri Amazing Brewing Company dan salah satu dari tujuh cicerones bersertifikasi (sommeliers bir) di Korea. Saya pernah tinggal di Asia, Eropa, dan AS dan mencicipi bir di lebih dari 100 pabrik di seluruh dunia."
       </p>
       <hr>
       <p class="div-block-5" style="font-style:italic;color:#222;">
-        "Born and raised in the Kenyan countryside, I moved to Nairobi at the age of 18. I ride a 400cc motorcycle, love the Kenyan biking community, and believe there is a special bond between bikers."
+        "Dilahirkan dan dibesarkan di pedesaan Kenya, saya pindah ke Nairobi pada usia 18 tahun. Saya mengendarai sepeda motor 400cc, mencintai komunitas bersepeda Kenya, dan percaya ada ikatan khusus antara pengendara motor."
       </p>
       <hr>
       <p class="div-block-5" style="font-style:italic;color:#222;">
-        "I left private banking to become a conscious lifestyle and travel blogger. I founded WaterThruSkin and travel the world promoting sustainable fashion, a plant-based diet, and nature-oriented travel."
+        "Saya meninggalkan perbankan swasta untuk menjadi gaya hidup sadar dan blogger perjalanan. Saya mendirikan WaterThruSkin dan berkeliling dunia mempromosikan busana yang berkelanjutan, pola makan nabati, dan perjalanan yang berorientasi alam."
       </p>
     </div>
     <div>
@@ -29,7 +29,7 @@
         <label style="margin-bottom:10px;">Jadi, ceritakan tentang diri Anda?</label>
         <textarea name="about" class="textarea-field" maxlength="1500" v-model="$store.state.about"></textarea>
         <p><strong :class="{'bold-text': $store.state.about.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
-        <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.about.length <= 10">
+        <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.about.length <= 10">
       </form>
     </div>
   </div>

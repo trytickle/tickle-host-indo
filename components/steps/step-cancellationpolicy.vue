@@ -15,7 +15,7 @@
       </div>
     </div>
     <p>{{policyDescription}}</p>
-    <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.cancellationPolicy === null">
+    <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.cancellationPolicy === null">
   </div>
 </template>
 
@@ -24,7 +24,7 @@ import { updateSubmissionField } from '~/services/firebase-service'
 export default {
   data() {
     return {
-      policyDescription: 'This experience can be canceled and fully refunded up to 24 hours before it starts.'
+      policyDescription: 'Pengalamannya dapat dibatalkan dan dikembalikan sepenuhnya hingga 24 jam sebelum dimulai.'
     };
   },
   mounted() {

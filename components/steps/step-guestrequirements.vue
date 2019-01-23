@@ -25,8 +25,8 @@
         <div class="text-block-2" style="margin-bottom:10px;">Apakah anak-anak diperbolehkan?</div>
         <p class="paragraph-3">
           <select name="kidsAllowed" class="menu-dropdown" v-model="$store.state.guestRequirements.kidsAllowed">
-            <option :value="true">Yes</option>
-            <option :value="false">No</option>
+            <option :value="true">Ya</option>
+            <option :value="false">Tidak</option>
           </select>
         </p>
       </div>
@@ -36,8 +36,8 @@
         <div class="text-block-2" style="margin-bottom:10px;">Apakah alkohol akan disajikan?</div>
         <p class="paragraph-3">
           <select name="servesAlcohol" class="menu-dropdown" v-model="$store.state.guestRequirements.servesAlcohol">
-            <option :value="false">No</option>
-            <option :value="true">Yes</option>
+            <option :value="false">Tidak</option>
+            <option :value="true">Ya</option>
           </select>
         </p>
       </div>
@@ -45,8 +45,8 @@
         <div class="text-block-2" style="margin-bottom:10px;">Hanya tamu yang diverifikasi?</div>
         <p class="paragraph-3">
           <select name="requireVerified" class="menu-dropdown" v-model="$store.state.guestRequirements.requireVerified">
-            <option :value="false">No</option>
-            <option :value="true">Yes</option>
+            <option :value="false">Tidak</option>
+            <option :value="true">Ya</option>
           </select>
         </p>
       </div>
@@ -59,7 +59,7 @@
       <label style="margin-bottom:10px;">Sertifikasi khusus (opsional)</label>
       <textarea name="specialCertifications" class="textarea-field" maxlength="1500" v-model="$store.state.guestRequirements.specialCertifications"></textarea>
     </div>
-    <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="!$store.state.guestRequirements">
+    <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="!$store.state.guestRequirements">
   </div>
 </template>
 
@@ -69,10 +69,10 @@ export default {
    data() {
     return {
       ages: [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],
-      languages: ["English",
+      languages: [ "Bahasa Indonesia",
+                  "English",
                   "中文",
                   "ภาษาไทย",
-                  "Bahasa Indonesia",
                   "Bahasa Malaysia",
                   "Tagalog",
                   "日本語",

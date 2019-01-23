@@ -32,7 +32,7 @@
         </p>
       </div>
     </div>
-    <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="validateCategories">
+    <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="validateCategories">
   </div>
 </template>
 

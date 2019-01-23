@@ -3,23 +3,23 @@
     <h3 class="heading-3">Tagline</h3>
     <p class="paragraph-4">Tagline adalah perpanjangan dari judul Anda. Jelaskan pengalaman Anda sedikit lebih banyak atau beri tahu tamu apa yang Anda ingin mereka rasakan ketika bergabung dengan pengalaman Anda.</p>
     <div class="div-block-4" style="padding-bottom:25px;">
-      <div class="text-block-2" style="margin-bottom:20px;">Examples</div>
+      <div class="text-block-2" style="margin-bottom:20px;">Contohnya</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
-        "Peek into a local designer's life and try out the Shibori resist-dyeing technique"
+        "Mengintip kehidupan desainer lokal dan mencoba teknik pewarnaan Shibori"
       </p>
       <p class="div-block-5" style="font-style:italic;color:#222;">
         "An enlightening experience for everyone of all ages"
       </p>
       <p class="div-block-5" style="font-style:italic;color:#222;">
-        "Overcome rash decisions through parkour"
+        "Pengalaman yang mencerahkan bagi semua orang dari segala usia"
       </p>
     </div>
     <div>
       <form>
         <label style="margin-bottom:10px;">Apa tagline pengalaman Anda?</label>
-        <input type="text" maxlength="80" name="tagline" placeholder="Your Tagline" class="text-field" autocomplete="off" v-model="$store.state.tagline">
+        <input type="text" maxlength="80" name="tagline" placeholder="Tagline Anda" class="text-field" autocomplete="off" v-model="$store.state.tagline">
         <p><strong :class="{'bold-text': $store.state.tagline.length >= 80}" v-text="characterCountLeft + ' Sisa karakter'"></strong></p>
-        <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.tagline.length <= 10">
+        <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.tagline.length <= 10">
       </form>
     </div>
   </div>

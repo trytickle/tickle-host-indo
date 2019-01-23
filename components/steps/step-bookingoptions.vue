@@ -7,12 +7,12 @@
         <div class="text-block-2" style="margin-bottom:10px;">Lamanya</div>
         <p class="paragraph-3">
           <select name="duration" class="menu-dropdown" v-model="$store.state.maxDuration">
-            <option :value="1">1 hour</option>
-            <option :value="2">2 hours</option>
-            <option :value="3">3 hours</option>
-            <option :value="4">4 hours</option>
-            <option :value="5">5 hours</option>
-            <option :value="6">> 5 hours</option>
+            <option :value="1">1 jam</option>
+            <option :value="2">2 jam</option>
+            <option :value="3">3 jam</option>
+            <option :value="4">4 jam</option>
+            <option :value="5">5 jam</option>
+            <option :value="6">6 jam</option>
           </select>
         </p>
       </div>
@@ -28,29 +28,29 @@
         <div class="text-block-2" style="margin-bottom:10px;">Waktu Pemesanan terbaru</div>
         <p class="paragraph-3">
           <select name="bookBefore" class="menu-dropdown" v-model="$store.state.bookingOptions.bookBefore">
-            <option :value="1">1 hour before</option>
-            <option :value="2">2 hours before</option>
-            <option :value="3">3 hours before</option>
-            <option :value="4">4 hours before</option>
-            <option :value="5">5 hours before</option>
-            <option :value="6">6 hours before</option>
-            <option :value="7">7 hours before</option>
-            <option :value="8">8 hours before</option>
-            <option :value="9">9 hours before</option>
-            <option :value="10">10 hours before</option>
-            <option :value="11">11 hours before</option>
-            <option :value="12">12 hours before</option>
-            <option :value="48">2 days before</option>
-            <option :value="72">3 days before</option>
-            <option :value="96">4 days before</option>
-            <option :value="120">5 days before</option>
-            <option :value="144">6 days before</option>
-            <option :value="168">1 week before</option>
+            <option :value="1">1 jam sebelumnya</option>
+            <option :value="2">2 jam sebelumnyae</option>
+            <option :value="3">3 jam sebelumnya</option>
+            <option :value="4">4 jam sebelumnya</option>
+            <option :value="5">5 jam sebelumnya</option>
+            <option :value="6">6 jam sebelumnya</option>
+            <option :value="7">7 jam sebelumnya</option>
+            <option :value="8">8 jam sebelumnya</option>
+            <option :value="9">9 jam sebelumnya</option>
+            <option :value="10">10 jam sebelumnya</option>
+            <option :value="11">11 jam sebelumnya</option>
+            <option :value="12">12 jam sebelumnya</option>
+            <option :value="48">2 jam sebelumnya</option>
+            <option :value="72">3 jam sebelumnya</option>
+            <option :value="96">4 jam sebelumnya</option>
+            <option :value="120">5 jam sebelumnya</option>
+            <option :value="144">6 jam sebelumnya</option>
+            <option :value="168">1 jam sebelumnya</option>
           </select>
         </p>
       </div>
     </div>
-    <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="!$store.state.bookingOptions.bookBefore">
+    <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="!$store.state.bookingOptions.bookBefore">
   </div>
 </template>
 

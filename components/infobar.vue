@@ -4,7 +4,7 @@
       <div class="div-block-6 headerSection" id="top">
         <div class="header-text-wrapper">
           <div class="text-block-4">{{$store.state.label.toUpperCase() ? $store.state.label.toUpperCase() : 'Label'}}</div>
-          <h2 class="heading-4">{{$store.state.title ? $store.state.title : 'A new experience'}}</h2>
+          <h2 class="heading-4">{{$store.state.title ? $store.state.title : 'Pengalaman baru'}}</h2>
           <div class="text-block-4">{{$store.state.whereWeMeet.locationName ? $store.state.whereWeMeet.locationName : "Di mana kami akan bertemu"}}</div>
           <div class="text-block-4">{{$store.state.maxDuration ? durationString : 'Lamanya'}}</div>
           <div class="text-block-4">{{$store.state.tagline ? $store.state.tagline : 'Tagline'}}</div>
@@ -44,9 +44,9 @@
           <div class="map-item" id="map-item" v-if="isLatLngAvailable"></div>
           <div class="map-item-label">
             <div class="map-label">
-              <strong style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{$store.state.whereWeMeet.locationName ? $store.state.whereWeMeet.locationName : 'Location name'}}</strong>
+              <strong style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{$store.state.whereWeMeet.locationName ? $store.state.whereWeMeet.locationName : 'Nama lokasi'}}</strong>
               <br/>
-              <span style="font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#888;">{{$store.state.whereWeMeet.streetAddress ? $store.state.whereWeMeet.streetAddress : 'Street address'}}</span>
+              <span style="font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#888;">{{$store.state.whereWeMeet.streetAddress ? $store.state.whereWeMeet.streetAddress : 'Alamat jalan'}}</span>
             </div>
             <i class="fas fa-map-pin fa-2x" style="color:red;margin-top:-30px;"></i>
           </div>
@@ -171,16 +171,16 @@ export default {
   computed: {
     durationString() {
       if (this.$store.state.maxDuration === 1) {
-        return this.$store.state.maxDuration + " hour";
+        return this.$store.state.maxDuration + " jam";
       } else if (this.$store.state.maxDuration > 1) {
-        return this.$store.state.maxDuration + " hours";
+        return this.$store.state.maxDuration + " jam";
       }
     },
     guestCountString() {
       if (this.$store.state.maxGuestCount === 1) {
-        return " up to " + this.$store.state.maxGuestCount + " guest";
+        return "" + this.$store.state.maxGuestCount + " Tamu";
       } else if (this.$store.state.maxGuestCount > 1) {
-        return " up to " + this.$store.state.maxGuestCount + " guests";
+        return "" + this.$store.state.maxGuestCount + " Tamu";
       }
     },
     cancellationPolicyTitle() {

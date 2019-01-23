@@ -43,7 +43,7 @@
         <!-- <a v-if="this.$store.state.user && !this.$store.state.user.settings.payoutMethods" target="_blank" rel="noopener noreferrer" :href=stripeUrl><button class="text-block link">Connect Stripe</button></a> -->
       </div>
       <div v-if="$store.state.user && !$store.state.user.isVerified">
-        <button class="text-block link"  @click.prevent="showVerifyModel=true">verifikasi akun</button>
+        <button class="text-block link"  @click.prevent="showVerifyModel=true">Verifikasi akun</button>
       </div>
       <div class="email-wrapper">
         <span class="text-block">{{this.$store.state.user && this.$store.state.user.email}}</span>
@@ -65,17 +65,17 @@
       <div v-if="$store.state.user" class="modal-delete-experience">
         <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;" @click.prevent="showVerifyModel=false"></button>
         <div v-if="!$store.state.user.isVerified">
-          <h4>Tambahkan IC untuk memverifikasi akun Anda.</h4>
+          <h4>Tambahkan IC untuk memveriifikasi akun Anda.</h4>
          Anda perlu mengunggah foto sisi depan dan belakang IC Anda.
         </div>
          <div v-if="$store.state.user.isVerified">
           <h4 style="color: green;">You have already verified.</h4>
         </div>
-        <div v-if="!$store.state.user.isVerified"><button class="submit-button" style="outline:none;margin-top:30px;margin-bottom:10px;" @click.prevent="pickPhoto(0)">{{frontVerifyFile ? "Added" : "Upload Front"}}</button>
-        <button class="submit-button" style="outline:none;margin-top:30px;margin-bottom:10px;margin-left:10px" @click.prevent="pickPhoto(1)">{{backVerifyFile ? "Added" : "Upload Back"}}</button>
+        <div v-if="!$store.state.user.isVerified"><button class="submit-button" style="outline:none;margin-top:30px;margin-bottom:10px;" @click.prevent="pickPhoto(0)">{{frontVerifyFile ? "Ditambahkan" : "Depan"}}</button>
+        <button class="submit-button" style="outline:none;margin-top:30px;margin-bottom:10px;margin-left:10px" @click.prevent="pickPhoto(1)">{{backVerifyFile ? "Ditambahkan" : "Kembali"}}</button>
         </div>
         <p v-if="showVerifyError" style="color: red; margin:5px">{{verifyErrorMessage}}</p>
-        <button v-if="!$store.state.user.isVerified" class="submit-button" style="outline:none;margin-top:30px;margin-bottom:10px;" @click.prevent="saveAndVerify()">{{verifyButtonText}}</button>
+        <button v-if="!$store.state.user.isVerified" class="submit-button-solid" style="outline:none;margin-top:30px;margin-bottom:10px;width:100%" @click.prevent="saveAndVerify()">{{verifyButtonText}}</button>
       </div>
     </div>
   </div>

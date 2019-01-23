@@ -3,11 +3,11 @@
     <div class="bg"></div>
     <div class="header-img"><img class="icon-image" src="/images/intro-header.png"></div>
     <div class="container">
-      <h3 class="heading-3" style="margin-bottom:25px;margin:auto;margin-bottom:20px;">Selamat datang, Tickle hosts!</h3>
-      <p>Masuk ke akun Anda untuk membuat, mengubah, dan mengelola pemesanan serta pengalaman Tickle Anda. Jika Anda baru di Tickle dan ingin mendaftar sebagai tuan rumah, <a href="#" @click.prevent="showSignupModal=true">silakan klik di sini</a>.</p>
+      <h3 class="heading-3" style="margin-bottom:20px;text-align:center;">Selamat datang, Tickle hosts!</h3>
+      <p style="text-align:left;">Masuk ke akun Anda untuk membuat, mengubah, dan mengelola pemesanan serta pengalaman Tickle Anda. Jika Anda baru di Tickle dan ingin mendaftar sebagai tuan rumah, <a href="#" @click.prevent="showSignupModal=true">Silakan klik di sini</a>.</p>
       <form v-on:submit.prevent="emailLogin" class="email-wrapper">
-        <input type="text" class="text-field" placeholder="email" spellcheck="false" v-model="emailString"/>
-        <input type="password" class="text-field" placeholder="kata sandi" spellcheck="false" v-model="passwordString"/>
+        <input type="text" class="text-field" placeholder="Email" spellcheck="false" v-model="emailString"/>
+        <input type="password" class="text-field" placeholder="Kata Sandi" spellcheck="false" v-model="passwordString"/>
         <button class="submit-button" @click.prevent="emailLogin">{{buttonTitle}}</button>
       </form>
       <div class="error-wrapper" style="margin-bottom:20px;" v-if="showError">{{errorMessage}}</div>
@@ -26,14 +26,14 @@
         <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;" @click.prevent="showSignupModal=false"></button>
         <form v-on:submit.prevent="emailSignup">
           <span>Email</span>
-          <input type="text" class="text-field" style="margin-top:5px;" placeholder="email" spellcheck="false" v-model="emailString"/>
-          <span>Kata sandi</span>
-          <input type="password" class="text-field" style="margin-top:5px;" placeholder="kata sandi" spellcheck="false" v-model="passwordString"/>
+          <input type="text" class="text-field" style="margin-top:5px;" placeholder="Email" spellcheck="false" v-model="emailString"/>
+          <span>Kata Sandi</span>
+          <input type="password" class="text-field" style="margin-top:5px;" placeholder="Kata Sandi" spellcheck="false" v-model="passwordString"/>
           <span>Nama Depan</span>
           <input type="text" class="text-field" style="margin-top:5px;" placeholder="Nama Depan" spellcheck="false" v-model="firstNameString"/>
           <span>Nama Keluarga</span>
           <input type="text" class="text-field" style="margin-top:5px;" placeholder="Nama Keluarga" spellcheck="false" v-model="lastNameString"/>
-          <p style="padding-top:10px;color:#222;">By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>
+          <p style="padding-top:10px;color:#222;">Saya setuju dengan <a target="_blank" href="https://trytickle.com/terms-of-service">Ketentuan Layanan</a> dan <a target="_blank" href="https://trytickle.com/guest-refund-policy">Kebijakan Pengembalian Uang Tamu</a> Tickle.</p>
           <button class="submit-button" style="margin-top:20px;" @click.prevent="emailSignup">{{signupButtonText}}</button>
         </form>
       </div>
@@ -52,14 +52,14 @@ import {
 export default {
   data() {
     return {
-      buttonTitle: "Sign in",
-      signupButtonText: "Sign up",
+      buttonTitle: "Masuk",
+      signupButtonText: "Daftar",
       emailString: "",
       passwordString: "",
       firstNameString: "",
       lastNameString: "",
       showError: false,
-      errorMessage: "email tidak valid",
+      errorMessage: "Email tidak valid",
       googleAuth: null,
       showSignupModal: false
     };
@@ -71,7 +71,7 @@ export default {
         this.passwordString.length > 5
       ) {
         this.showError = false;
-        this.buttonTitle = "Signing in...";
+        this.buttonTitle = "Masuk...";
         
         try {
           const result = await auth.signInWithEmailAndPassword(
@@ -86,7 +86,7 @@ export default {
           this.errorMessage =
             "Gagal masuk. Silakan periksa email dan kata sandi Anda.";
           this.showError = true;
-          this.buttonTitle = "Sign in";
+          this.buttonTitle = "Masuk";
         }
       } else {
         if (!this.validateEmail(this.emailString)) {
@@ -102,7 +102,7 @@ export default {
       }
     },
     async emailSignup() {
-      this.signupButtonText = "Signing up..";
+      this.signupButtonText = "Mendaftar...";
       try {
         const result = await auth.createUserWithEmailAndPassword(
           this.emailString,
@@ -131,7 +131,7 @@ export default {
         this.errorMessage =
           "Gagal masuk. Silakan periksa email dan kata sandi Anda.";
         this.showError = true;
-        this.buttonTitle = "Sign in";
+        this.buttonTitle = "Masuk";
       }
     },
     fbLogin() {

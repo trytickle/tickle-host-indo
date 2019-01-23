@@ -9,7 +9,7 @@
       </p>
       <div class="text-block-2">Rekomendasi kami</div>
       <p class="paragraph-3">
-      Jika Anda baru, mulailah dari $20. Setelah Anda menjalankan pengalaman Anda beberapa kali, sesuaikan harga berdasarkan masukan dari tamu untuk mengontrol jumlah pemesanan yang Anda dapatkan.
+      Jika Anda baru, mulailah dari 200000 Rp. Setelah Anda menjalankan pengalaman Anda beberapa kali, sesuaikan harga berdasarkan masukan dari tamu untuk mengontrol jumlah pemesanan yang Anda dapatkan.
       </p>
     </div>
     <label style="margin-bottom:10px;margin-top:30px;">Tetapkan harga rata-rata Anda</label>
@@ -18,7 +18,7 @@
       <input type="number" maxlength="5" name="price" placeholder="Rp" class="text-field price-input" autocomplete="off" v-model="$store.state.pricePerPax">
     </div>
     <p>Catatan: Anda dapat mengubah harga di lain waktu untuk setiap tanggal saat mengatur ketersediaan Anda.</p>
-    <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.pricePerPax < 20">
+    <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.pricePerPax < 20">
   </div>
 </template>
 

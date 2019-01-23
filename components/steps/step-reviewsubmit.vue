@@ -25,7 +25,7 @@
         <input type="checkbox" class="default-checkbox" v-model="check2">
         <span class="checkmark"></span>
       </label>
-      <div>Saya setuju dengan Ketentuan Layanan Tickle dan Kebijakan Pengembalian Uang Tamu. <a target="_blank" href="https://trytickle.com/terms-of-service" class="link" style="padding:0;">Terms of Service</a> and <a target="_blank" href="https://trytickle.com/guest-refund-policy" class="link" style="padding:0;">Guest Refund Policy</a>.</div>
+      <div>Saya setuju dengan <a target="_blank" href="https://trytickle.com/terms-of-service" class="link" style="padding:0;">Ketentuan Layanan</a> dan <a target="_blank" href="https://trytickle.com/guest-refund-policy" class="link" style="padding:0;">>Kebijakan Pengembalian Uang Tamu </a> Tickle.</div>
     </div>
     <div class="checkitem-wrapper">
       <label class=container>

@@ -4,7 +4,7 @@
     <p class="paragraph-4">Beri tahu tamu persisnya tempat untuk bertemu Anda di awal pengalaman. Pastikan lokasi mudah ditemukan. Alamat pasti tidak akan dibagikan sampai reservasi tamu dikonfirmasi.</p>
     <div class="div-block-4">
       <div class="text-block-2" style="margin-bottom:30px;">Langkah 1: Berikan alamat</div>
-      <div class="text-block-2" style="margin-bottom:10px;">Country</div>
+      <div class="text-block-2" style="margin-bottom:10px;">Negara</div>
       <p class="paragraph-3">
         <select name="country" class="menu-dropdown">
           <option value="0">JAKARTA</option>
@@ -20,11 +20,11 @@
       </p>
       <div class="city-zipcode-wrapper" style="margin-bottom:10px;">
         <div>
-          <div class="text-block-2" style="margin-bottom:10px;">City</div>
+          <div class="text-block-2" style="margin-bottom:10px;">Kota</div>
           <input type="text" maxlength="50" name="city" placeholder="E.g. Jakarta" class="text-field" autocomplete="off" style="color:#000;background:#fff" v-model="$store.state.whereWeMeet.city" readonly>
         </div>
         <div>
-          <div class="text-block-2" style="margin-bottom:10px;">Zipcode</div>
+          <div class="text-block-2" style="margin-bottom:10px;">Kode Pos</div>
           <input type="text" maxlength="50" name="zipcode" placeholder="E.g. 739013" class="text-field" autocomplete="off" style="color:#000;background:#fff" v-model="$store.state.whereWeMeet.zipcode">
         </div>
       </div>
@@ -38,7 +38,7 @@
       <div class="map-wrapper" id="map-wrapper"></div>
     </div>
     <div>
-      <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="validateForm">
+      <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="validateForm">
     </div>
   </div>
 </template>

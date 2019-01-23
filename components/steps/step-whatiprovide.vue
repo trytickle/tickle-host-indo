@@ -11,29 +11,29 @@
       <p class="paragraph-3">
      Beberapa tamu mungkin memiliki keterbatasan fisik atau karena diet. Beri tahu mereka jika Anda dapat menyesuaikan untuk memenuhi kebutuhan mereka.
       </p>
-      <div class="text-block-2" style="margin-bottom:20px;text-decoration:underline;">Examples</div>
+      <div class="text-block-2" style="margin-bottom:20px;text-decoration:underline;">Contohnya</div>
       <p class="div-block-5" style="color:#222;">
         Tour Martin’s Studio<br/><br/>
-        Refreshments<br/>
-        Feel free to share your preference and I will do my best to accommodate!
+        Minuman<br/>
+        Jangan ragu untuk membagikan preferensi Anda dan saya akan melakukan yang terbaik untuk mengakomodasi!
         <br/><br/>
-        Appetisers<br/>
-        Let me know if you are on a special diet, like Vegan or Gluten Free
+        Makanan pembuka aneka sup<br/>
+        Beri tahu saya jika Anda melakukan diet khusus, seperti Vegan atau Bebas Gluten
       </p>
       <hr>
       <p class="div-block-5" style="color:#222;">
-        Malibu Dinner and Mountaintop Shoot<br/><br/>
-        Seafood Dinner<br/>
-        Longtime spot where fresh catches & beer are served at picnic tables overlooking the ocean
+        Malibu Dinner dan Mountaintop Shoot<br/><br/>
+        Makan Malam Seafood<br/>
+        Tempat lama di mana tangkapan segar & bir disajikan di meja piknik yang menghadap ke laut
         <br/><br/>
-        Sparkling water<br/>
-        Feel free to bring a bottle of wine for the campfire (BYOB)
+        Air soda<br/>
+       Jangan ragu untuk membawa sebotol anggur untuk api unggun (BYOB)
         <br/><br/>
-        Transportation to Rick’s Estate<br/>
-        We will pick you up from Neptune’s Net and head up the mountain to Rick’s estate<br/>
-        **Transportation provided free of charge
+       Transportasi ke Perkebunan Rick<br/>
+       Kami akan menjemput Anda dari Neptunus Net dan menuju gunung ke perkebunan Rick<br/>
+       ** Transportasi disediakan gratis
         <br/><br/>
-        Digital Cameras & Telescopes Binoculars, Special Mounts & Tripods
+       Kamera Digital & Teropong Teleskop, Mount & Tripod Khusus
       </p>
     </div>
     <div>
@@ -41,7 +41,7 @@
         <label style="margin-bottom:10px;">Apa yang akan Anda berikan untuk tamu?</label>
         <textarea name="whatIProvide" class="textarea-field" placeholder="• A bottle of water" maxlength="1500" v-model="$store.state.whatIProvide"></textarea>
         <p><strong :class="{'bold-text': $store.state.whatIProvide.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
-        <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.whatIProvide.length <= 10">
+        <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.whatIProvide.length <= 10">
       </form>
     </div>
   </div>

@@ -11,13 +11,13 @@
       <p class="paragraph-3">
        Jika pengalaman Anda bersifat teknis, seperti lokakarya atau tutorial, jangan takut untuk dirinci secara detail. Para tamu ingin tahu persis apa yang mereka bayar.
       </p>
-      <div class="text-block-2" style="margin-bottom:20px;">Examples</div>
+      <div class="text-block-2" style="margin-bottom:20px;">Contohnya</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
-        "You’ll jump right into the action of our weekly basketball coaching clinics, where we do drills and plays for two hours with 60 kids. There are only three of us for all of the kids (girls and boys ages 10-17), so you’ll be helping us with the drills and coaching. Be prepared to be active, sweat, and definitely be on your toes while having fun with the kids."
+        "Anda akan langsung terjun ke aksi klinik pelatihan bola basket mingguan kami, tempat kami melakukan latihan dan bermain selama dua jam dengan 60 anak. Hanya ada tiga dari kami untuk semua anak-anak (perempuan dan laki-laki usia 10-17), jadi Anda akan membantu kami dengan latihan dan pelatihan. Bersiaplah untuk aktif, berkeringat, dan jelas-jelas waspada sambil bersenang-senang dengan anak-anak."
       </p>
       <hr>
       <p class="div-block-5" style="font-style:italic;color:#222;">
-        "My hometown of Colle Val d’Elsa, about an hour south of Florence, has a local market, where I’ll introduce you to all my favourite producers. Join me as we greet and shop amongst the cheese vendors and local fishmongers and my family’s longtime butcher, as well as the guys behind Tuscany’s best fruit and vegetable stalls."
+      "Kampung halaman saya di Colle Val d'Elsa, sekitar satu jam di selatan Florence, memiliki pasar lokal, di mana saya akan memperkenalkan Anda kepada semua produsen favorit saya. Bergabunglah dengan kami saat kami menyapa dan berbelanja di antara penjual keju dan penjual ikan lokal dan saya tukang daging lama keluarga, serta orang-orang di belakang warung buah dan sayuran terbaik Tuscany. "
       </p>
     </div>
     <div>
@@ -25,7 +25,7 @@
         <label style="margin-bottom:10px;">Tuliskan setiap aktivitas dalam urutan yang akan Anda lakukan</label>
         <textarea name="whatWeDo" class="textarea-field" maxlength="1500" v-model="$store.state.whatWeDo"></textarea>
         <p><strong :class="{'bold-text': $store.state.whatWeDo.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
-        <input type="submit" value="Save" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.whatWeDo.length <= 10">
+        <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.whatWeDo.length <= 10">
       </form>
     </div>
   </div>

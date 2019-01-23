@@ -152,7 +152,6 @@ a:hover {
 
 .heading-3 {
   margin-top: 0px;
-  margin-bottom: 10px;
 }
 
 .paragraph {
@@ -226,6 +225,18 @@ textarea::placeholder {
   border-radius: 4px;
   background-color: transparent;
   color: rgba(8, 192, 255, 1);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .1s ease-in;
+}
+
+.submit-button-solid {
+  margin-top: 50px;
+  padding: 13px 50px;
+  border: 2px solid rgba(8, 192, 255, 1);
+  border-radius: 4px;
+  background-color: rgba(8, 192, 255, 1);
+  color: white;
   font-weight: 700;
   cursor: pointer;
   transition: all .1s ease-in;
@@ -328,6 +339,7 @@ textarea::placeholder {
   text-decoration: none;
   background-color: white;
   transition: all .2s ease-in-out;
+  text-align: left;
   outline: none;
 }
 

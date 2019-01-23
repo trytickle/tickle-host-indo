@@ -26,7 +26,7 @@
         <li class="photo-list-item">Menggunakan filter </li>
         <li class="photo-list-item">Teks overlay pada gambar</li>
       </ul>
-      <div class="text-block-2">Examples</div>
+      <div class="text-block-2">Contohnya</div>
       <div class="photo-grid">
         <div class="example-wrapper">
           <img src="images/photo-example-1.jpg" width="180" height="250" class="image" style="object-fit:cover;">
@@ -225,7 +225,7 @@ export default {
   data() {
     return {
       selectedIndex: 0,
-      buttonTitle: "Save",
+      buttonTitle: "Menyimpan",
       myCroppa: {}
     };
   },
@@ -245,9 +245,9 @@ export default {
           1
         );
       } catch (ex) {}
-      this.buttonTitle = "Uploading...";
+      this.buttonTitle = "Mengunggah...";
       await this.$store.dispatch("uploadImageToDatabase");
-      this.buttonTitle = "Save";
+      this.buttonTitle = "Menyimpan";
       this.$store.commit("setActivePage", "StepAbout");
       this.$parent.switchComponent();
     },
