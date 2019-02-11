@@ -125,7 +125,7 @@
               <img :src="$store.state.photos[2]">
             </div>
           </div>
-          <p class="photo-caption" ><span style="color:#555;font-weight:900;">Action</span> · Show guests engaging in your experience</p>
+          <p class="photo-caption" ><span style="color:#555;font-weight:900;">Tindakan</span> · Tampilkan tamu yang terlibat dalam pengalaman Anda</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[3], 'photo-element': !$store.state.photos[3]}" @click="pickPhoto(3, 'add')">
@@ -137,7 +137,7 @@
               <img :src="$store.state.photos[3]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Details</span> · Capture a close-up of textures or interesting details</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">Detail</span> · Abadikan close-up tekstur atau detail menarik</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[4], 'photo-element': !$store.state.photos[4]}" @click="pickPhoto(4, 'add')">
@@ -149,7 +149,7 @@
               <img :src="$store.state.photos[4]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Location</span> · Show the full scene and try to include people</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lokasi</span> · Tampilkan adegan penuh dan coba sertakan orang</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[5], 'photo-element': !$store.state.photos[5]}" @click="pickPhoto(5, 'add')">
@@ -161,7 +161,7 @@
               <img :src="$store.state.photos[5]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Miscellaneous</span> · Add up to 9 photos</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lain-lain</span> · Tambahkan hingga 9 foto</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[6], 'photo-element': !$store.state.photos[6]}" @click="pickPhoto(6, 'add')">
@@ -173,7 +173,7 @@
               <img :src="$store.state.photos[6]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Miscellaneous</span> · Add up to 9 photos</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lain-lain</span> · Tambahkan hingga 9 foto</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[7], 'photo-element': !$store.state.photos[7]}" @click="pickPhoto(7, 'add')">
@@ -185,7 +185,7 @@
               <img :src="$store.state.photos[7]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Miscellaneous</span> · Add up to 9 photos</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lain-lain</span> · Tambahkan hingga 9 foto</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[8], 'photo-element': !$store.state.photos[8]}" @click="pickPhoto(8, 'add')">
@@ -197,7 +197,7 @@
               <img :src="$store.state.photos[8]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Miscellaneous</span> · Add up to 9 photos</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lain-lain</span> ·Tambahkan hingga 9 foto</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[9], 'photo-element': !$store.state.photos[9]}" @click="pickPhoto(9, 'add')">
@@ -209,7 +209,7 @@
               <img :src="$store.state.photos[9]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Miscellaneous</span> · Add up to 9 photos</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lain-lain</span> · Tambahkan hingga 9 foto</p>
         </div>
       </div>
     </section>

@@ -23,10 +23,10 @@ export default {
   computed: {
     currentTitle() {
       switch (this.activePage) {
-        case 1: return 'How to choose great photos for your experience';
-        case 2: return 'People';
-        case 3: return 'Composition';
-        case 4: return 'Technical requirements';
+        case 1: return 'Bagaimana memilih foto yang bagus untuk pengalaman Anda';
+        case 2: return 'Orang-orang';
+        case 3: return 'Komposisi';
+        case 4: return 'Persyaratan teknis';
         default: return '';
       }
     },
@@ -35,8 +35,8 @@ export default {
         case 1:
           return `
             <div>
-              <p>When guests are looking for experiences, photos are the first thing they notice. They want to get a sense of what they’ll be doing with you!</p>
-              <p>These guidelines will help you showcase what you have to offer. We’ll review each photo before they are displayed on your experience page.</p>
+              <p>Ketika tamu mencari pengalaman, foto adalah hal pertama yang mereka perhatikan. Mereka ingin mengetahui apa yang akan mereka lakukan dengan Anda!</p>
+              <p>Pedoman ini akan membantu Anda menunjukkan apa yang Anda tawarkan. Kami akan meninjau setiap foto sebelum ditampilkan pada halaman pengalaman Anda.</p>
             </div>
             <div>
               <img src="/images/photoguide-img.png">
@@ -45,60 +45,60 @@ export default {
         case 2:
           return `
             <p style="width:60%;text-align:center;">
-              Make sure to include a human element, like hands making something or a person laughing.
+             Pastikan untuk memasukkan unsur manusia, seperti tangan membuat sesuatu atau seseorang tertawa.
             </p>
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-column-gap:20px;margin-top:20px;margin-bottom:20px;">
               <div style="width:200px;">
                 <img src="images/example1.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
-                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Highlight yourself connecting with guests</p>
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Sorot diri Anda terhubung dengan tamu</p>
               </div>
               <div style="width:200px;">
                 <img src="images/example2.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
-                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Show guests having fun and engaging with one another</p>
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Perlihatkan tamu yang bersenang-senang dan terlibat satu sama lain</p>
               </div>
               <div style="width:200px;">
                 <img src="images/example3.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
-                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Feature interactions with details of the activity</p>
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Fitur interaksi dengan detail kegiatan</p>
               </div>
             </div>
           `;
         case 3:
           return `
             <p style="width:60%;text-align:center;">
-              Focus on the setting, or what guests will do or make.
+            Fokus pada pengaturan, atau apa yang akan dilakukan atau dibuat tamu.
             </p>
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-column-gap:20px;margin-top:20px;margin-bottom:20px;">
               <div style="width:200px;">
                 <img src="images/photo-example-3.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
-                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Highlight the activity</p>
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Sorot aktivitas</p>
               </div>
               <div style="width:200px;">
                 <img src="images/photo-example-5.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
-                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Feature the space where the activity will take place</p>
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Menampilkan ruang tempat aktivitas akan berlangsung</p>
               </div>
               <div style="width:200px;">
                 <img src="images/photo-example-6.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
-                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Capture close-up details and textures</p>
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Tangkap detail dan tekstur close-up</p>
               </div>
             </div>
           `;
         case 4:
           return `
             <p style="width:60%;text-align:center;">
-              A few simple tricks to help you meet our standards and take a great shot.
+              Beberapa trik sederhana untuk membantu Anda memenuhi standar kami dan mengambil gambar yang bagus.
             </p>
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-column-gap:20px;margin-top:20px;margin-bottom:20px;">
               <div style="width:200px;">
                 <img src="images/photo-example-1-dark.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
-                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Don’t use dark images</p>
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Jangan gunakan gambar gelap</p>
               </div>
               <div style="width:200px;">
                 <img src="images/photo-example-1-filtered.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
-                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Don’t use stylized filters</p>
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Jangan gunakan filter bergaya</p>
               </div>
               <div style="width:200px;">
                 <img src="images/photo-example-1-blur.jpg" width="200" height="300" style="object-fit:cover;border-radius:5px;">
-                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Don’t use blurry images</p>
+                <p style="margin-top:10px;text-align:center;color:#555;font-size:15px;">Jangan gunakan gambar buram</p>
               </div>
             </div>
           `;

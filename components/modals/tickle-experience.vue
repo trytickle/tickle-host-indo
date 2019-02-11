@@ -24,9 +24,9 @@ export default {
     currentTitle() {
       switch (this.activePage) {
         case 1: return "Apa itu pengalaman Tickle?";
-        case 2: return 'Story';
-        case 3: return 'Activity';
-        case 4: return 'Social';
+        case 2: return 'Cerita';
+        case 3: return 'Aktivitas';
+        case 4: return 'Sosial';
         default: return '';
       }
     },
@@ -35,10 +35,10 @@ export default {
         case 1:
           return `
             <div>
-              <p style="color:#555;font-weight:900;">Let's start with what a Tickle experience is NOT.</p>
-              <p>It's <i>not</i> just about learning something in a class, workshop or seminar. No, it's <i>not</i> a typical activity you might come across on a Facebook group. And it's <i>definitely not</i> about finding the best deals for a tour guide in a city.</p>
-              <p style="color:#555;font-weight:900;margin-top:20px;">A Tickle experience is made out of 3 things:</p>
-              <p>A host's STORY, which comes from something they are deeply passionate about, an ACTIVITY which is a natural extension of their passion, and a SOCIAL element, which brings both guests and hosts together in doing something meaningful.</p>
+              <p style="color:#555;font-weight:900;">Mari kita mulai dengan apa yang bukan pengalaman Tickle.</p>
+              <p>Ini <i> bukan </i> hanya tentang mempelajari sesuatu di kelas, lokakarya, atau seminar. Tidak, ini <i> bukan </i> aktivitas khas yang mungkin Anda temui di grup Facebook. Dan itu <i> jelas bukan </i> tentang menemukan penawaran terbaik untuk pemandu wisata di kota.</p>
+              <p style="color:#555;font-weight:900;margin-top:20px;">Pengalaman Tickle terdiri dari 3 hal:</p>
+              <p>CERITA tuan rumah, yang berasal dari sesuatu yang mereka sangat sukai, suatu AKTIVITAS yang merupakan perpanjangan alami dari hasrat mereka, dan unsur sosial, yang menyatukan tamu dan tuan rumah bersama dalam melakukan sesuatu yang bermakna.</p>
             </div>
             <div>
               <img src="/images/experience-img.png">
@@ -47,7 +47,7 @@ export default {
         case 2:
           return `
             <p style="width:60%;text-align:center;">
-              Every Tickle experience starts with each host's story. It's unique, because every host is unique.
+             Setiap pengalaman Tickle dimulai dengan kisah masing-masing pembawa acara. Ini unik, karena setiap host unik.
             </p>
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-column-gap:20px;margin-top:20px;margin-bottom:20px;">
               <div style="width:200px;">
@@ -64,7 +64,7 @@ export default {
         case 3:
           return `
             <p style="width:60%;text-align:center;">
-              The activity is really just an excuse for people to come together for a shared experience. That being said, it's always fun and interesting.
+            Kegiatan ini benar-benar hanya alasan bagi orang-orang untuk berkumpul bersama untuk berbagi pengalaman. Yang sedang berkata, itu selalu menyenangkan dan menarik.
             </p>
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-column-gap:20px;margin-top:20px;margin-bottom:20px;">
               <div style="width:200px;">
@@ -81,7 +81,7 @@ export default {
         case 4:
           return `
             <p style="width:60%;text-align:center;">
-              At the end of the day, it's all about people. A great experience helps start conversations, creating lasting friendships and memorable moments.
+         Pada akhirnya, ini semua tentang orang. Pengalaman hebat membantu memulai percakapan, menciptakan persahabatan yang langgeng dan momen yang tak terlupakan.
             </p>
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-column-gap:20px;margin-top:20px;margin-bottom:20px;">
               <div style="width:200px;">
