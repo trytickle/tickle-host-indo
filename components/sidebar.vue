@@ -4,7 +4,6 @@
     <h1 class="heading-2" style="margin-top:15px;line-height:35px;">Personalisasikan pengalaman Anda</h1>
     <div class="div-block-3">
       <div class="step-line"></div>
-      <div class="step-dot">1</div>
       <button class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepTitle', 'is-completed': $store.state.title.length > 10}" id="StepTitle" @click="changeStep($event)">Judul<span v-if="$store.state.title.length > 10"> 👍</span></button>
       <button class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepTagline', 'is-completed': $store.state.tagline.length > 10}" id="StepTagline" @click="changeStep($event)">Tagline<span v-if="$store.state.tagline.length > 10"> 👍</span></button>
       <button class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepPhotos', 'is-completed': $store.state.photos[0] !== null}" id="StepPhotos" @click="changeStep($event)">Foto<span v-if="$store.state.photos[0] !== null"> 👍</span></button>
@@ -15,7 +14,6 @@
       <button class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepWhereWeBe', 'is-completed': $store.state.whereWeBe.length > 10}" id="StepWhereWeBe" @click="changeStep($event)">Di mana kami berada<span v-if="$store.state.whereWeBe.length > 10"> 👍</span></button>
       <button class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepWhereWeMeet', 'is-completed': validateWhereWeMeet}" id="StepWhereWeMeet" @click="changeStep($event)">Di mana kami akan bertemu<span v-if="validateWhereWeMeet"> 👍</span></button>
 
-      <div class="step-dot">2</div>
       <button class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepCategory', 'is-completed': validateCategories}" id="StepCategory" @click="changeStep($event)">Kategori<span v-if="validateCategories"> 👍</span></button>
       <button style="text-align:left;" class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepGuestRequirements', 'is-completed': validateGuestRequirements}" id="StepGuestRequirements" @click="changeStep($event)">Persyaratan tamu<span v-if="validateGuestRequirements"> 👍</span></button>
       <button class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepPrice', 'is-completed': $store.state.pricePerPax}" id="StepPrice" @click="changeStep($event)">Harga<span v-if="$store.state.pricePerPax"> 👍</span></button>
@@ -23,7 +21,6 @@
       <button style="text-align:left;" class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepBookingOptions', 'is-completed': validateBookingOptions}" id="StepBookingOptions" @click="changeStep($event)">Opsi pemesanan<span v-if="validateBookingOptions"> 👍</span></button>
       <button class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepAvailability', 'is-completed': validateAvailability}" id="StepAvailability" @click="changeStep($event)">Tanggal ketersediaan<span v-if="validateAvailability"> 👍</span></button>
 
-      <div v-if="$store.state.status && !$store.state.status.isApproved" class="step-dot">3</div>
       <button v-if="$store.state.status && !$store.state.status.isApproved" class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepReviewSubmit'}" id="StepReviewSubmit" @click="changeStep($event)">Tinjau &amp; Kirim</button>
     </div>
   </div>

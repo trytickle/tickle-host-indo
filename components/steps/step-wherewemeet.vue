@@ -7,7 +7,7 @@
       <div class="text-block-2" style="margin-bottom:10px;">Negara</div>
       <p class="paragraph-3">
         <select name="country" class="menu-dropdown">
-          <option value="0">JAKARTA</option>
+          <option value="0">Indonesia</option>
         </select>
       </p>
       <div class="text-block-2" style="margin-bottom:10px;">Alamat jalan</div>
