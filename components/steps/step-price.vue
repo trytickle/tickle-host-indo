@@ -9,7 +9,7 @@
       </p>
       <div class="text-block-2">Rekomendasi kami</div>
       <p class="paragraph-3">
-      Jika Anda baru, mulailah dari 200000 Rp. Setelah Anda menjalankan pengalaman Anda beberapa kali, sesuaikan harga berdasarkan masukan dari tamu untuk mengontrol jumlah pemesanan yang Anda dapatkan.
+      Jika Anda baru, mulailah dari IDR 200,000. Setelah Anda menjalankan pengalaman Anda beberapa kali, sesuaikan harga berdasarkan masukan dari tamu untuk mengontrol jumlah pemesanan yang Anda dapatkan.
       </p>
     </div>
     <label style="margin-bottom:10px;margin-top:30px;">Tetapkan harga rata-rata Anda</label>

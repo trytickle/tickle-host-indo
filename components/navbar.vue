@@ -18,7 +18,7 @@
           <div v-for="submission in this.$store.state.submissions" :key="submission.submissionId" :submission="submission">
             <hr>
             <div class="menu-item-cell">
-              <button class="link menu-item" @click.prevent="openSubmission(submission)"><div class="menu-item-grid"><div><span :class="{'status-label-draft': submission.status.isDraft, 'status-label-live': submission.status.isApproved, 'status-label-rejected': submission.status.isRejected, 'status-label-review': submission.status.inReview }" >{{submission.status.isDraft ? "Draft" : (submission.status.inReview ? "In Review": (submission.status.isApproved ? "Live": "Rejected"))}}</span></div><div>{{submission.title}}</div></div></button>
+              <button class="link menu-item" @click.prevent="openSubmission(submission)"><div class="menu-item-grid"><div><span :class="{'status-label-draft': submission.status.isDraft, 'status-label-live': submission.status.isApproved, 'status-label-rejected': submission.status.isRejected, 'status-label-review': submission.status.inReview }" >{{submission.status.isDraft ? "Draf" : (submission.status.inReview ? "Ditinjau": (submission.status.isApproved ? "Langsung": "Ditolak"))}}</span></div><div>{{submission.title}}</div></div></button>
               <button title="Hapus pengalaman" style="outline:none;background: #fff;" @click.prevent="showdeleteExperience(submission.title, submission)"><i class="fas fa-minus-circle" style="color:red;"></i></button>
             </div>
           </div>
