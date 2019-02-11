@@ -90,8 +90,8 @@
         <div :class="{'photo-image': $store.state.photos[1], 'photo-element': !$store.state.photos[1]}" @click="pickVideo()">
           <div class="image-wrapper">
             <div class="buttons-wrapper">
-              <div class="photo-action-button" @click.stop="removeVideo()">Remove</div>
-              <div class="photo-action-button" @click.stop="pickVideo()">Replace</div>
+              <div class="photo-action-button" @click.stop="removeVideo()">Menghapus</div>
+              <div class="photo-action-button" @click.stop="pickVideo()">Perubahan</div>
             </div>
              <video class="video" width="200" height="300" v-if="$store.state.photos[1]" ref="videoRef" :src="$store.state.photos[1]" id="video-container"  muted loop autoplay></video>  
           </div>

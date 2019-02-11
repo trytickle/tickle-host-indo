@@ -29,7 +29,7 @@ export default {
     nextClicked() {
       updateSubmissionField('pricePerPax', this.$store.state.pricePerPax*100, this.$store.state.submissionId);
       updateSubmissionField('currency', 'idr', this.$store.state.submissionId);
-      this.$store.commit('setActivePage', 'StepCancellationPolicy');
+      this.$store.commit('setActivePage', 'StepBookingOptions');
       this.$parent.switchComponent();
     }
   }

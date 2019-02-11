@@ -219,7 +219,7 @@ const store = () => {
             context.commit('setNotes', submissionData.notes ? submissionData.notes : '');
             context.commit('setCategory', { primary: submissionData.categoryPrimary != null ? submissionData.categoryPrimary : null, secondary: submissionData.categorySecondary != null ? submissionData.categorySecondary : null });
             context.commit('setPrice', submissionData.pricePerPax != null ? (submissionData.pricePerPax / 100) : null);
-            context.commit('setDuration', submissionData.maxDuration != null ? submissionData.maxDuration / 60 : null);
+            context.commit('setDuration', submissionData.maxDuration != null ? submissionData.maxDuration / 60 : 2);
             context.commit('setGuestCount', submissionData.maxGuestCount != null ? submissionData.maxGuestCount : null);
             context.commit('setLanguage', submissionData.languages ? submissionData.languages[0] : null);
             context.commit('setCancellationPolicy', submissionData.cancellationPolicy != null ? submissionData.cancellationPolicy : null);

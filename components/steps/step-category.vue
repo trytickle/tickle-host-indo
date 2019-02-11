@@ -4,7 +4,7 @@
     <p class="paragraph-4">Pilih kategori yang paling menggambarkan pengalaman Anda sehingga muncul untuk tamu yang menelusuri kategori itu..</p>
     <div class="content-wrapper">
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Primary Category</div>
+        <div class="text-block-2" style="margin-bottom:10px;">Kategori Utama</div>
         <p class="paragraph-3">
           <select name="category" class="menu-dropdown" v-model="$store.state.categoryPrimary">
             <option v-for="(category, index) in categories" :key="index" :value="index">{{category}}</option>
@@ -12,7 +12,7 @@
         </p>
       </div>
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Secondary Category</div>
+        <div class="text-block-2" style="margin-bottom:10px;">Kategori Sekunder</div>
         <p class="paragraph-3">
           <select name="category" class="menu-dropdown" v-model="$store.state.categorySecondary">
             <option v-for="(category, index) in categories" :key="index" :value="index">{{category}}</option>

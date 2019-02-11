@@ -12,6 +12,12 @@
         Tickle mengambil 30% dari setiap pemesanan. Baca lebih lanjut tentang biaya layanan kami. <a target="_blank" href="https://trytickle.com/service-fee" class="link" style="padding:0;background:#eee">service fee</a>.
       </p>
     </div>
+     <div class="div-block-4" style="padding-top:40px;padding-bottom:25px;background:rgb(191, 239, 255);">
+      <div class="text-block-2">Bayar dengan uang tunai</div>
+      <p class="paragraph-3" style="color:#000">
+      Saat ini, hanya pembayaran dengan uang tunai yang diterima. Harap bayar host pada saat kedatangan.
+      </p>
+    </div>
     <div class="text-block-2" style="margin-top:40px;">Dengan mengirimkan, saya jamin bahwa ini benar:</div>
     <div class="checkitem-wrapper">
       <label class=container>
