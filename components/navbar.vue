@@ -42,9 +42,9 @@
       <div>
         <!-- <a v-if="this.$store.state.user && !this.$store.state.user.settings.payoutMethods" target="_blank" rel="noopener noreferrer" :href=stripeUrl><button class="text-block link">Connect Stripe</button></a> -->
       </div>
-      <div v-if="$store.state.user && !$store.state.user.isVerified">
+      <!-- <div v-if="$store.state.user && !$store.state.user.isVerified">
         <button class="text-block link"  @click.prevent="showVerifyModel=true">Verifikasi akun</button>
-      </div>
+      </div> -->
       <div class="email-wrapper">
         <span class="text-block">{{this.$store.state.user && this.$store.state.user.email}}</span>
         <button class="link" style="color:red;margin-left:-5px;" @click="signOut">Keluar</button>
