@@ -7,15 +7,11 @@
       <p class="paragraph-3">
        Pengalaman di Tickle memiliki kebijakan minimum 1 tamu. Itu berarti jika satu orang memesan pengalaman Anda, Anda wajib diharapkan untuk menjadi tuan rumah bagi mereka.
       </p>
-      <div class="text-block-2">Biaya layanan</div>
-      <p class="paragraph-3">
-        Tickle mengambil 30% dari setiap pemesanan. Baca lebih lanjut tentang biaya layanan kami. <a target="_blank" href="https://trytickle.com/service-fee" class="link" style="padding:0;background:#eee">service fee</a>.
-      </p>
     </div>
      <div class="div-block-4" style="padding-top:40px;padding-bottom:25px;background:rgb(191, 239, 255);">
-      <div class="text-block-2">Bayar dengan uang tunai</div>
+      <div class="text-block-2" style="font-weight:900;font-size:18px;padding-bottom:5px;">Pembayaran dengan uang tunai saja</div>
       <p class="paragraph-3" style="color:#000">
-      Saat ini, hanya pembayaran dengan uang tunai yang diterima. Harap bayar host pada saat kedatangan.
+      Saat ini, hanya pembayaran dengan uang tunai yang diterima. Harap terima pembayaran saat tamu Anda datang.
       </p>
     </div>
     <div class="text-block-2" style="margin-top:40px;">Dengan mengirimkan, saya jamin bahwa ini benar:</div>
@@ -31,7 +27,7 @@
         <input type="checkbox" class="default-checkbox" v-model="check2">
         <span class="checkmark"></span>
       </label>
-      <div>Saya setuju dengan <a target="_blank" href="https://trytickle.com/terms-of-service" class="link" style="padding:0;">Ketentuan Layanan</a> dan <a target="_blank" href="https://trytickle.com/guest-refund-policy" class="link" style="padding:0;">>Kebijakan Pengembalian Uang Tamu </a> Tickle.</div>
+      <div>Saya setuju dengan <a target="_blank" href="https://trytickle.com/terms-of-service" class="link" style="padding:0;">Ketentuan Layanan</a> Tickle.</div>
     </div>
     <div class="checkitem-wrapper">
       <label class=container>

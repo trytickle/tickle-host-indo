@@ -8,7 +8,7 @@
           <div class="text-block-4">{{$store.state.whereWeMeet.locationName ? $store.state.whereWeMeet.locationName : "Di mana kami akan bertemu"}}</div>
           <div class="text-block-4">{{$store.state.maxDuration ? durationString : 'Lamanya'}}</div>
           <div class="text-block-4">{{$store.state.tagline ? $store.state.tagline : 'Tagline'}}</div>
-          <div class="text-block-4">{{$store.state.language ? $store.state.language : 'Bahasa'}}</div>
+          <div class="text-block-4">{{$store.state.language ? $store.state.language : 'Bahasa Indonesia'}}</div>
         </div>
         <div class="image-wrapper" v-if="this.photos[currentPhoto] !== null"><img v-if="!this.photos[currentPhoto].includes('.mp4')" :src="this.photos[currentPhoto]" alt="photo"> <video  class="video" v-if="this.photos[currentPhoto].includes('.mp4')" ref="videoRef" :src="$store.state.photos[1]" id="video-container" muted loop autoplay></video></div>
         <div class="image-gallery-arrow-left" @click="galleryLeftClicked" v-if="showLeftArrow"><i class="fas fa-chevron-left fa-2x"></i></div>
@@ -53,12 +53,17 @@
         </div>
       </div>
       <div class="content-section">
-        <h4 class="heading-5">Ukuran grup {{guestCountString}}</h4>
+        <h4 class="heading-5">Ukuran grup hingga {{guestCountString}}</h4>
         <div class="div-block-8"></div>
       </div>
-      <div class="content-section">
+      <!-- <div class="content-section">
         <h4 class="heading-5">{{cancellationPolicyTitle}}</h4>
         <p class="paragraph-5" style="margin-top:-30px;">{{cancellationPolicyDescription}}</p>
+        <div class="div-block-8"></div>
+      </div> -->
+      <div class="content-section">
+        <h4 class="heading-5">Bayar dengan uang tunai</h4>
+        <p class="paragraph-5" style="margin-top:-30px;">Saat ini, hanya pembayaran dengan uang tunai yang diterima. Harap bayar host pada saat kedatangan.</p>
         <div class="div-block-8"></div>
       </div>
     </div>
@@ -178,9 +183,9 @@ export default {
     },
     guestCountString() {
       if (this.$store.state.maxGuestCount === 1) {
-        return "" + this.$store.state.maxGuestCount + " Tamu";
+        return "" + this.$store.state.maxGuestCount + " tamu";
       } else if (this.$store.state.maxGuestCount > 1) {
-        return "" + this.$store.state.maxGuestCount + " Tamu";
+        return "" + this.$store.state.maxGuestCount + " tamu";
       }
     },
     cancellationPolicyTitle() {
