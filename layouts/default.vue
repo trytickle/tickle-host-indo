@@ -2,9 +2,9 @@
   <div>
     <div class="warning-modal">
       <img src="images/tickleIcon.png" width="80" alt="Tickle logo" class="logo-img"><br><br>
-      Sorry, your current view size is not supported.
+      Maaf, ukuran tampilan Anda saat ini tidak didukung.
       <br><br>
-      Please use your desktop browser to view this web application.
+      Silakan gunakan browser desktop Anda untuk melihat aplikasi web ini.
     </div>
     <nuxt/>
   </div>
