@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <span v-if="$store.state.status" :class="{'status-label-draft': $store.state.status.isDraft, 'status-label-live': $store.state.status.isApproved, 'status-label-rejected': $store.state.status.isRejected, 'status-label-review': $store.state.status.inReview  }" >{{$store.state.status && ($store.state.status.isDraft ? "Draf" : ($store.state.status.inReview ? "Ditinjau": ($store.state.status.isApproved ? "Langsung": "Ditolak")))}}</span>
-    <h1 class="heading-2" style="margin-top:15px;line-height:35px;">Personalisasikan pengalaman Anda</h1>
+    <h1 class="heading-2" style="margin-top:20px;line-height:35px;">Personalisasikan pengalaman Anda</h1>
     <div class="div-block-3">
       <div class="step-line"></div>
       <button class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepTitle', 'is-completed': $store.state.title.length > 10}" id="StepTitle" @click="changeStep($event)">Judul<span v-if="$store.state.title.length > 10"> 👍</span></button>
@@ -100,29 +100,29 @@ export default {
   border-color: #d5efec;
 }
 .status-label-live {
-  padding: 5px 8px 5px 8px;
-  font-size: 16px;
+  padding: 6px 30px 6px 30px;
+  font-size: 15px;
   color: white;
   background: rgb(5, 175, 56);
   border-radius: 4px;
 }
 .status-label-draft {
-  padding: 5px 8px 5px 8px;
-  font-size: 16px;
+  padding: 6px 30px 6px 30px;
+  font-size: 15px;
   color: white;
   background: #888;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 .status-label-rejected {
-  padding: 5px 8px 5px 8px;
-  font-size: 16px;
+  padding: 6px 30px 6px 30px;
+  font-size: 15px;
   color: white;
   background: rgb(218, 34, 34);
   border-radius: 4px;
 }
 .status-label-review {
-  padding: 5px 8px 5px 8px;
-  font-size: 16px;
+  padding: 6px 30px 6px 30px;
+  font-size: 15px;
   color: white;
   background: rgb(216, 166, 30);
   border-radius: 4px;

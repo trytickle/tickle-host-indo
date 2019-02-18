@@ -18,7 +18,7 @@
           <div v-for="submission in this.$store.state.submissions" :key="submission.submissionId" :submission="submission">
             <hr>
             <div class="menu-item-cell">
-              <button class="link menu-item" @click.prevent="openSubmission(submission)"><div class="menu-item-grid"><div><span :class="{'status-label-draft': submission.status.isDraft, 'status-label-live': submission.status.isApproved, 'status-label-rejected': submission.status.isRejected, 'status-label-review': submission.status.inReview }" >{{submission.status.isDraft ? "Draf" : (submission.status.inReview ? "Ditinjau": (submission.status.isApproved ? "Langsung": "Ditolak"))}}</span></div><div>{{submission.title}}</div></div></button>
+              <button class="link menu-item" @click.prevent="openSubmission(submission)"><div class="menu-item-grid"><div :class="{'status-label-draft': submission.status.isDraft, 'status-label-live': submission.status.isApproved, 'status-label-rejected': submission.status.isRejected, 'status-label-review': submission.status.inReview }" >{{submission.status.isDraft ? "Draf" : (submission.status.inReview ? "Ditinjau": (submission.status.isApproved ? "Langsung": "Ditolak"))}}</div><div>{{submission.title}}</div></div></button>
               <button title="Hapus pengalaman" style="outline:none;background: #fff;" @click.prevent="showdeleteExperience(submission.title, submission)"><i class="fas fa-minus-circle" style="color:red;"></i></button>
             </div>
           </div>
@@ -37,7 +37,7 @@
               <div>{{booking.count}}</div>
             </div>
           </div>
-        </div>
+        </div>  
       </div>
       <div>
         <!-- <a v-if="this.$store.state.user && !this.$store.state.user.settings.payoutMethods" target="_blank" rel="noopener noreferrer" :href=stripeUrl><button class="text-block link">Connect Stripe</button></a> -->
@@ -248,9 +248,9 @@ export default {
 }
 .menu-item-grid {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 85px auto;
   align-items: center;
-  grid-column-gap: 15px;
+  grid-gap: 15px;
 }
 .status-label-live {
   padding: 5px 8px 5px 8px;
@@ -258,6 +258,7 @@ export default {
   color: white;
   background: rgb(5, 175, 56);
   border-radius: 4px;
+  text-align: center;
 }
 .status-label-draft {
   padding: 5px 8px 5px 8px;
@@ -265,6 +266,7 @@ export default {
   color: white;
   background: #888;
   border-radius: 4px;
+  text-align: center;
 }
 .status-label-rejected {
   padding: 5px 8px 5px 8px;
@@ -272,6 +274,7 @@ export default {
   color: white;
   background: rgb(218, 34, 34);
   border-radius: 4px;
+  text-align: center;
 }
 .status-label-review {
   padding: 5px 8px 5px 8px;
@@ -279,6 +282,7 @@ export default {
   color: white;
   background: rgb(216, 166, 30);
   border-radius: 4px;
+  text-align: center;
 }
 .modal-overlay {
   position: absolute;
