@@ -197,7 +197,7 @@
               <img :src="$store.state.photos[8]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lain-lain</span> ·Tambahkan hingga 9 foto</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lain-lain</span> · Tambahkan hingga 9 foto</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[9], 'photo-element': !$store.state.photos[9]}" @click="pickPhoto(9, 'add')">

@@ -3,8 +3,8 @@
     <div class="device-wrapper">
       <div class="div-block-6 headerSection" id="top">
         <div class="header-text-wrapper">
-          <div class="text-block-4">{{$store.state.label.toUpperCase() ? $store.state.label.toUpperCase() : 'Label'}}</div>
-          <h2 class="heading-4">{{$store.state.title ? $store.state.title : 'Pengalaman baru'}}</h2>
+          <div class="text-block-4">{{$store.state.label.toUpperCase().trim() ? $store.state.label.toUpperCase().trim() : 'Label'}}</div>
+          <h2 class="heading-4" style="margin-left:5px;margin-right:5px;">{{$store.state.title ? $store.state.title : 'Pengalaman baru'}}</h2>
           <div class="text-block-4">{{$store.state.whereWeMeet.locationName ? $store.state.whereWeMeet.locationName : "Di mana kami akan bertemu"}}</div>
           <div class="text-block-4">{{$store.state.maxDuration ? durationString : 'Lamanya'}}</div>
           <div class="text-block-4">{{$store.state.tagline ? $store.state.tagline : 'Tagline'}}</div>

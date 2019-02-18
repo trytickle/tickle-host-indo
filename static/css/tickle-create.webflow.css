@@ -47,7 +47,7 @@ input[type="submit"],
   display: flex;
   height: 9vh;
   width: 100vw;
-  min-width: 1530px;
+  min-width: 1080px;
   min-height: 85px;
   -webkit-box-align: center;
   -webkit-align-items: center;
