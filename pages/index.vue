@@ -198,11 +198,14 @@ export default {
         }
       } else {
         if (isSignUp) {
+          console.log("verification email sent")
           this.sendVerificationEmail()
         } else {
           this.showSendVerification = true;
           this.showError = true;
           this.buttonTitle = "Masuk",
+          this.signupButtonText = "Daftar"
+          this.showSignupModal = false;
           this.errorMessage = "Email tidak terverifikasi. Anda perlu memverifikasi alamat email Anda sebelum masuk."
         }
       }
