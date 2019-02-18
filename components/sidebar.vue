@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <span v-if="$store.state.status" :class="{'status-label-draft': $store.state.status.isDraft, 'status-label-live': $store.state.status.isApproved, 'status-label-rejected': $store.state.status.isRejected, 'status-label-review': $store.state.status.inReview  }" >{{$store.state.status && ($store.state.status.isDraft ? "Draf" : ($store.state.status.inReview ? "Ditinjau": ($store.state.status.isApproved ? "Langsung": "Ditolak")))}}</span>
-    <h1 class="heading-2" style="margin-top:20px;line-height:35px;">Personalisasikan pengalaman Anda</h1>
+    <h1 class="heading-2" style="margin-top:25px;line-height:28px;font-size:23px;">Personalisasikan pengalaman Anda</h1>
     <div class="div-block-3">
       <div class="step-line"></div>
       <button class="sidebar-link" :class="{'is-active': $store.state.activePage === 'StepTitle', 'is-completed': $store.state.title.length > 10}" id="StepTitle" @click="changeStep($event)">Judul<span v-if="$store.state.title.length > 10"> 👍</span></button>

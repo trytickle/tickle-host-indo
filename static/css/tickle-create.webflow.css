@@ -123,14 +123,14 @@ a:hover {
 .sidebar {
   overflow: scroll;
   width: 20%;
-  min-width: 280px;
-  padding: 40px;
+  min-width: 250px;
+  padding: 40px 30px;
 }
 
 .main-content {
   width: 52%;
-  min-width: 800px;
-  padding: 40px 50px;
+  min-width: 760px;
+  padding: 40px 30px;
   border-left: 1px solid #e2e2e2;
   overflow: scroll;
 }
@@ -161,8 +161,8 @@ a:hover {
 
 .infobar {
   width: 28%;
-  padding: 40px;
-  min-width: 450px;
+  padding: 20px 20px 40px 20px;
+  min-width: 420px;
 }
 
 .paragraph-2 {

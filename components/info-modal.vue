@@ -47,9 +47,7 @@ export default {
 .info-modal-wrapper {
   position: absolute;
   width: 100%;
-  height: 100%;
-  min-width: 1560px;
-  min-height: 950px;
+  height: 102%;
   background-color: rgba(0,0,0,0.7);
   z-index: 99999;
   display: grid;
@@ -60,8 +58,7 @@ export default {
 .info-modal {
   background-color: #fff;
   width: 80%;
-  height: 80%;
-  padding: 50px;
+  padding: 40px;
   border-radius: 5px;
   animation: 0.3s ease-out 0s 1 slideIn;
 }
@@ -101,7 +98,7 @@ export default {
   }
 }
 .content-wrapper {
-  margin-top: 30px;
+  margin-top: 0px;
   width: 100%;
   height: calc(100% - 70px);
   display: grid;
