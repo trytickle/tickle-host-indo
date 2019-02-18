@@ -17,7 +17,7 @@ let layouts = {
 let resolvedLayouts = {}
 
 export default {
-  head: {"title":"Tickle Hosts","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Create, edit and manage your Tickle experiences and bookings"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.png"},{"href":"https:\u002F\u002Funpkg.com\u002Fvue-croppa\u002Fdist\u002Fvue-croppa.min.css","rel":"stylesheet","type":"text\u002Fcss"}],"script":[{"src":"https:\u002F\u002Fmaps.googleapis.com\u002Fmaps\u002Fapi\u002Fjs?key=AIzaSyCY3x0GxjLNamXJG-ghiecuPejkuLkIHQQ"},{"src":"https:\u002F\u002Fapis.google.com\u002Fjs\u002Fplatform.js"},{"src":"https:\u002F\u002Funpkg.com\u002Fvue-croppa\u002Fdist\u002Fvue-croppa.min.js"}],"style":[]},
+  head: {"title":"Host Tickle","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Buat, edit, dan kelola pengalaman dan pemesanan Tickle Anda"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.png"},{"href":"https:\u002F\u002Funpkg.com\u002Fvue-croppa\u002Fdist\u002Fvue-croppa.min.css","rel":"stylesheet","type":"text\u002Fcss"}],"script":[{"src":"https:\u002F\u002Fmaps.googleapis.com\u002Fmaps\u002Fapi\u002Fjs?key=AIzaSyCY3x0GxjLNamXJG-ghiecuPejkuLkIHQQ"},{"src":"https:\u002F\u002Fapis.google.com\u002Fjs\u002Fplatform.js"},{"src":"https:\u002F\u002Funpkg.com\u002Fvue-croppa\u002Fdist\u002Fvue-croppa.min.js"}],"style":[]},
   render(h, props) {
     const loadingEl = h('nuxt-loading', { ref: 'loading' })
     const layoutEl = h(this.layout || 'nuxt')

@@ -3,17 +3,17 @@
     <div class="bg"></div>
     <div class="header-img"><img class="icon-image" src="/images/intro-header.png"></div>
     <div class="container">
-      <h3 class="heading-3" style="margin-bottom:20px;text-align:center;">Selamat datang, Tickle hosts!</h3>
+      <h3 class="heading-3" style="margin-bottom:20px;text-align:center;">Selamat datang, host Tickle!</h3>
       <p style="text-align:left;">Masuk ke akun Anda untuk membuat, mengubah, dan mengelola pemesanan serta pengalaman Tickle Anda. Jika Anda baru di Tickle dan ingin mendaftar sebagai tuan rumah, <a href="#" @click.prevent="showSignupModal=true">Silakan klik di sini</a>.</p>
       <form v-on:submit.prevent="emailLogin" class="email-wrapper">
         <input type="text" class="text-field" placeholder="Email" spellcheck="false" v-model="emailString"/>
         <input type="password" class="text-field" placeholder="Kata Sandi" spellcheck="false" v-model="passwordString"/>
         <button class="submit-button" @click.prevent="emailLogin">{{buttonTitle}}</button>
       </form>
-      <div class="error-wrapper" style="margin-bottom:20px;" v-if="showError">{{errorMessage}}<br><a class="error-wrapper"  v-if="showSendVerification" href="#" @click.prevent="sendVerificationEmail()"><u>Kirim verifikasi email</u></a></div>
-      <div class="green-wrapper" style="margin-bottom:20px;" v-if="showVerifySent">Email verifikasi dikirim. Silakan periksa email Anda dan klik tautan verifikasi di dalamnya.</div>
-      <div style="margin:auto;margin-bottom:10px;padding-left:20px;">
-        <span style="align:center;font-size:12px;font-weight:600;color:#aaa;">ATAU LANJUTKAN DENGAN</span>
+      <div class="error-wrapper" style="margin-bottom:20px;margin-top:20px;" v-if="showError">{{errorMessage}}<br><a class="error-wrapper"  v-if="showSendVerification" href="#" @click.prevent="sendVerificationEmail()"><u>Kirim verifikasi email</u></a></div>
+      <div class="green-wrapper" style="margin-bottom:20px;margin-top:20px;" v-if="showVerifySent">Email verifikasi dikirim. Silakan periksa email Anda dan klik tautan verifikasi di dalamnya.</div>
+      <div style="margin:auto;margin-bottom:10px;margin-top:30px;padding-left:20px;">
+        <span style="align:center;font-size:11px;font-weight:600;color:#ccc;">ATAU LANJUTKAN DENGAN</span>
       </div>
       <div style="margin:auto;">
         <button class="fb-button" style="margin-right:10px;" @click.prevent="fbLogin">Facebook</button>

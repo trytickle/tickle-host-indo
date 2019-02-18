@@ -7,11 +7,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Tickle Hosts',
+    title: 'Host Tickle',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Create, edit and manage your Tickle experiences and bookings' },
+      { hid: 'description', name: 'description', content: 'Buat, edit, dan kelola pengalaman dan pemesanan Tickle Anda' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
