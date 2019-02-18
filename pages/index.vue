@@ -10,7 +10,8 @@
         <input type="password" class="text-field" placeholder="Kata Sandi" spellcheck="false" v-model="passwordString"/>
         <button class="submit-button" @click.prevent="emailLogin">{{buttonTitle}}</button>
       </form>
-      <div class="error-wrapper" style="margin-bottom:20px;" v-if="showError">{{errorMessage}}</div>
+      <div class="error-wrapper" style="margin-bottom:20px;" v-if="showError">{{errorMessage}}<br><a class="error-wrapper"  v-if="showSendVerification" href="#" @click.prevent="sendVerificationEmail()"><u>Kirim verifikasi email</u></a></div>
+      <div class="green-wrapper" style="margin-bottom:20px;" v-if="showVerifySent">Email verifikasi dikirim. Silakan periksa email Anda dan klik tautan verifikasi di dalamnya.</div>
       <div style="margin:auto;margin-bottom:10px;padding-left:20px;">
         <span style="align:center;font-size:12px;font-weight:600;color:#aaa;">ATAU LANJUTKAN DENGAN</span>
       </div>
@@ -59,6 +60,8 @@ export default {
       firstNameString: "",
       lastNameString: "",
       showError: false,
+      showSendVerification: false,
+      showVerifySent: false,
       errorMessage: "Email tidak valid",
       googleAuth: null,
       showSignupModal: false
@@ -70,6 +73,8 @@ export default {
         this.validateEmail(this.emailString) &&
         this.passwordString.length > 5
       ) {
+        this.showVerifySent = false;
+        this.showSendVerification = false;
         this.showError = false;
         this.buttonTitle = "Masuk...";
         
@@ -80,7 +85,7 @@ export default {
           );
           if (result) {
             const user = result.user;
-            this.takeToStart();
+            this.takeToStart(false, false);
           }
         } catch (error) {
           this.errorMessage =
@@ -119,7 +124,7 @@ export default {
             profilePhotoUrl: "",
             email: this.emailString
           };
-          await this.createNewUser(body);
+          await this.createNewUser(body, false);
         }
       } catch (error) {
         const errorCode = error.code;
@@ -158,7 +163,7 @@ export default {
           profilePhotoUrl: user.photoURL,
           email: user.email
         };
-        await this.createNewUser(body);
+        await this.createNewUser(body, true);
       } catch (error) {
         console.error(error);
       }
@@ -167,33 +172,56 @@ export default {
       const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return emailRegex.test(String(this.emailString).toLowerCase());
     },
-    async createNewUser(body) {
+    async createNewUser(body, isSocialLogin) {
       try {
         await this.$axios.$post(
           process.env.functionsUrl + "/createNewUser",
           body
         );
-        this.takeToStart();
+        auth.currentUser.sendEmailVerification()
+        this.takeToStart(isSocialLogin, true);
       } catch (error) {
         if (error.response.status == 400) {
-          this.takeToStart();
+          this.takeToStart(isSocialLogin, true);
           return;
         }
         this.errorMessage = error.message;
         this.showError = true;
       }
     },
-    async takeToStart() {
-      await this.$store.dispatch("loadCurrentUser");
-      if (this.$store.state.user) {
-        this.$router.push('/start?step=StepTitle');
+    async takeToStart(isSocialLogin, isSignUp) {
+      this.showError = false;
+      if (auth.currentUser.emailVerified || isSocialLogin) {
+        await this.$store.dispatch("loadCurrentUser");
+        if (this.$store.state.user) {
+          this.$router.push('/start?step=StepTitle');
+        }
+      } else {
+        if (isSignUp) {
+          this.sendVerificationEmail()
+        } else {
+          this.showSendVerification = true;
+          this.showError = true;
+          this.buttonTitle = "Masuk",
+          this.errorMessage = "Email tidak terverifikasi. Anda perlu memverifikasi alamat email Anda sebelum masuk."
+        }
       }
+    },
+    async sendVerificationEmail() {
+        this.buttonTitle = "Masuk",
+        this.signupButtonText = "Daftar"
+        this.showSignupModal = false;
+        this.showSendVerification = false;
+        this.showError = false;
+        auth.currentUser.sendEmailVerification()
+        this.showVerifySent = true;
+        auth.signOut();
     }
   },
   mounted() {
     auth.onAuthStateChanged(user => {
       if (user) {
-        this.takeToStart();
+        //this.takeToStart();
       }
     });
   }
@@ -283,6 +311,10 @@ export default {
 }
 .error-wrapper {
   color: red;
+  text-align: center;
+}
+.green-wrapper {
+  color: rgb(24, 173, 61);
   text-align: center;
 }
 .overlay {

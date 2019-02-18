@@ -242,7 +242,6 @@ export default {
       }
     },
     addMonth() {
-      console.log(this.dateContext.diff(this.today))
       if (this.dateContext.diff(this.today) < 7689600000) {
         this.dateContext = moment(this.dateContext).add(1, "month");
         this.nextOneMonthContext = moment(this.nextOneMonthContext).add(1, "month");

@@ -102,7 +102,9 @@ export default {
     auth.onAuthStateChanged(user => {
       if (user) {
          this.reloadData();
-      }
+        } else {
+           this.$router.replace("/");
+        }
     });
   },
   watch: {
