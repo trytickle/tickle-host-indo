@@ -493,31 +493,12 @@ textarea::placeholder {
   }
 }
 
-@media (max-width: 479px) {
+@media screen and (max-width: 640px) {
   .navbar {
-    min-width: 1550px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+    display: none;
   }
-  .link {
-    width: 50px;
-  }
-  .email-wrapper {
-    overflow: visible;
+  .main-section {
+    display: none;
   }
 }
 

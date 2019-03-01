@@ -407,4 +407,16 @@ export default {
   border-radius: 6px;
   z-index: 100;
 }
+
+@media screen and (max-width: 640px) {
+  .bg {
+    min-width: 100%;
+  }
+  .header-img {
+    display: none;
+  }
+  .container {
+    display: none;
+  }
+}
 </style>
