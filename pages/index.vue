@@ -4,7 +4,12 @@
     <div class="header-img"><img class="icon-image" src="/images/intro-header.png"></div>
     <div class="container">
       <h3 class="heading-3" style="margin-bottom:20px;text-align:center;">Selamat datang, host Tickle!</h3>
-      <p style="text-align:left;">Masuk ke akun Anda untuk membuat, mengubah, dan mengelola pemesanan serta pengalaman Tickle Anda. Jika Anda baru di Tickle dan ingin mendaftar sebagai tuan rumah, <a href="#" @click.prevent="showSignupModal=true">Silakan klik di sini</a>.</p>
+      <p style="text-align:center;">Masuk ke akun Anda untuk membuat, mengubah, dan mengelola pemesanan serta pengalaman Tickle Anda.</p>
+      <p style="text-align:center;">
+        Jika Anda ingin mendaftar sebagai tuan rumah, <a href="#" @click.prevent="showSignupModal=true">silakan klik disini</a>.
+        <br>
+       Jika Anda lupa kata sandi, <a href="#" @click.prevent="showForgotPassModal=true">silakan klik disini</a>.
+      </p>
       <form v-on:submit.prevent="emailLogin" class="email-wrapper">
         <input type="text" class="text-field" placeholder="Email" spellcheck="false" v-model="emailString"/>
         <input type="password" class="text-field" placeholder="Kata Sandi" spellcheck="false" v-model="passwordString"/>
@@ -35,7 +40,20 @@
           <span>Nama Keluarga</span>
           <input type="text" class="text-field" style="margin-top:5px;" placeholder="Nama Keluarga" spellcheck="false" v-model="lastNameString"/>
           <p style="padding-top:10px;color:#222;">Saya setuju dengan <a target="_blank" href="https://trytickle.com/terms-of-service">Ketentuan Layanan</a> dan <a target="_blank" href="https://trytickle.com/guest-refund-policy">Kebijakan Pengembalian Uang Tamu</a> Tickle.</p>
+          <div class="error-wrapper-modal" style="margin-bottom:20px;margin-top:20px;" v-if="showModalError">{{errorMessage}}</div>
           <button class="submit-button" style="margin-top:20px;" @click.prevent="emailSignup">{{signupButtonText}}</button>
+        </form>
+      </div>
+    </div>
+     <div class="overlay" :hidden="!showForgotPassModal">
+      <div class="signup-modal">
+        <h3 style="margin-top:-5px;padding-bottom:20px;">Enter your email address</h3>
+        <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;" @click.prevent="showForgotPassModal=false"></button>
+        <form v-on:submit.prevent="sendResetPasswordEmail">
+          <span>Email</span>
+          <input type="text" class="text-field" style="margin-top:5px;" placeholder="Email" spellcheck="false" v-model="emailString"/>
+          <div class="error-wrapper-modal" style="margin-bottom:20px;margin-top:20px;" v-if="showModalError">{{errorMessage}}</div>
+          <button class="submit-button" style="margin-top:20px;" @click.prevent="sendResetPasswordEmail">Send Reset Email</button>
         </form>
       </div>
     </div>
@@ -64,7 +82,9 @@ export default {
       showVerifySent: false,
       errorMessage: "Email tidak valid",
       googleAuth: null,
-      showSignupModal: false
+      showSignupModal: false,
+      showForgotPassModal: false,
+      showModalError: false
     };
   },
   methods: {
@@ -92,6 +112,7 @@ export default {
             "Gagal masuk. Silakan periksa email dan kata sandi Anda.";
           this.showError = true;
           this.buttonTitle = "Masuk";
+          this.showSignupModal = false;
         }
       } else {
         if (!this.validateEmail(this.emailString)) {
@@ -107,36 +128,66 @@ export default {
       }
     },
     async emailSignup() {
-      this.signupButtonText = "Mendaftar...";
-      try {
-        const result = await auth.createUserWithEmailAndPassword(
-          this.emailString,
-          this.passwordString
-        );
-        if (result) {
-          const user = result.user;
-          let firstName = this.firstNameString;
-          let lastName = this.lastNameString;
-          const body = {
-            firstName: firstName,
-            lastName: lastName,
-            userId: user.uid,
-            profilePhotoUrl: "",
-            email: this.emailString
-          };
-          await this.createNewUser(body, false);
+       if (
+        this.validateEmail(this.emailString) &&
+        this.passwordString.length > 5 && 
+        this.firstNameString.length > 0 && 
+        this.lastNameString.length > 0
+      ) {
+        this.signupButtonText = "Mendaftar...";
+        this.showModalError = false;
+        try {
+          const result = await auth.createUserWithEmailAndPassword(
+            this.emailString,
+            this.passwordString
+          );
+          if (result) {
+            const user = result.user;
+            let firstName = this.firstNameString;
+            let lastName = this.lastNameString;
+            const body = {
+              firstName: firstName,
+              lastName: lastName,
+              userId: user.uid,
+              profilePhotoUrl: "",
+              email: this.emailString
+            };
+            await this.createNewUser(body, false);
+          }
+        } catch (error) {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          if (errorCode == "auth/email-already-in-use") {
+            this.emailLogin();
+            return;
+          }
+          this.errorMessage =
+            "Gagal masuk. Silakan periksa email dan kata sandi Anda.";
+          this.showError = true;
+          this.showSignupModal = false;
+          this.signupButtonText = "Daftar";
         }
-      } catch (error) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        if (errorCode == "auth/email-already-in-use") {
-          this.emailLogin();
+      } else {
+         if (!this.validateEmail(this.emailString)) {
+          this.errorMessage = "Masukkan email yang valid.";
+          this.showModalError = true;
           return;
         }
-        this.errorMessage =
-          "Gagal masuk. Silakan periksa email dan kata sandi Anda.";
-        this.showError = true;
-        this.buttonTitle = "Masuk";
+        if (this.passwordString.length < 5) {
+          this.errorMessage = "Masukkan kata sandi yang valid.";
+          this.showModalError = true;
+          return;
+        }
+        if (this.firstNameString.length == 0) {
+          this.errorMessage = "Masukkan nama depan yang valid";
+          this.showModalError = true;
+          return;
+        }
+        if (this.lastNameString.length == 0) {
+          this.errorMessage = "Masukkan nama belakang yang valid";
+           this.showModalError = true;
+          return;
+        }
       }
     },
     fbLogin() {
@@ -170,7 +221,7 @@ export default {
     },
     validateEmail(email) {
       const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return emailRegex.test(String(this.emailString).toLowerCase());
+      return emailRegex.test(String(email).toLowerCase());
     },
     async createNewUser(body, isSocialLogin) {
       try {
@@ -219,6 +270,17 @@ export default {
         auth.currentUser.sendEmailVerification()
         this.showVerifySent = true;
         auth.signOut();
+    },
+    async sendResetPasswordEmail() {
+      if (this.validateEmail(this.emailString)) {
+        auth.sendPasswordResetEmail(this.emailString);
+        this.showForgotPassModal = false;
+        this.showModalError = false;
+        this.emailString = ""
+      } else {
+        this.showModalError = true;
+        this.errorMessage = "Masukkan email yang valid";
+      }
     }
   },
   mounted() {
@@ -315,6 +377,10 @@ export default {
 .error-wrapper {
   color: red;
   text-align: center;
+}
+.error-wrapper-modal {
+  color: red;
+  text-align: left;
 }
 .green-wrapper {
   color: rgb(24, 173, 61);
