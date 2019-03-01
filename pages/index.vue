@@ -6,7 +6,7 @@
       <h3 class="heading-3" style="margin-bottom:20px;text-align:center;">Selamat datang, host Tickle!</h3>
       <p style="text-align:center;">Masuk ke akun Anda untuk membuat, mengubah, dan mengelola pemesanan serta pengalaman Tickle Anda.</p>
       <p style="text-align:center;">
-        Jika Anda ingin mendaftar sebagai tuan rumah, <a href="#" @click.prevent="showSignupModal=true">silakan klik disini</a>.
+        Jika Anda ingin mendaftar sebagai host, <a href="#" @click.prevent="showSignupModal=true">silakan klik disini</a>.
         <br>
        Jika Anda lupa kata sandi, <a href="#" @click.prevent="showForgotPassModal=true">silakan klik disini</a>.
       </p>
@@ -47,13 +47,14 @@
     </div>
      <div class="overlay" :hidden="!showForgotPassModal">
       <div class="signup-modal">
-        <h3 style="margin-top:-5px;padding-bottom:20px;">Enter your email address</h3>
+        <h3 style="margin-top:-5px;padding-bottom:20px;">Mereset password Anda</h3>
         <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;" @click.prevent="showForgotPassModal=false"></button>
         <form v-on:submit.prevent="sendResetPasswordEmail">
           <span>Email</span>
           <input type="text" class="text-field" style="margin-top:5px;" placeholder="Email" spellcheck="false" v-model="emailString"/>
+          <div  style="margin-bottom:20px;margin-top:5px;" >Silakan periksa email Anda setelah mengatur ulang kata sandi Anda.</div>
           <div class="error-wrapper-modal" style="margin-bottom:20px;margin-top:20px;" v-if="showModalError">{{errorMessage}}</div>
-          <button class="submit-button" style="margin-top:20px;" @click.prevent="sendResetPasswordEmail">Send Reset Email</button>
+          <button class="submit-button" style="margin-top:20px;" @click.prevent="sendResetPasswordEmail">Mereset password</button>
         </form>
       </div>
     </div>
