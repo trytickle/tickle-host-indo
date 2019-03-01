@@ -113,6 +113,7 @@ export default {
           this.showError = true;
           this.buttonTitle = "Masuk";
           this.showSignupModal = false;
+          this.signupButtonText = "Daftar"
         }
       } else {
         if (!this.validateEmail(this.emailString)) {
