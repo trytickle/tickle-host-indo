@@ -1,7 +1,7 @@
 <template>
   <div>
     <nuxt-link
-        style="float:right;margin:20px;color:#fff;font-size:30px"
+        style="display:none;float:right;margin:20px;color:#fff;font-size:30px"
         v-for="locale in availableLocales"
         :key="locale.code"
         :to="switchLocalePath(locale.code)">{{ locale.name }}</nuxt-link>

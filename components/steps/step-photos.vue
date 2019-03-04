@@ -30,7 +30,7 @@
           <img src="images/photo-example-3.jpg" width="180" height="250" class="image" style="object-fit:cover;">
         </div>
         <div class="example-wrapper">
-          <img src="images/photo-example-4.jpg" width="180" height="250" class="image" style="object-fit:cover;">
+          <img src="images/example4.jpg" width="180" height="250" class="image" style="object-fit:cover;">
         </div>
         <div class="example-wrapper">
           <img src="images/photo-example-5.jpg" width="180" height="250" class="image" style="object-fit:cover;">
