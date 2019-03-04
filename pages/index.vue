@@ -1,14 +1,19 @@
 <template>
   <div>
+    <nuxt-link
+        style="float:right;margin:20px;color:#fff;font-size:30px"
+        v-for="locale in availableLocales"
+        :key="locale.code"
+        :to="switchLocalePath(locale.code)">{{ locale.name }}</nuxt-link>
     <div class="bg"></div>
     <div class="header-img"><img class="icon-image" src="/images/intro-header.png"></div>
     <div class="container">
-      <h3 class="heading-3" style="margin-bottom:20px;text-align:center;">Selamat datang, host Tickle!</h3>
-      <p style="text-align:center;">Masuk ke akun Anda untuk membuat, mengubah, dan mengelola pemesanan serta pengalaman Tickle Anda.</p>
+      <h3 class="heading-3" style="margin-bottom:20px;text-align:center;">{{ $t('welcomeTickleHost') }}</h3>
+      <p style="text-align:center;">{{ $t('welcomeMessage') }}</p>
       <p style="text-align:center;">
-        Jika Anda ingin mendaftar sebagai host, <a href="#" @click.prevent="showSignupModal=true">silakan klik disini</a>.
+        {{$t('askToSignupText')}}, <a href="#" @click.prevent="showSignupModal=true">{{ $t('pleaseClickHere') }}</a>
         <br>
-       Jika Anda lupa kata sandi, <a href="#" @click.prevent="showForgotPassModal=true">silakan klik disini</a>.
+       {{ $t('askForgetPasswordText') }}, <a href="#" @click.prevent="showForgotPassModal=true">{{ $t('pleaseClickHere') }}</a>
       </p>
       <form v-on:submit.prevent="emailLogin" class="email-wrapper">
         <input type="text" class="text-field" placeholder="Email" spellcheck="false" v-model="emailString"/>
@@ -18,7 +23,7 @@
       <div class="error-wrapper" style="margin-bottom:20px;margin-top:20px;" v-if="showError">{{errorMessage}}<br><a class="error-wrapper"  v-if="showSendVerification" href="#" @click.prevent="sendVerificationEmail()"><u>Kirim verifikasi email</u></a></div>
       <div class="green-wrapper" style="margin-bottom:20px;margin-top:20px;" v-if="showVerifySent">Email verifikasi dikirim. Silakan periksa email Anda dan klik tautan verifikasi di dalamnya.</div>
       <div style="margin:auto;margin-bottom:10px;margin-top:30px;padding-left:20px;">
-        <span style="align:center;font-size:11px;font-weight:600;color:#ccc;">ATAU LANJUTKAN DENGAN</span>
+        <span style="align:center;font-size:11px;font-weight:600;color:#ccc;">{{ $t('continueWith')}}</span>
       </div>
       <div style="margin:auto;">
         <button class="fb-button" style="margin-right:10px;" @click.prevent="fbLogin">Facebook</button>
@@ -31,13 +36,13 @@
         <h3 style="margin-top:-5px;padding-bottom:20px;">Mendaftar sebagai Host Tickle</h3>
         <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;" @click.prevent="showSignupModal=false"></button>
         <form v-on:submit.prevent="emailSignup">
-          <span>Email</span>
+          <span>{{ $t('email') }}</span>
           <input type="text" class="text-field" style="margin-top:5px;" placeholder="Email" spellcheck="false" v-model="emailString"/>
-          <span>Kata Sandi</span>
+          <span>{{ $t('password') }}</span>
           <input type="password" class="text-field" style="margin-top:5px;" placeholder="Kata Sandi" spellcheck="false" v-model="passwordString"/>
-          <span>Nama Depan</span>
+          <span>{{ $t('firstName') }}</span>
           <input type="text" class="text-field" style="margin-top:5px;" placeholder="Nama Depan" spellcheck="false" v-model="firstNameString"/>
-          <span>Nama Keluarga</span>
+          <span>{{ $t('lastName') }}</span>
           <input type="text" class="text-field" style="margin-top:5px;" placeholder="Nama Keluarga" spellcheck="false" v-model="lastNameString"/>
           <p style="padding-top:10px;color:#222;">Saya setuju dengan <a target="_blank" href="https://trytickle.com/terms-of-service">Ketentuan Layanan</a> dan <a target="_blank" href="https://trytickle.com/guest-refund-policy">Kebijakan Pengembalian Uang Tamu</a> Tickle.</p>
           <div class="error-wrapper-modal" style="margin-bottom:20px;margin-top:20px;" v-if="showModalError">{{errorMessage}}</div>
@@ -68,6 +73,8 @@ import {
   googleAuthProvider,
   facebookAuthProvider
 } from "~/plugins/firebase";
+import Vue from 'vue'
+import VueI18n from 'vue-i18n'
 
 export default {
   data() {
@@ -286,12 +293,18 @@ export default {
     }
   },
   mounted() {
+    Vue.use(VueI18n)
     auth.onAuthStateChanged(user => {
       if (user) {
         //this.takeToStart();
       }
     });
-  }
+  },
+  computed: {
+    availableLocales () {
+      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+    }
+  } 
 };
 </script>
 

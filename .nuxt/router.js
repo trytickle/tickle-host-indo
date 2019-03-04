@@ -69,22 +69,42 @@ export function createRouter () {
 		{
 			path: "/thankyou",
 			component: _5ce81878,
-			name: "thankyou"
+			name: "thankyou___id"
+		},
+		{
+			path: "/en/thankyou",
+			component: _5ce81878,
+			name: "thankyou___en"
 		},
 		{
 			path: "/start",
 			component: _45354a6f,
-			name: "start"
+			name: "start___id"
+		},
+		{
+			path: "/en/start",
+			component: _45354a6f,
+			name: "start___en"
 		},
 		{
 			path: "/bookings/:experienceId?",
 			component: _71d31b32,
-			name: "bookings-experienceId"
+			name: "bookings-experienceId___id"
+		},
+		{
+			path: "/en/bookings/:experienceId?",
+			component: _71d31b32,
+			name: "bookings-experienceId___en"
 		},
 		{
 			path: "/",
 			component: _d8041242,
-			name: "index"
+			name: "index___id"
+		},
+		{
+			path: "/en/",
+			component: _d8041242,
+			name: "index___en"
 		}
     ],
     

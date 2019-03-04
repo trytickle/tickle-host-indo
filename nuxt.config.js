@@ -51,6 +51,28 @@ module.exports = {
     '@nuxtjs/axios'
   ],
 
+  modules: [
+    ['nuxt-i18n', {
+      locales: [
+        {
+          name: 'Bahasa',
+          code: 'id',
+          iso: 'id-ID',
+          file: 'id.js'
+        },
+        {
+          name: 'English',
+          code: 'en',
+          iso: 'en-US',
+          file: 'en.js'
+        },
+      ],
+      lazy:true,
+      langDir: 'lang/',
+      defaultLocale: 'id',
+    }]
+  ],
+
   env: {
     // firebaseConfig: {
     //   apiKey: "AIzaSyCxjzIiNtQ0Nc2V1_j8eWFdHx0avp7-CSs",
