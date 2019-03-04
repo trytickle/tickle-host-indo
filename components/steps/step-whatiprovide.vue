@@ -3,15 +3,7 @@
     <h3 class="heading-3">Apa yang akan saya sediakan</h3>
     <p class="paragraph-4">Penting untuk memberi tahu tamu apa yang akan Anda berikan karena hal tersebut membantu mereka memahami apa yang mereka bayar.</p>
     <div class="div-block-4">
-      <div class="text-block-2">Tentukan apa yang termasuk</div>
-      <p class="paragraph-3">
-       Jelaskan hal-hal unik yang akan Anda berikan secara detail sehingga para tamu tahu apa yang diharapkan.
-      </p>
-      <div class="text-block-2">Mengakomodasi tamu yang berbeda</div>
-      <p class="paragraph-3">
-     Beberapa tamu mungkin memiliki keterbatasan fisik atau karena diet. Beri tahu mereka jika Anda dapat menyesuaikan untuk memenuhi kebutuhan mereka.
-      </p>
-      <div class="text-block-2" style="margin-bottom:20px;text-decoration:underline;">Contohnya</div>
+      <div class="text-block-2" style="margin-bottom:20px;text-decoration:underline;">Contoh</div>
       <p class="div-block-5" style="color:#222;">
         Tour Martin’s Studio<br/><br/>
         Minuman<br/>

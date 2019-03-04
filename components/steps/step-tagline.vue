@@ -1,9 +1,8 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
     <h3 class="heading-3">Tagline</h3>
-    <p class="paragraph-4">Tagline adalah perpanjangan dari judul Anda. Jelaskan pengalaman Anda sedikit lebih banyak atau beri tahu tamu apa yang Anda ingin mereka rasakan ketika bergabung dengan pengalaman Anda.</p>
-    <div class="div-block-4" style="padding-bottom:25px;">
-      <div class="text-block-2" style="margin-bottom:20px;">Contohnya</div>
+     <div class="div-block-4" style="padding-bottom:25px;">
+      <div class="text-block-2" style="margin-bottom:20px;">Contoh</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
         "Mengintip kehidupan desainer lokal dan mencoba teknik pewarnaan Shibori"
       </p>

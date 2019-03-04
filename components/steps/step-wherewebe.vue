@@ -3,15 +3,7 @@
     <h3 class="heading-3">Di mana kami berada</h3>
     <p class="paragraph-4">Beri tahu tamu ke mana Anda akan pergi, mengapa setiap lokasi istimewa, atau mengapa mereka akan menyukainya. Tidak apa-apa jika hanya satu lokasi.</p>
     <div class="div-block-4">
-      <div class="text-block-2">Buat daftar tempat yang akan dikunjungie</div>
-      <p class="paragraph-3">
-       Sebutkan tempat yang akan Anda kunjungi dan beri petunjuk mengapa tempat itu bermakna bagi Anda dan keseluruhan pengalaman yang akan dirasakan.
-      </p>
-      <div class="text-block-2">Jangan memberikan alamat</div>
-      <p class="paragraph-3">
-       Para tamu akan melihat alamat yang tepat setelah mereka memesan. Lebih penting untuk menjelaskan secara deskriptif mengapa tempat tersebut menarik.
-      </p>
-      <div class="text-block-2" style="margin-bottom:20px;">Contohnya</div>
+      <div class="text-block-2" style="margin-bottom:20px;">Contoh</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
         "Kami akan melakukan workshop kami di rumah mungil kami di atas roda, bus sekolah yang kami konversi menjadi rumah yang indah. Segala sesuatu di rumah ini berkelanjutan. Ini adalah tempat khusus untuk dilihat dan dialami."
       </p>

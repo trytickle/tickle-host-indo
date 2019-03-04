@@ -1,17 +1,8 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
     <h3 class="heading-3">Tentang saya</h3>
-    <p class="paragraph-4">Menyebutkan semua hal yang menunjukkan bahwa Anda orang tepat untuk menjadi tuan rumah dalam pengalaman ini akan membuat Anda lebih dipercaya oleh tamu. Hal ini dapat mencakup kualitas pribadi, kualifikasi, prestasi, penghargaan, atau bahkan lamanya waktu Anda berlatih atau mempelajari keahlian Anda.</p>
-    <div class="div-block-4">
-      <div class="text-block-2">Sorot keahlian Anda</div>
-      <p class="paragraph-3">
-       Tunjukkan mengapa Anda memenuhi syarat untuk menjadi tuan rumah. Sebutkan keterampilan, kredensial, atau bahkan pengalaman hidup unik yang menjadikan Anda tuan rumah yang kredibel.
-      </p>
-      <div class="text-block-2">Terdengar menarik</div>
-      <p class="paragraph-3">
-       Biarkan kepribadian Anda bersinar. Coba akhiri dengan fakta yang menyenangkan atau detail pribadi yang menarik untuk menghindari kesan formal.
-      </p>
-      <div class="text-block-2" style="margin-bottom:20px;">Contohnya</div>
+      <div class="div-block-4">
+      <div class="text-block-2" style="margin-bottom:20px;">Contoh</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
         "Saya adalah salah satu pendiri Amazing Brewing Company dan salah satu dari tujuh cicerones bersertifikasi (sommeliers bir) di Korea. Saya pernah tinggal di Asia, Eropa, dan AS dan mencicipi bir di lebih dari 100 pabrik di seluruh dunia."
       </p>

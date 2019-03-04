@@ -3,15 +3,7 @@
     <h3 class="heading-3">Apa yang akan kami lakukan</h3>
     <p class="paragraph-4">Membuat para tamu senang dengan deskripsi rencana perjalanan yang menyenangkan dan terperinci.</p>
     <div class="div-block-4">
-      <div class="text-block-2">Menetapkan ekspektasi</div>
-      <p class="paragraph-3">
-       Para tamu penting tahu apa yang mereka hadapi. Biarkan mereka tahu jika mereka harus siap untuk petualangan tertentu.
-      </p>
-      <div class="text-block-2">Lebih spesifik</div>
-      <p class="paragraph-3">
-       Jika pengalaman Anda bersifat teknis, seperti lokakarya atau tutorial, jangan takut untuk dirinci secara detail. Para tamu ingin tahu persis apa yang mereka bayar.
-      </p>
-      <div class="text-block-2" style="margin-bottom:20px;">Contohnya</div>
+      <div class="text-block-2" style="margin-bottom:20px;">Contoh</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
         "Anda akan langsung terjun ke aksi klinik pelatihan bola basket mingguan kami, tempat kami melakukan latihan dan bermain selama dua jam dengan 60 anak. Hanya ada tiga dari kami untuk semua anak-anak (perempuan dan laki-laki usia 10-17), jadi Anda akan membantu kami dengan latihan dan pelatihan. Bersiaplah untuk aktif, berkeringat, dan jelas-jelas waspada sambil bersenang-senang dengan anak-anak."
       </p>

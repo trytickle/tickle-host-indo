@@ -3,15 +3,16 @@
     <h3 class="heading-3">Beri judul pengalaman Anda</h3>
     <p class="paragraph-4">Buatlah singkat, deskriptif, dan menarik.</p>
     <div class="div-block-4">
-      <p class="paragraph-3">Pikirkan tentang judul yang menggambarkan aktivitas utama Anda sehingga tamu dapat memahami apa yang akan mereka lakukan. Pertimbangkan untuk menggunakan kata kerja tindakan dan buat seunik mungkin untuk membedakan pengalaman Anda dengan yang lain.</p>
-      <div class="text-block-2">Contohnya</div>
+     <div class="text-block-2">Contoh</div>
       <div class="div-block-5">
         <div class="example-wrapper">
-          <div class="text-block-3">Shibori Menolak-Mewarnai dengan Dora</div><img src="images/example1.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
+          <div class="text-block-3">Men's Shirt – Japanese Style with Andrina</div><img src="images/example1.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
         <div class="example-wrapper">
-          <div class="text-block-3">Cat Kecantikan Porcelain dengan Yueshi</div><img src="images/example2.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
+          <div class="text-block-3">Basic DJ Knowledge with DJ Rhino</div><img src="images/example2.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
         <div class="example-wrapper">
-          <div class="text-block-3">Surviving A Zombie Apocalypse dengan Nachos</div><img src="images/example3.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
+          <div class="text-block-3">Jakarta Night Cycle with Oki</div><img src="images/example3.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
+       <div class="example-wrapper">
+          <div class="text-block-3">Toy Photography with Iboy</div><img src="images/example4.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
       </div>
     </div>
     <div>

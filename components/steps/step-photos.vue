@@ -8,15 +8,7 @@
     </p>
     
     <div class="div-block-4">
-      <p class="desc-title" style="margin-bottom:20px;">
-       Apa yang membuat foto menjadi luar biasa:
-      </p>
-      <ul class="photo-list-dos">
-        <li class="photo-list-item">Tampilkan Anda dan tamu Anda</li>
-        <li class="photo-list-item">Komposisi yang baik (misal menunjukkan di mana pengalaman Anda berada, tindakan yang dilakukan tamu, atau objek/alat yang terlibat)</li>
-        <li class="photo-list-item">Adegan tersembunyi</li>
-        <li class="photo-list-item">Resolusi tinggi dan cahaya natural</li>
-      </ul>
+
       <p class="desc-title" style="margin-bottom:20px;">
        Apa yang tidak dapat kami terima di foto:
       </p>
@@ -26,7 +18,7 @@
         <li class="photo-list-item">Menggunakan filter </li>
         <li class="photo-list-item">Teks overlay pada gambar</li>
       </ul>
-      <div class="text-block-2">Contohnya</div>
+      <div class="text-block-2">Contoh</div>
       <div class="photo-grid">
         <div class="example-wrapper">
           <img src="images/photo-example-1.jpg" width="180" height="250" class="image" style="object-fit:cover;">
