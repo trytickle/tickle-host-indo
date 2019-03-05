@@ -14,7 +14,7 @@ export const uploadImage = async (submissionId, imageFile) => {
     const name = String(Date.now());
     let uploadRef;
     if (!imageFile.type.includes("video")) {
-       uploadRef = storage.child(`media/submissions/${submissionId}`).child(`${name}.jpg`);
+      uploadRef = storage.child(`media/submissions/${submissionId}`).child(`${name}.jpg`);
     } else {
       uploadRef = storage.child(`media/submissions/${submissionId}`).child(`${name}.mp4`);
     }
