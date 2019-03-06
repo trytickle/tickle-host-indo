@@ -2,6 +2,7 @@ import Vuex from 'vuex';
 import { db, auth } from '~/plugins/firebase';
 import _ from 'lodash';
 import { uploadImage, updateSubmissionField, deletePhotoFromStorage } from '~/services/firebase-service';
+import axios from 'axios';
 
 const store = () => {
   return new Vuex.Store({
@@ -256,9 +257,9 @@ const store = () => {
           }
         }
         if (context.state.coverThumbnail) {
-            const url = await uploadImage(context.state.submissionId, context.state.coverThumbnail);
-            context.commit('setCoverThumbnailUrl', url);
-            await updateSubmissionField('coverThumbnail', url, context.state.submissionId);
+          const url = await uploadImage(context.state.submissionId, context.state.coverThumbnail);
+          context.commit('setCoverThumbnailUrl', url);
+          await updateSubmissionField('coverThumbnail', url, context.state.submissionId);
         }
       },
       async createExperience(context, payload) {
