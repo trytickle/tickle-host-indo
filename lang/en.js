@@ -13,9 +13,37 @@ export default {
     firstName: "First name",
     lastName: "Last name",
 
-    
-    // pages: {
-    //   home: 'Home',
-    //   contacts: 'Contacts'
-    // }
+      // sidebar
+      personalizeExperience: 'Personalize your experience',
+      title: "Title",
+      tagline: "Tagline",
+      photos: "Photos",
+      aboutMe: "About me",
+      whatWeDo: "What we'll do",
+      whatIProvide: "What I'll provide",
+      notes: "Notes",
+      whereWeBe: "Where we'll be",
+      whereWeMeet: "Where we'll meet",
+      category: "Category",
+      guestRequirements: "Guest requirements",
+      price: "Price",
+      bookingOptions: "Booking options",
+      addAvailability: "Availability dates",
+      reviewAndSubmit: "Review & Submit",
+  
+      //navbar
+      whatsATickleExperience: "What's Tickle experience?",
+      myExperiences: "My Experiences",
+      myBookings: "My Bookings",
+      createNewExperience: "Create new experience",
+      noBookingsYet: "No bookings yet",
+      draft: "Draft",
+      inReview: "In Review",
+      rejected: "Rejected",
+      approved: "Approved",
+      removeExperienceText: "This experience will be permanently removed. Are you sure?",
+      remove: "Remove",
+      removing: "Removing",
+      logout: "Sign out"
+  
   }

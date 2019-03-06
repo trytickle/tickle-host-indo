@@ -47,11 +47,9 @@ module.exports = {
   /*
   ** Nuxt.js modules
   */
+ 
   modules: [
-    '@nuxtjs/axios'
-  ],
-
-  modules: [
+    '@nuxtjs/axios',
     ['nuxt-i18n', {
       locales: [
         {

@@ -8,17 +8,17 @@
       </div>
       <div class="menu-wrapper">
         <a href="#" class="link" @click="$parent.toggleInfoModal('tickleExperience')">
-         Apa itu pengalaman Tickle?
+         {{ $t("whatsATickleExperience") }}
         </a>
       </div>
       <div class="menu-button">
-        <button class="text-block link" style="height:100%;">Pengalaman saya</button>
+        <button class="text-block link" style="height:100%;"> {{ $t("myExperiences") }}</button>
         <div class="menu">
-          <button class="link" @click="createExperience">Ciptakan Pengalaman Anda<i class="fas fa-plus-circle" style="position:absolute;right:28px;padding-top:2px;"></i></button>
+          <button class="link" @click="createExperience">{{ $t("createNewExperience") }}<i class="fas fa-plus-circle" style="position:absolute;right:28px;padding-top:2px;"></i></button>
           <div v-for="submission in this.$store.state.submissions" :key="submission.submissionId" :submission="submission">
             <hr>
             <div class="menu-item-cell">
-              <button class="link menu-item" @click.prevent="openSubmission(submission)"><div class="menu-item-grid"><div :class="{'status-label-draft': submission.status.isDraft, 'status-label-live': submission.status.isApproved, 'status-label-rejected': submission.status.isRejected, 'status-label-review': submission.status.inReview }" >{{submission.status.isDraft ? "Draf" : (submission.status.inReview ? "Ditinjau": (submission.status.isApproved ? "Langsung": "Ditolak"))}}</div><div>{{submission.title}}</div></div></button>
+              <button class="link menu-item" @click.prevent="openSubmission(submission)"><div class="menu-item-grid"><div :class="{'status-label-draft': submission.status.isDraft, 'status-label-live': submission.status.isApproved, 'status-label-rejected': submission.status.isRejected, 'status-label-review': submission.status.inReview }">{{submission.status.isDraft ?  $t("draft")  : (submission.status.inReview ? $t("inReview") : (submission.status.isApproved ? $t("approved"): $t("rejected")))}}</div><div>{{submission.title}}</div></div></button>
               <button title="Hapus pengalaman" style="outline:none;background: #fff;" @click.prevent="showdeleteExperience(submission.title, submission)"><i class="fas fa-minus-circle" style="color:red;"></i></button>
             </div>
           </div>
@@ -26,9 +26,9 @@
       </div>
        <input style="display:none" ref ="picker" type="file" name="pic" accept="image/*" @change="onFileChange">
       <div class="menu-button">
-        <button class="text-block link" style="height:100%;">Pemesanan saya</button>
+        <button class="text-block link" style="height:100%;"> {{ $t("myBookings") }}</button>
         <div class="menu">
-          <div v-if="this.$store.state.bookingExperiences.length <= 0" style="color:#ccc;padding-left:15px;">Belum ada pemesanan</div>
+          <div v-if="this.$store.state.bookingExperiences.length <= 0" style="color:#ccc;padding-left:15px;">{{ $t("noBookingsYet") }}</div>
           <div v-for="(booking, index) in this.$store.state.bookingExperiences" :key="booking.experienceId" :booking="booking">
             <hr v-if="index != 0">
             <div class="menu-item-cell">
@@ -47,7 +47,7 @@
       </div> -->
       <div class="email-wrapper">
         <span class="text-block">{{this.$store.state.user && this.$store.state.user.email}}</span>
-        <button class="link" style="color:red;margin-left:-5px;" @click="signOut">Keluar</button>
+        <button class="link" style="color:red;margin-left:-5px;" @click="signOut">{{ $t("logout") }}</button>
       </div>
     </div>
     <div class="modal-overlay" :hidden="!showDeleteModal">
@@ -55,7 +55,7 @@
         <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;" @click.prevent="showDeleteModal=false"></button>
         <div>
           <h4>{{showDeleteExperienceTitle}}</h4>
-          Pengalaman ini akan dihapus secara permanen. Apakah kamu yakin?
+           {{ $t("removeExperienceText") }}
         </div>
         <p v-if="showError" style="color: red; margin-top:10px">{{errorMessage}}</p>
         <div><button class="delete-button" style="outline:none;margin-top:30px;margin-bottom:10px;" @click.prevent="deleteExperience()">{{removeButtonTitle}}</button></div>
@@ -96,7 +96,7 @@ export default {
       verifyButtonText: "Simpan dan Verifikasi",
       showDeleteExperienceTitle: null,
       deleteSubmission: null,
-      removeButtonTitle: "Menghapus",
+      removeButtonTitle:  this.$t("remove"),
       showError: false,
       errorMessage: "Error",
       verifyPhotoSide: 0,
@@ -174,7 +174,7 @@ export default {
     async deleteExperience() {
       if (this.deleteSubmission) {
           this.showError = false
-          this.removeButtonTitle =  "Menghapus..."
+          this.removeButtonTitle =   this.$t("removing")+"..."
         if (!this.deleteSubmission.status.isApproved) {
           await this.deleteSubmissionCF()
         } else {
@@ -184,7 +184,7 @@ export default {
           } else {
             this.errorMessage = "Your experience has "+ existingBookings.docs.length+ " future bookings and cannot be removed until its over or canceled"
             this.showError = true;
-             this.removeButtonTitle =  "Remove"
+             this.removeButtonTitle =  this.$t("remove")
           }
         }
       }
@@ -201,7 +201,7 @@ export default {
           console.error(error);
           this.errorMessage = error.message;
           this.showError = true;
-           this.removeButtonTitle =  "Remove"
+           this.removeButtonTitle =  this.$t("remove")
         }
     } 
   },

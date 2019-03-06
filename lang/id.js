@@ -13,9 +13,38 @@ export default {
     firstName: "Nama Depan",
     lastName: "Nama Keluarga",
 
+    // sidebar
+    personalizeExperience: 'Deskripsikan Experience Anda',
+    title: "Judul",
+    tagline: "Tagline",
+    photos: "Foto",
+    aboutMe: "Tentang saya",
+    whatWeDo: "Apa yang akan kami lakukan",
+    whatIProvide: "Apa yang akan saya sediakan",
+    notes: "Catatan",
+    whereWeBe: "Di mana kami berada",
+    whereWeMeet: "Di mana kami akan bertemu",
+    category: "Kategori",
+    guestRequirements: "Persyaratan tamu",
+    price: "Harga",
+    bookingOptions: "Opsi pemesanan",
+    addAvailability: "Tanggal ketersediaan",
+    reviewAndSubmit: "Tinjau & Kirim",
 
-    // pages: {
-    //   home: 'Pagina iniziale',
-    //   contacts: 'Contatti'
-    // }
+    //navbar
+    whatsATickleExperience: "Apa itu pengalaman Tickle?",
+    myExperiences: "Pengalaman saya",
+    myBookings: "Pemesanan saya",
+    createNewExperience: "Ciptakan Pengalaman Anda",
+    noBookingsYet: "Belum ada pemesanan",
+    draft: "Draf",
+    inReview: "Ditinjau",
+    rejected: "Ditolak",
+    approved: "Langsung",
+    removeExperienceText: "Pengalaman ini akan dihapus secara permanen. Apakah kamu yakin?",
+    remove: "Menghapus",
+    removing: "Menghapus",
+    logout: "Keluar"
+
+
   }
