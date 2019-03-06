@@ -31,7 +31,7 @@ export default {
     addAvailability: "Tanggal ketersediaan",
     reviewAndSubmit: "Tinjau & Kirim",
 
-    //navbar
+    //navbar and infobar
     whatsATickleExperience: "Apa itu pengalaman Tickle?",
     myExperiences: "Pengalaman saya",
     myBookings: "Pemesanan saya",
@@ -44,7 +44,13 @@ export default {
     removeExperienceText: "Pengalaman ini akan dihapus secara permanen. Apakah kamu yakin?",
     remove: "Menghapus",
     removing: "Menghapus",
-    logout: "Keluar"
-
+    logout: "Keluar",
+    guest: "tamu",
+    duration: "Lamanya",
+    groupSizeUpto: "Ukuran grup hingga",
+    paymentPolicy: "Bayar dengan uang tunai",
+    paymentPolicyText: "Saat ini, hanya pembayaran dengan uang tunai yang diterima. Harap bayar host pada saat kedatangan.",
+    locationName: "Nama lokasi",
+    streetAddress: "Alamat jalan"
 
   }

@@ -31,7 +31,7 @@ export default {
       addAvailability: "Availability dates",
       reviewAndSubmit: "Review & Submit",
   
-      //navbar
+      //navbar and infobar
       whatsATickleExperience: "What's Tickle experience?",
       myExperiences: "My Experiences",
       myBookings: "My Bookings",
@@ -44,6 +44,13 @@ export default {
       removeExperienceText: "This experience will be permanently removed. Are you sure?",
       remove: "Remove",
       removing: "Removing",
-      logout: "Sign out"
+      logout: "Sign out",
+      guest: "guest",
+      duration: "Duration",
+      groupSizeUpto: "Group size up to",
+      paymentPolicy: "Pay by cash",
+      paymentPolicyText: "At present, only payments with cash are accepted. Please pay the host upon arrival.",
+      locationName: "Loaction name",
+      streetAddress: "Street address"
   
   }

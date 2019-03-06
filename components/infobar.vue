@@ -5,8 +5,8 @@
         <div class="header-text-wrapper">
           <div class="text-block-4">{{$store.state.label.toUpperCase().trim() ? $store.state.label.toUpperCase().trim() : 'Label'}}</div>
           <h2 class="heading-4" style="margin-left:5px;margin-right:5px;">{{$store.state.title ? $store.state.title : 'Pengalaman baru'}}</h2>
-          <div class="text-block-4">{{$store.state.whereWeMeet.locationName ? $store.state.whereWeMeet.locationName : "Di mana kami akan bertemu"}}</div>
-          <div class="text-block-4">{{$store.state.maxDuration ? durationString : 'Lamanya'}}</div>
+          <div class="text-block-4">{{$store.state.whereWeMeet.locationName ? $store.state.whereWeMeet.locationName : $t('whereWeMeet')}}</div>
+          <div class="text-block-4">{{$store.state.maxDuration ? durationString : $t("duration")}}</div>
           <div class="text-block-4">{{$store.state.tagline ? $store.state.tagline : 'Tagline'}}</div>
           <div class="text-block-4">{{$store.state.language ? $store.state.language : 'Bahasa Indonesia'}}</div>
         </div>
@@ -15,27 +15,27 @@
         <div class="image-gallery-arrow-right" @click="galleryRightClicked" v-if="showRightArrow"><i class="fas fa-chevron-right fa-2x"></i></div>
       </div>
       <div class="content-section" id="about">
-        <h4 class="content-heading">Tentang saya</h4>
+        <h4 class="content-heading">{{ $t("aboutMe") }}</h4>
         <p class="paragraph-5" style="margin-top:-10px;white-space:pre-wrap;">{{$store.state.about ? $store.state.about : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.'}}</p>
         <div class="div-block-8"></div>
       </div>
       <div class="content-section" id="whatWeDo">
-        <h4 class="content-heading">Apa yang akan kami lakukan</h4>
+        <h4 class="content-heading">{{ $t("whatWeDo") }}</h4>
         <p class="paragraph-5" style="margin-top:-10px;white-space:pre-wrap;">{{$store.state.whatWeDo ? $store.state.whatWeDo : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.'}}</p>
         <div class="div-block-8"></div>
       </div>
       <div class="content-section" id="whatIProvide">
-        <h4 class="content-heading">Apa yang akan saya sediakan</h4>
+        <h4 class="content-heading">{{ $t("whatIProvide") }}</h4>
         <p class="paragraph-5" style="margin-top:-10px;white-space:pre-wrap;">{{$store.state.whatIProvide ? $store.state.whatIProvide : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.'}}</p>
         <div class="div-block-8"></div>
       </div>
       <div class="content-section" id="notes">
-        <h4 class="content-heading">Catatan</h4>
+        <h4 class="content-heading">{{ $t("notes") }}</h4>
         <p class="paragraph-5" style="margin-top:-10px;white-space:pre-wrap;">{{$store.state.notes ? $store.state.notes : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.'}}</p>
         <div class="div-block-8"></div>
       </div>
       <div class="content-section" id="whereWeBe">
-        <h4 class="content-heading">Di mana kami berada</h4>
+        <h4 class="content-heading">{{ $t("whereWeBe") }}</h4>
         <p class="paragraph-5" style="margin-top:-10px;white-space:pre-wrap;">{{$store.state.whereWeBe ? $store.state.whereWeBe : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.'}}</p>
         <div class="div-block-8"></div>
       </div>
@@ -44,16 +44,16 @@
           <div class="map-item" id="map-item" v-if="isLatLngAvailable"></div>
           <div class="map-item-label">
             <div class="map-label">
-              <strong style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{$store.state.whereWeMeet.locationName ? $store.state.whereWeMeet.locationName : 'Nama lokasi'}}</strong>
+              <strong style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{$store.state.whereWeMeet.locationName ? $store.state.whereWeMeet.locationName : $t("locationName")}}</strong>
               <br/>
-              <span style="font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#888;">{{$store.state.whereWeMeet.streetAddress ? $store.state.whereWeMeet.streetAddress : 'Alamat jalan'}}</span>
+              <span style="font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#888;">{{$store.state.whereWeMeet.streetAddress ? $store.state.whereWeMeet.streetAddress : $t("streetAddress")}}</span>
             </div>
             <i class="fas fa-map-pin fa-2x" style="color:red;margin-top:-30px;"></i>
           </div>
         </div>
       </div>
       <div class="content-section">
-        <h4 class="heading-5">Ukuran grup hingga {{guestCountString}}</h4>
+        <h4 class="heading-5">{{ $t("groupSizeUpto")}} {{guestCountString}}</h4>
         <div class="div-block-8"></div>
       </div>
       <!-- <div class="content-section">
@@ -62,8 +62,8 @@
         <div class="div-block-8"></div>
       </div> -->
       <div class="content-section">
-        <h4 class="heading-5">Bayar dengan uang tunai</h4>
-        <p class="paragraph-5" style="margin-top:-30px;">Saat ini, hanya pembayaran dengan uang tunai yang diterima. Harap bayar host pada saat kedatangan.</p>
+        <h4 class="heading-5">{{ $t("paymentPolicy") }}</h4>
+        <p class="paragraph-5" style="margin-top:-30px;">{{ $t("paymentPolicyText") }}</p>
         <div class="div-block-8"></div>
       </div>
     </div>
@@ -183,9 +183,9 @@ export default {
     },
     guestCountString() {
       if (this.$store.state.maxGuestCount === 1) {
-        return "" + this.$store.state.maxGuestCount + " tamu";
+        return "" + this.$store.state.maxGuestCount + " "+this.$t("guest");
       } else if (this.$store.state.maxGuestCount > 1) {
-        return "" + this.$store.state.maxGuestCount + " tamu";
+        return "" + this.$store.state.maxGuestCount + " "+this.$t("guest");
       }
     },
     cancellationPolicyTitle() {
