@@ -51,6 +51,68 @@ export default {
     paymentPolicy: "Bayar dengan uang tunai",
     paymentPolicyText: "Saat ini, hanya pembayaran dengan uang tunai yang diterima. Harap bayar host pada saat kedatangan.",
     locationName: "Nama lokasi",
-    streetAddress: "Alamat jalan"
+    streetAddress: "Alamat jalan",
 
+    //steps
+    //steptitle
+    charRemaining: "Sisa karakter",
+    giveExperienceTitle: "Beri judul pengalaman Anda",
+    titleHelpText: "Buatlah singkat, deskriptif, dan menarik.",
+    examples: "Contoh",
+    whatIsTitleOfExp: "Apa judul pengalaman Anda?",
+    save: "Menyimpan",
+
+    //steptagline
+    whatIsTagline: "Apa tagline pengalaman Anda?",
+    yourTagline: "Tagline Anda",
+
+    //stepAbout
+    tellAboutYourself: "Jadi, ceritakan tentang diri Anda?",
+
+    //stepWhatWeDo
+    writeAboutWhatWeDo: "Tuliskan setiap aktivitas dalam urutan yang akan Anda lakukan",
+
+    //whatIProvide
+    writeWhatYouProvide: "Apa yang akan Anda berikan untuk tamu?",
+
+    //stepNotes
+    notesIntro: "Tempatkan diri Anda pada posisi tamu. Beberapa informasi mungkin tampak jelas, tetapi harus spesifik sehingga para tamu akan siap.",
+    writeAboutNotes: "Coba atasi masalah yang mungkin tamu miliki sebelum pemesanan pengalaman Anda",
+
+    //whereWeBe
+    whereWeBeIntro: "Beri tahu tamu ke mana Anda akan pergi, mengapa setiap lokasi istimewa, atau mengapa mereka akan menyukainya. Tidak apa-apa jika hanya satu lokasi.",
+    writeAboutWhereWeBe: "Tambahkan detail tentang di mana Anda akan berada",
+
+    //whereWeMeet
+    whereWeMeetIntro: "Beri tahu tamu persisnya tempat untuk bertemu Anda di awal pengalaman. Pastikan lokasi mudah ditemukan. Alamat pasti tidak akan dibagikan sampai reservasi tamu dikonfirmasi.",
+    stepProvideAddress: "Langkah 1: Berikan alamat",
+    country: "Negara",
+    city: "Kota",
+    zipCode: "Kode Pos",
+    stepConfirmMap: "Langkah 2: Konfirmasi lokasi pada peta",
+
+    //category
+    categoryIntro: "Pilih kategori yang paling menggambarkan pengalaman Anda sehingga muncul untuk tamu yang menelusuri kategori itu.",
+    primaryCategory: "Kategori Utama",
+    secondaryCategory: "Kategori Sekunder",
+    labelIntro: "Pilih Label yang paling menggambarkan pengalaman Anda.",
+
+    //guestRequirements
+    guestRequirementsIntro: "Ingatlah bahwa seseorang yang memesan pengalaman Anda mungkin memesan tempat untuk tamu lain. Jika ada persyaratan ketat seputar usia, tingkat keterampilan, atau sertifikasi, sertakan di sini.",
+    language: "Bahasa",
+    minimumAge: "Usia minimum",
+    kidsAllowed: "Apakah anak-anak diperbolehkan?",
+    alcoholServed: "Apakah alkohol akan disajikan?",
+    verifiedGuestOnly: "Hanya tamu yang diverifikasi?",
+    additionalRequirements: "Persyaratan tambahan (opsional)",
+    specialCerifications: "Sertifikasi khusus (opsional)",
+
+    //price
+    priceIntro: "Harga pengalaman Anda selalu terserah Anda. Beberapa host baru menawarkan pengalaman mereka dengan harga lebih rendah di awal untuk menarik tamu ketika mereka belum memiliki ulasan.",
+    writeAboutPrice: "Tetapkan harga rata-rata Anda",
+    priceNote: "Catatan: Anda dapat mengubah harga di lain waktu untuk setiap tanggal saat mengatur ketersediaan Anda."
+
+
+
+    
   }

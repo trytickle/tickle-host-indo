@@ -82,8 +82,8 @@ import VueI18n from 'vue-i18n'
 export default {
   data() {
     return {
-      buttonTitle: "Masuk",
-      signupButtonText: "Daftar",
+      buttonTitle: this.$t("login"),
+      signupButtonText: this.$t("signup"),
       emailString: "",
       passwordString: "",
       firstNameString: "",
@@ -109,7 +109,7 @@ export default {
         this.showVerifySent = false;
         this.showSendVerification = false;
         this.showError = false;
-        this.buttonTitle = "Masuk...";
+        this.buttonTitle = this.$t("login")+"...";
         
         try {
           const result = await auth.signInWithEmailAndPassword(
@@ -124,9 +124,9 @@ export default {
           this.errorMessage =
             "Gagal masuk. Silakan periksa email dan kata sandi Anda.";
           this.showError = true;
-          this.buttonTitle = "Masuk";
+          this.buttonTitle = this.$t("login");
           this.showSignupModal = false;
-          this.signupButtonText = "Daftar"
+          this.signupButtonText = this.$t("signup")
         }
       } else {
         if (!this.validateEmail(this.emailString)) {
@@ -148,7 +148,7 @@ export default {
         this.firstNameString.length > 0 && 
         this.lastNameString.length > 0
       ) {
-        this.signupButtonText = "Mendaftar...";
+        this.signupButtonText = this.$t("signup")+"...";
         this.showModalError = false;
         try {
           const result = await auth.createUserWithEmailAndPassword(
@@ -179,7 +179,7 @@ export default {
             "Gagal masuk. Silakan periksa email dan kata sandi Anda.";
           this.showError = true;
           this.showSignupModal = false;
-          this.signupButtonText = "Daftar";
+          this.signupButtonText = this.$t("signup");
         }
       } else {
          if (!this.validateEmail(this.emailString)) {
@@ -268,16 +268,16 @@ export default {
         } else {
           this.showSendVerification = true;
           this.showError = true;
-          this.buttonTitle = "Masuk",
-          this.signupButtonText = "Daftar"
+          this.buttonTitle = this.$t("login"),
+          this.signupButtonText = this.$t("signup")
           this.showSignupModal = false;
           this.errorMessage = "Email tidak terverifikasi. Anda perlu memverifikasi alamat email Anda sebelum masuk."
         }
       }
     },
     async sendVerificationEmail() {
-        this.buttonTitle = "Masuk",
-        this.signupButtonText = "Daftar"
+        this.buttonTitle = this.$t("login"),
+        this.signupButtonText = this.$t("signup")
         this.showSignupModal = false;
         this.showSendVerification = false;
         this.showError = false;

@@ -1,10 +1,10 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Persyaratan Tamu</h3>
-    <p class="paragraph-4">Ingatlah bahwa seseorang yang memesan pengalaman Anda mungkin memesan tempat untuk tamu lain. Jika ada persyaratan ketat seputar usia, tingkat keterampilan, atau sertifikasi, sertakan di sini.</p>
+    <h3 class="heading-3">{{$t("guestRequirements")}}</h3>
+    <p class="paragraph-4">{{$t("guestRequirementsIntro")}}</p>
     <div class="content-wrapper">
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Bahasa</div>
+        <div class="text-block-2" style="margin-bottom:10px;">{{$t("language")}}</div>
         <p class="paragraph-3">
           <select name="language" class="menu-dropdown" v-model="$store.state.language">
             <option  v-for="(language, index) in languages" :key="index" :value="language">{{language}}</option>
@@ -14,7 +14,7 @@
     </div>
     <div class="content-wrapper" style="margin-top:20px;">
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Usia minimum</div>
+        <div class="text-block-2" style="margin-bottom:10px;">{{$t("minimumAge")}}</div>
         <p class="paragraph-3">
           <select name="minimumAge" class="menu-dropdown" v-model="$store.state.guestRequirements.minimumAge">
             <option v-for="(age, index) in ages" :key="index" :value="age">{{age}}</option>
@@ -22,7 +22,7 @@
         </p>
       </div>
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Apakah anak-anak diperbolehkan?</div>
+        <div class="text-block-2" style="margin-bottom:10px;">{{$t("kidsAllowed")}}</div>
         <p class="paragraph-3">
           <select name="kidsAllowed" class="menu-dropdown" v-model="$store.state.guestRequirements.kidsAllowed">
             <option :value="true">Ya</option>
@@ -33,7 +33,7 @@
     </div>
     <div class="content-wrapper" style="margin-top:20px;">
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Apakah alkohol akan disajikan?</div>
+        <div class="text-block-2" style="margin-bottom:10px;">{{$t("alcoholServed")}}</div>
         <p class="paragraph-3">
           <select name="servesAlcohol" class="menu-dropdown" v-model="$store.state.guestRequirements.servesAlcohol">
             <option :value="false">Tidak</option>
@@ -42,7 +42,7 @@
         </p>
       </div>
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Hanya tamu yang diverifikasi?</div>
+        <div class="text-block-2" style="margin-bottom:10px;">{{$t("verifiedGuestOnly")}}</div>
         <p class="paragraph-3">
           <select name="requireVerified" class="menu-dropdown" v-model="$store.state.guestRequirements.requireVerified">
             <option :value="false">Tidak</option>
@@ -52,11 +52,11 @@
       </div>
     </div>
     <div style="margin-top:20px;">
-      <label style="margin-bottom:10px;">Persyaratan tambahan (opsional)</label>
+      <label style="margin-bottom:10px;">{{$t("additionalRequirements")}}</label>
       <textarea name="additionalRequirements" class="textarea-field" maxlength="1500" v-model="$store.state.guestRequirements.additionalRequirements"></textarea>
     </div>
     <div style="margin-top:20px;">
-      <label style="margin-bottom:10px;">Sertifikasi khusus (opsional)</label>
+      <label style="margin-bottom:10px;">{{$t("specialCerifications")}}</label>
       <textarea name="specialCertifications" class="textarea-field" maxlength="1500" v-model="$store.state.guestRequirements.specialCertifications"></textarea>
     </div>
     <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="!$store.state.guestRequirements">

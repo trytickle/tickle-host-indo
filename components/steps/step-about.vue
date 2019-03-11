@@ -1,8 +1,8 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Tentang saya</h3>
+    <h3 class="heading-3">{{ $t('aboutMe') }}</h3>
       <div class="div-block-4">
-      <div class="text-block-2" style="margin-bottom:20px;">Contoh</div>
+      <div class="text-block-2" style="margin-bottom:20px;">{{ $t('examples') }}</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
         "Saya adalah salah satu pendiri Amazing Brewing Company dan salah satu dari tujuh cicerones bersertifikasi (sommeliers bir) di Korea. Saya pernah tinggal di Asia, Eropa, dan AS dan mencicipi bir di lebih dari 100 pabrik di seluruh dunia."
       </p>
@@ -17,9 +17,9 @@
     </div>
     <div>
       <form>
-        <label style="margin-bottom:10px;">Jadi, ceritakan tentang diri Anda?</label>
+        <label style="margin-bottom:10px;">{{ $t('tellAboutYourself')}}</label>
         <textarea name="about" class="textarea-field" maxlength="1500" v-model="$store.state.about"></textarea>
-        <p><strong :class="{'bold-text': $store.state.about.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
+        <p><strong :class="{'bold-text': $store.state.about.length >= 1500}" v-text="characterCountLeft + ' '+$t('charRemaining')"></strong></p>
         <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.about.length <= 10">
       </form>
     </div>

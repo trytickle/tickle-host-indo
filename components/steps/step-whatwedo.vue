@@ -1,9 +1,9 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Apa yang akan kami lakukan</h3>
+    <h3 class="heading-3">{{$t("whatWeDo")}}</h3>
     <p class="paragraph-4">Membuat para tamu senang dengan deskripsi rencana perjalanan yang menyenangkan dan terperinci.</p>
     <div class="div-block-4">
-      <div class="text-block-2" style="margin-bottom:20px;">Contoh</div>
+      <div class="text-block-2" style="margin-bottom:20px;">{{ $t('examples') }}</div>
       <p class="div-block-5" style="font-style:italic;color:#222;">
         "Anda akan langsung terjun ke aksi klinik pelatihan bola basket mingguan kami, tempat kami melakukan latihan dan bermain selama dua jam dengan 60 anak. Hanya ada tiga dari kami untuk semua anak-anak (perempuan dan laki-laki usia 10-17), jadi Anda akan membantu kami dengan latihan dan pelatihan. Bersiaplah untuk aktif, berkeringat, dan jelas-jelas waspada sambil bersenang-senang dengan anak-anak."
       </p>
@@ -14,9 +14,9 @@
     </div>
     <div>
       <form>
-        <label style="margin-bottom:10px;">Tuliskan setiap aktivitas dalam urutan yang akan Anda lakukan</label>
+        <label style="margin-bottom:10px;">{{$t("writeAboutWhatWeDo")}}</label>
         <textarea name="whatWeDo" class="textarea-field" maxlength="1500" v-model="$store.state.whatWeDo"></textarea>
-        <p><strong :class="{'bold-text': $store.state.whatWeDo.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
+        <p><strong :class="{'bold-text': $store.state.whatWeDo.length >= 1500}" v-text="characterCountLeft + ' '+$t('charRemaining')"></strong></p>
         <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.whatWeDo.length <= 10">
       </form>
     </div>

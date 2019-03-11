@@ -1,16 +1,16 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Di mana kami akan bertemu</h3>
-    <p class="paragraph-4">Beri tahu tamu persisnya tempat untuk bertemu Anda di awal pengalaman. Pastikan lokasi mudah ditemukan. Alamat pasti tidak akan dibagikan sampai reservasi tamu dikonfirmasi.</p>
+    <h3 class="heading-3">{{$t('whereWeMeet')}}</h3>
+    <p class="paragraph-4">{{$t('whereWeMeetIntro')}}</p>
     <div class="div-block-4">
-      <div class="text-block-2" style="margin-bottom:30px;">Langkah 1: Berikan alamat</div>
-      <div class="text-block-2" style="margin-bottom:10px;">Negara</div>
+      <div class="text-block-2" style="margin-bottom:30px;">{{$t('stepProvideAddress')}}</div>
+      <div class="text-block-2" style="margin-bottom:10px;">{{$t('country')}}</div>
       <p class="paragraph-3">
         <select name="country" class="menu-dropdown">
           <option value="0">Indonesia</option>
         </select>
       </p>
-      <div class="text-block-2" style="margin-bottom:10px;">Alamat jalan</div>
+      <div class="text-block-2" style="margin-bottom:10px;">{{$t('streetAddress')}}</div>
       <p class="paragraph-3" style="margin-bottom:10px;">
         <input type="text" maxlength="50" name="streetAddress" placeholder="E.g. Blk 35, Mandalay Road" class="text-field" style="color:#000;background:#fff" autocomplete="off" v-model="$store.state.whereWeMeet.streetAddress">
       </p>
@@ -20,21 +20,21 @@
       </p>
       <div class="city-zipcode-wrapper" style="margin-bottom:10px;">
         <div>
-          <div class="text-block-2" style="margin-bottom:10px;">Kota</div>
+          <div class="text-block-2" style="margin-bottom:10px;">{{$t('city')}}</div>
           <input type="text" maxlength="50" name="city" placeholder="E.g. Jakarta" class="text-field" autocomplete="off" style="color:#000;background:#fff" v-model="$store.state.whereWeMeet.city" readonly>
         </div>
         <div>
-          <div class="text-block-2" style="margin-bottom:10px;">Kode Pos</div>
+          <div class="text-block-2" style="margin-bottom:10px;">{{$t('zipCode')}}</div>
           <input type="text" maxlength="50" name="zipcode" placeholder="E.g. 739013" class="text-field" autocomplete="off" style="color:#000;background:#fff" v-model="$store.state.whereWeMeet.zipcode">
         </div>
       </div>
-      <div class="text-block-2" style="margin-bottom:10px;">Nama lokasi</div>
+      <div class="text-block-2" style="margin-bottom:10px;">{{$t('locationName')}}</div>
       <p class="paragraph-3" style="margin-bottom:0px;">
         <input type="text" maxlength="50" name="locationName" placeholder="E.g. My home studio @ Khatib" class="text-field" style="color:#000;background:#fff" autocomplete="off" v-model="$store.state.whereWeMeet.locationName">
       </p>
     </div>
     <div>
-      <div class="text-block-2" style="margin-bottom:10px;padding-top:20px;">Langkah 2: Konfirmasi lokasi pada peta</div>
+      <div class="text-block-2" style="margin-bottom:10px;padding-top:20px;">{{$t('stepConfirmMap')}}</div>
       <div class="map-wrapper" id="map-wrapper"></div>
     </div>
     <div>

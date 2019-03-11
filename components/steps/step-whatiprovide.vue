@@ -3,7 +3,7 @@
     <h3 class="heading-3">Apa yang akan saya sediakan</h3>
     <p class="paragraph-4">Penting untuk memberi tahu tamu apa yang akan Anda berikan karena hal tersebut membantu mereka memahami apa yang mereka bayar.</p>
     <div class="div-block-4">
-      <div class="text-block-2" style="margin-bottom:20px;text-decoration:underline;">Contoh</div>
+      <div class="text-block-2" style="margin-bottom:20px;text-decoration:underline;">{{ $t('examples') }}</div>
       <p class="div-block-5" style="color:#222;">
         Tour Martin’s Studio<br/><br/>
         Minuman<br/>
@@ -30,9 +30,9 @@
     </div>
     <div>
       <form>
-        <label style="margin-bottom:10px;">Apa yang akan Anda berikan untuk tamu?</label>
+        <label style="margin-bottom:10px;">{{ $t('writeWhatYouProvide') }}</label>
         <textarea name="whatIProvide" class="textarea-field" placeholder="• A bottle of water" maxlength="1500" v-model="$store.state.whatIProvide"></textarea>
-        <p><strong :class="{'bold-text': $store.state.whatIProvide.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
+        <p><strong :class="{'bold-text': $store.state.whatIProvide.length >= 1500}" v-text="characterCountLeft + ' '+$t('charRemaining')"></strong></p>
         <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.whatIProvide.length <= 10">
       </form>
     </div>

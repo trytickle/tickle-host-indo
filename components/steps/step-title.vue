@@ -1,9 +1,9 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Beri judul pengalaman Anda</h3>
-    <p class="paragraph-4">Buatlah singkat, deskriptif, dan menarik.</p>
+    <h3 class="heading-3">{{ $t("giveExperienceTitle")}}</h3>
+    <p class="paragraph-4">{{ $t("titleHelpText")}}</p>
     <div class="div-block-4">
-     <div class="text-block-2">Contoh</div>
+     <div class="text-block-2">{{ $t("examples")}}</div>
       <div class="div-block-5">
         <div class="example-wrapper">
           <div class="text-block-3">Men's Shirt – Japanese Style with Andrina</div><img src="images/example1.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
@@ -17,10 +17,10 @@
     </div>
     <div>
       <form>
-        <label style="margin-bottom:10px;">Apa judul pengalaman Anda?</label>
+        <label style="margin-bottom:10px;">{{ $t("whatIsTitleOfExp")}}</label>
         <input type="text" :maxlength= "maxCount" name="title" placeholder="Judul Anda" class="text-field" autocomplete="off" v-model="$store.state.title">
-        <p><strong :class="{'bold-text': $store.state.title.length >= 50}" v-text="characterCountLeft + ' Sisa karakter'"></strong></p>
-        <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.title.length <= 10">
+        <p><strong :class="{'bold-text': $store.state.title.length >= 50}" v-text="characterCountLeft + ' '+$t('charRemaining')"></strong></p>
+        <input type="submit" :value="$t('save')" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.title.length <= 10">
       </form>
     </div>
   </div>

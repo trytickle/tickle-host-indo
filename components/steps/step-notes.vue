@@ -1,12 +1,12 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Catatan (opsional)</h3>
-    <p class="paragraph-4">Tempatkan diri Anda pada posisi tamu. Beberapa informasi mungkin tampak jelas, tetapi harus spesifik sehingga para tamu akan siap.</p>
+    <h3 class="heading-3">{{ $t("notes") }} (opsional)</h3>
+    <p class="paragraph-4">{{$t("notesIntro")}}</p>
     <div>
       <form>
-        <label style="margin-bottom:10px;">Coba atasi masalah yang mungkin tamu miliki sebelum pemesanan pengalaman Anda</label>
+        <label style="margin-bottom:10px;">{{$t("writeAboutNotes")}}</label>
         <textarea name="notes" class="textarea-field" maxlength="1500" v-model="$store.state.notes"></textarea>
-        <p><strong :class="{'bold-text': $store.state.notes.length >= 1500}" v-text="characterCountLeft + '  Sisa karakter'"></strong></p>
+        <p><strong :class="{'bold-text': $store.state.notes.length >= 1500}" v-text="characterCountLeft + ' '+$t('charRemaining')"></strong></p>
         <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.notes.length <= 10">
         <input type="submit" value="Melewatkan" class="submit-button" style="margin-left:20px;" @click.prevent="nextClicked">
       </form>

@@ -1,10 +1,10 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Kategori</h3>
-    <p class="paragraph-4">Pilih kategori yang paling menggambarkan pengalaman Anda sehingga muncul untuk tamu yang menelusuri kategori itu..</p>
+    <h3 class="heading-3">{{$t('category')}}</h3>
+    <p class="paragraph-4">{{$t('categoryIntro')}}</p>
     <div class="content-wrapper">
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Kategori Utama</div>
+        <div class="text-block-2" style="margin-bottom:10px;">{{$t('primaryCategory')}}</div>
         <p class="paragraph-3">
           <select name="category" class="menu-dropdown" v-model="$store.state.categoryPrimary">
             <option v-for="(category, index) in categories" :key="index" :value="index">{{category}}</option>
@@ -12,7 +12,7 @@
         </p>
       </div>
       <div>
-        <div class="text-block-2" style="margin-bottom:10px;">Kategori Sekunder</div>
+        <div class="text-block-2" style="margin-bottom:10px;">{{$t('secondaryCategory')}}</div>
         <p class="paragraph-3">
           <select name="category" class="menu-dropdown" v-model="$store.state.categorySecondary">
             <option v-for="(category, index) in categories" :key="index" :value="index">{{category}}</option>
@@ -21,7 +21,7 @@
       </div>
     </div>
     <h3 style="padding-top:100px;" class="heading-3">Label</h3>
-    <p class="paragraph-4">Pilih Label yang paling menggambarkan pengalaman Anda.</p>
+    <p class="paragraph-4">{{$t('labelIntro')}}</p>
     <div class="content-wrapper">
       <div>
         <div class="text-block-2" style="margin-bottom:10px;">Label</div>

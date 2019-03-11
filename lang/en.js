@@ -51,7 +51,66 @@ export default {
       paymentPolicy: "Pay by cash",
       paymentPolicyText: "At present, only payments with cash are accepted. Please pay the host upon arrival.",
       locationName: "Loaction name",
-      streetAddress: "Street address"
+      streetAddress: "Street address",
     
-  
+    //steps
+    //steptitle
+    charRemaining: "characters remaining",
+    giveExperienceTitle: "Give your experience a title",
+    titleHelpText: "Make it short, descriptive, and exciting.",
+    examples: "Examples",
+    whatIsTitleOfExp: "What's the title of your experience?",
+    save: "Save",
+
+    //steptagline
+    //steptagline
+    whatIsTagline: "What is your tagline?",
+    yourTagline: "Yout tagline",
+
+    //stepAbout
+    tellAboutYourself: "So tell us about yourself?",
+
+    //stepWhatWeDo
+    writeAboutWhatWeDo: "Write about each activity in the order you'll do them",
+
+    //whatIProvide
+    writeWhatYouProvide: "What will you provide for guests?",
+
+    //stepNotes
+    notesIntro: "Put yourself in a guest’s shoes. Some information may seem obvious, but be detailed so guests are over-prepared.",
+    writeAboutNotes: "Try addressing any concerns guests might have about booking your experience",
+
+    //whereWeBe
+    whereWeBeIntro: "Tell guests where you’ll go, why each location is special, or why they will love it. It’s ok if it’s just one location.",
+    writeAboutWhereWeBe: "Add details about where you’ll be",
+
+    //whereWeMeet
+    whereWeMeetIntro: "Tell guests exactly where to meet you at the start of the experience. Make sure the location is easy to find. The exact address won’t be shared until the guest’s reservation is confirmed.",
+    stepProvideAddress: "Step 1: Provide an address",
+    country: "Country",
+    city: "City",
+    zipCode: "Zip code",
+    stepConfirmMap: "Step 2: Confirm location on the map",
+
+    //category
+    categoryIntro: "Choose the category that best describes your experience. Add a second so it also appears to guests browsing in that category.",
+    primaryCategory: "Primary Category",
+    secondaryCategory: "Secondary Category",
+    labelIntro: "Choose the Label that best describes your experience.",
+
+    //guestRequirements
+    guestRequirementsIntro: "Keep in mind that someone booking your experience might book spots for other guests. If there are strict requirements around age, skill level, or certifications, include them here.",
+    language: "Language",
+    minimumAge: "Minimum Age",
+    kidsAllowed: "Are kids allowed?",
+    alcoholServed: "Will alcohol be served?",
+    verifiedGuestOnly: "Verified guests only?",
+    additionalRequirements: "Additional requirements (optional)",
+    specialCerifications: "Special certifications (optional)",
+
+    //price
+    priceIntro: "The price of your experience is always up to you. Some new hosts offer their experience at a lower price in the beginning to attract guests when they don’t have any reviews yet.",
+    writeAboutPrice: "Set your average price",
+    priceNote: "Note: You can vary your price later for each date when you set up your availability."
+    
   }
