@@ -1,10 +1,13 @@
 <template>
   <div>
-    <nuxt-link
-        style="display:none;float:right;margin:20px;color:#fff;font-size:30px"
-        v-for="locale in availableLocales"
-        :key="locale.code"
-        :to="switchLocalePath(locale.code)">{{ locale.name }}</nuxt-link>
+  <div class="menu-button">
+      <button class="text-block link" style="height:100%;"> {{ selectedLaguage}}</button>
+         <div v-for="language in languages" :key="language" :language="language">
+            <div class="menu-item-cell">
+              <button style="outline:none;background: #fff;" @click.prevent="onLanguageChanged()"> {{language}}</button>
+            </div>
+  </div>
+  </div>
     <div class="bg"></div>
     <div class="header-img"><img class="icon-image" src="/images/intro-header.png"></div>
     <div class="container">
@@ -92,7 +95,9 @@ export default {
       googleAuth: null,
       showSignupModal: false,
       showForgotPassModal: false,
-      showModalError: false
+      showModalError: false,
+      selectedLaguage: "Bahasa",
+      languages: ["Bahasa", "English"]
     };
   },
   methods: {
@@ -254,7 +259,7 @@ export default {
       if (auth.currentUser.emailVerified || isSocialLogin) {
         await this.$store.dispatch("loadCurrentUser");
         if (this.$store.state.user) {
-          this.$router.push('/start?step=StepTitle');
+          this.$router.push(this.localePath({name: 'start', params: { step: 'StepTitle' }}));
         }
       } else {
         if (isSignUp) {
@@ -290,6 +295,13 @@ export default {
         this.showModalError = true;
         this.errorMessage = "Masukkan email yang valid";
       }
+    },
+    onLanguageChanged() {
+      if (this.selectedLaguage == "English") {
+        this.$router.push(this.switchLocalePath('en'));
+      } else {
+        this.$router.push(this.switchLocalePath('en'));
+      }
     }
   },
   mounted() {
@@ -297,6 +309,7 @@ export default {
     auth.onAuthStateChanged(user => {
       if (user) {
         //this.takeToStart();
+     
       }
     });
   },
@@ -421,6 +434,45 @@ export default {
   background-color: white;
   border-radius: 6px;
   z-index: 100;
+}
+.menu-button {
+  float: right;
+  margin: 10px;
+  height: 80%;
+}
+.menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  width: 400px;
+  background-color: white;
+  z-index: 100;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 10px 10px;
+  max-height: 80vh;
+  overflow: auto;
+}
+.menu-item {
+  text-align: right;
+  max-width: 320px;
+  overflow: hidden;
+  padding-bottom: 4px;
+  margin: 10px
+}
+.menu-button:hover .menu {
+  display: block;
+}
+.menu-item-cell {
+  display:grid;
+  grid-template-columns: 120px auto;
+  align-items: center;
+}
+.menu-item-grid {
+  display: grid;
+  grid-template-columns: 85px auto;
+  align-items: center;
+  grid-gap: 15px;
 }
 
 @media screen and (max-width: 640px) {

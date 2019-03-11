@@ -52,5 +52,6 @@ export default {
       paymentPolicyText: "At present, only payments with cash are accepted. Please pay the host upon arrival.",
       locationName: "Loaction name",
       streetAddress: "Street address"
+    
   
   }
