@@ -53,7 +53,7 @@ module.exports = {
     ['nuxt-i18n', {
       locales: [
         {
-          name: 'Bahasa',
+          name: 'Bahasa Indonesia',
           code: 'id',
           iso: 'id-ID',
           file: 'id.js'

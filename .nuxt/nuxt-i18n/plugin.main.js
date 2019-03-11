@@ -104,7 +104,7 @@ export default async ({ app, route, store, req }) => {
 
   // Set instance options
   app.i18n = new VueI18n({})
-  app.i18n.locales = [{"name":"Bahasa","code":"id","iso":"id-ID","file":"id.js"},{"name":"English","code":"en","iso":"en-US","file":"en.js"}]
+  app.i18n.locales = [{"name":"Bahasa Indonesia","code":"id","iso":"id-ID","file":"id.js"},{"name":"English","code":"en","iso":"en-US","file":"en.js"}]
   app.i18n.defaultLocale = 'id'
   app.i18n.differentDomains = false
   app.i18n.forwardedHost = false

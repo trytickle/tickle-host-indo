@@ -51,7 +51,7 @@ middleware['i18n'] = async ({ app, req, res, route, store, redirect, isHMR }) =>
 }
   const routesNameSeparator = '___'
   const defaultLocaleRouteNameSuffix = 'default'
-  const locales = getLocaleCodes([{"name":"Bahasa","code":"id","iso":"id-ID","file":"id.js"},{"name":"English","code":"en","iso":"en-US","file":"en.js"}])
+  const locales = getLocaleCodes([{"name":"Bahasa Indonesia","code":"id","iso":"id-ID","file":"id.js"},{"name":"English","code":"en","iso":"en-US","file":"en.js"}])
   const syncVuex = (locale = null, messages = null) => {
   if (vuex && store) {
     if (locale !== null && vuex.mutations.setLocale) {
