@@ -1,7 +1,7 @@
 <template>
-  <div class="menu-button" :style="isMenu ? 'margin-top:45px;text-align:left' : 'position:fixed;top:30px;right:0;'">
+  <div class="menu-button" :style="isMenu ? 'margin-top:30px;text-align:left;height:50px;' : 'position:fixed;top:30px;right:0;height:40px;'">
     <button class="text-block link" :style="isMenu ? '' : 'color:rgba(0,0,0,0.7);'" style="background-color:rgba(0,0,0,0);"><i class="fas fa-comment" style="font-size:12px;margin-right:10px;"></i>{{ language }}</button>
-    <div class="menu" :style="isMenu ? 'top:37px;left:0;right:0;' : ''">
+    <div class="menu" :style="isMenu ? 'top:35px;left:0;right:0;' : ''">
       <div v-for="locale in availableLocales" :key="locale.code" @click="changeLocale(locale.code)">
         <div class="menu-item-cell">
           <button class="link menu-item">{{ locale.name }}</button>
