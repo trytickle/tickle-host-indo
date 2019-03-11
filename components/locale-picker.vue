@@ -1,7 +1,7 @@
 <template>
-  <div class="menu-button" :style="isMenu ? 'margin-top:30px;' : ''">
-    <button class="text-block link" :style="isMenu ? '' : 'color:rgba(0,0,0,0.7);'" style="height:100%;background-color:rgba(0,0,0,0);">{{ language }}</button>
-    <div class="menu" :style="isMenu ? 'top: 45px;left:0;right:0;' : ''">
+  <div class="menu-button" :style="isMenu ? 'margin-top:45px;text-align:left' : 'position:fixed;top:30px;right:0;'">
+    <button class="text-block link" :style="isMenu ? '' : 'color:rgba(0,0,0,0.7);'" style="background-color:rgba(0,0,0,0);"><i class="fas fa-comment" style="font-size:12px;margin-right:10px;"></i>{{ language }}</button>
+    <div class="menu" :style="isMenu ? 'top:37px;left:0;right:0;' : ''">
       <div v-for="locale in availableLocales" :key="locale.code" @click="changeLocale(locale.code)">
         <div class="menu-item-cell">
           <button class="link menu-item">{{ locale.name }}</button>
@@ -13,11 +13,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      localePickerVisible: false
-    }
-  },
   props: {
     isMenu: false
   },
@@ -34,13 +29,6 @@ export default {
     }
   },
   methods: {
-    handleLanguageClick() {
-      if (this.localePickerVisible) {
-        this.localePickerVisible = false;
-      } else {
-        this.localePickerVisible = true;
-      }
-    },
     changeLocale(code) {
       this.localePickerVisible = false;
       this.$router.push(this.switchLocalePath(code));
@@ -53,8 +41,8 @@ export default {
 .menu-button {
   position: relative;
   display: inline-block;
-  padding-bottom: 30px;
-  min-width: 210px;
+  min-width: 240px;
+  text-align: right;
 }
 .menu {
   display: none;
