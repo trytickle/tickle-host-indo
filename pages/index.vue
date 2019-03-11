@@ -1,13 +1,6 @@
 <template>
   <div>
-  <div class="menu-button">
-      <button class="text-block link" style="height:100%;"> {{ selectedLaguage}}</button>
-         <div v-for="language in languages" :key="language" :language="language">
-            <div class="menu-item-cell">
-              <button style="outline:none;background: #fff;" @click.prevent="onLanguageChanged()"> {{language}}</button>
-            </div>
-  </div>
-  </div>
+    <LocalePicker/>
     <div class="bg"></div>
     <div class="header-img"><img class="icon-image" src="/images/intro-header.png"></div>
     <div class="container">
@@ -76,8 +69,9 @@ import {
   googleAuthProvider,
   facebookAuthProvider
 } from "~/plugins/firebase";
-import Vue from 'vue'
-import VueI18n from 'vue-i18n'
+import Vue from 'vue';
+import VueI18n from 'vue-i18n';
+import LocalePicker from '~/components/locale-picker';
 
 export default {
   data() {
@@ -96,9 +90,12 @@ export default {
       showSignupModal: false,
       showForgotPassModal: false,
       showModalError: false,
-      selectedLaguage: "Bahasa",
-      languages: ["Bahasa", "English"]
+      selectedLanguage: "Bahasa Indonesia",
+      languages: ["Bahasa ", "English"]
     };
+  },
+  components: {
+    LocalePicker
   },
   methods: {
     async emailLogin() {
@@ -297,7 +294,7 @@ export default {
       }
     },
     onLanguageChanged() {
-      if (this.selectedLaguage == "English") {
+      if (this.selectedLanguage == "English") {
         this.$router.push(this.switchLocalePath('en'));
       } else {
         this.$router.push(this.switchLocalePath('en'));
@@ -317,7 +314,7 @@ export default {
     availableLocales () {
       return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
     }
-  } 
+  }
 };
 </script>
 
