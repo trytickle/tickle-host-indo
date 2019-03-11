@@ -1,7 +1,7 @@
 <template>
-  <div class="menu-button">
-    <button class="text-block link" style="color:rgba(0,0,0,0.7);height:100%;background-color:rgba(0,0,0,0);">{{ language }}</button>
-    <div class="menu">
+  <div class="menu-button" :style="isMenu ? 'margin-top:30px;' : ''">
+    <button class="text-block link" :style="isMenu ? '' : 'color:rgba(0,0,0,0.7);'" style="height:100%;background-color:rgba(0,0,0,0);">{{ language }}</button>
+    <div class="menu" :style="isMenu ? 'top: 45px;left:0;right:0;' : ''">
       <div v-for="locale in availableLocales" :key="locale.code" @click="changeLocale(locale.code)">
         <div class="menu-item-cell">
           <button class="link menu-item">{{ locale.name }}</button>
@@ -17,6 +17,9 @@ export default {
     return {
       localePickerVisible: false
     }
+  },
+  props: {
+    isMenu: false
   },
   computed: {
     language() {
@@ -51,6 +54,7 @@ export default {
   position: relative;
   display: inline-block;
   padding-bottom: 30px;
+  min-width: 210px;
 }
 .menu {
   display: none;
@@ -77,8 +81,6 @@ export default {
   display: block;
 }
 .menu-item-cell {
-  display:grid;
-  grid-template-columns: 200px auto;
-  align-items: center;
+  display: inline-block;
 }
 </style>

@@ -39,6 +39,7 @@
           </div>
         </div>  
       </div>
+      <LocalePicker :isMenu="true"/>
       <div>
         <!-- <a v-if="this.$store.state.user && !this.$store.state.user.settings.payoutMethods" target="_blank" rel="noopener noreferrer" :href=stripeUrl><button class="text-block link">Connect Stripe</button></a> -->
       </div>
@@ -85,6 +86,7 @@
 import {auth, db} from "~/plugins/firebase";
 import { resizeImage } from "~/services/utility";
 import { uploadImageToVerification } from '~/services/firebase-service';
+import LocalePicker from '~/components/locale-picker';
 
 export default {
   data() {
@@ -103,6 +105,9 @@ export default {
       frontVerifyFile: null,
       backVerifyFile: null
     }
+  },
+  components: {
+    LocalePicker
   },
   methods: {
     async signOut() {
