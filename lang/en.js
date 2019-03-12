@@ -111,6 +111,32 @@ export default {
     //price
     priceIntro: "The price of your experience is always up to you. Some new hosts offer their experience at a lower price in the beginning to attract guests when they don’t have any reviews yet.",
     writeAboutPrice: "Set your average price",
-    priceNote: "Note: You can vary your price later for each date when you set up your availability."
+    priceNote: "Note: You can vary your price later for each date when you set up your availability.",
+
+    //bookingOption
+    bookingOptionIntro: "Some final settings. Set how long you plan for your experience to last, the number of guests you can accomodate at one time, and how long before it starts that a guest would have to book.",
+    guestCount: "Guest count",
+    latestBookingTime: "Latest booking time",
+
+    //availability
+    selectDates: "Select dates",
+    selectDateNote: "Please select some dates on the calendar",
+    setAvailabilityDetails: "Set availability details",
+    whatTimeStart: "What time does it start?",
+    whatTimeEnd: "What time does it end?",
+    howMuchItCost: "How much does it cost for each guest?",
+    howManyGuest: "How many guests can you accommodate in this session?",
+    createAvailability: "Add Availability",
+    adding: "Adding",
+
+     //review and submit
+     reviewIntro: "You're all done! We'll review the experience you’re about to submit, so make sure you’re happy with it. You can still go back and fine-tune your descriptions at any time.",
+     bySubmittingConfirm: "By submitting, I confirm the following is true:",
+     confirmLaw: "My experience complies with local laws. Learn more about other laws (like business licensing) that may apply.",
+     confirmCopyright: "I confirm that my descriptions and photos are my own, and accurately reflect my experience.",
+     submitExperience: "Submit Experience",
+     agreeToTerms: "I agree to ",
+     termsOfService: "Terms of Service",
+     submitting: "Submitting"
     
   }

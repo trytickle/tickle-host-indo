@@ -110,9 +110,31 @@ export default {
     //price
     priceIntro: "Harga pengalaman Anda selalu terserah Anda. Beberapa host baru menawarkan pengalaman mereka dengan harga lebih rendah di awal untuk menarik tamu ketika mereka belum memiliki ulasan.",
     writeAboutPrice: "Tetapkan harga rata-rata Anda",
-    priceNote: "Catatan: Anda dapat mengubah harga di lain waktu untuk setiap tanggal saat mengatur ketersediaan Anda."
+    priceNote: "Catatan: Anda dapat mengubah harga di lain waktu untuk setiap tanggal saat mengatur ketersediaan Anda.",
 
-
-
+    //bookingOption
+    bookingOptionIntro: "Beberapa pengaturan akhir. Tetapkan berapa lama Anda merencanakan pengalaman Anda untuk bertahan, jumlah tamu yang dapat Anda tampung pada satu waktu, dan berapa lama sebelum pengalaman dimulai, seorang tamu harus memesan.",
+    guestCount: "Jumlah tamu",
+    latestBookingTime: "Waktu Pemesanan terbaru",
     
+    //availability
+    selectDates: "Pilih tanggal",
+    selectDateNote: "Silakan pilih tanggal di kalender",
+    setAvailabilityDetails: "Tetapkan detail ketersediaan",
+    whatTimeStart: "Jam berapa itu mulai?",
+    whatTimeEnd: "Jam berapa ini berakhir?",
+    howMuchItCost: "Berapa biayanya untuk setiap tamu?",
+    howManyGuest: "Berapa banyak tamu yang dapat Anda akomodasi di sesi ini?",
+    createAvailability: "Tambahkan ketersediaan",
+    adding: "Menambahkan",
+
+    //review and submit
+    reviewIntro: "Anda sudah selesai! Kami akan meninjau pengalaman yang akan Anda kirim, jadi pastikan Anda senang dengan hal tersebut. Anda masih dapat kembali dan menyempurnakan deskripsi pengalaman Anda kapan saja.",
+    bySubmittingConfirm: "Dengan mengirimkan, saya jamin bahwa ini benar:",
+    confirmLaw: "Pengalaman saya sesuai dengan hukum setempat. Pelajari lebih lanjut tentang undang-undang lain (seperti lisensi bisnis) yang mungkin berlaku.",
+    confirmCopyright: "Saya mengonfirmasi bahwa uraian dan foto saya adalah milik saya, dan secara akurat mencerminkan pengalaman saya.",
+    submitExperience: "Kirim Pengalaman",
+    agreeToTerms: "Saya setuju dengan",
+    termsOfService: "Ketentuan Layanan",
+    submitting: "Mengirimkan"
   }

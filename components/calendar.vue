@@ -94,21 +94,21 @@
         <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;background:#fff" @click.prevent="showEditModel=false"></button>
         <hr>
         <form v-on:submit.prevent="" style="margin-top:20px;">
-          <div>Jam berapa itu mulai?</div>
+          <div>{{$t('whatTimeStart')}}</div>
           <select v-model="editAvailabilityStarttime" class="menu-dropdown">
             <option v-for="time in times" :key="time">
               {{ time }}
             </option>
           </select>
-          <div style="margin-top:5px;">Jam berapa ini berakhir?</div>
+          <div style="margin-top:5px;">{{$t('whatTimeEnd')}}</div>
           <select v-model="editAvailabilityEndTime" class="menu-dropdown">
             <option v-for="time in times" :key="time">
               {{ time }}
             </option>
           </select>
-          <div style="margin-top:5px;">Berapa biayanya untuk setiap tamu?</div>
+          <div style="margin-top:5px;">{{$t('howMuchItCost')}}</div>
           <input type="number" min="10" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57" v-model="editAvailabilityPrice" class="text-field" style="margin-top:5px;" placeholder="IDR"/>
-          <div style="margin-top:5px;">Berapa banyak tamu yang dapat Anda akomodasi di sesi ini?</div>
+          <div style="margin-top:5px;">{{$t('howManyGuest')}}</div>
           <select v-model="editAvailabilityGuestCount" class="menu-dropdown">
             <option v-for="guest in guests" :key="guest">
               {{ guest }}

@@ -1,7 +1,7 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Tinjau &amp; Kirim</h3>
-    <p class="paragraph-4">Anda sudah selesai! Kami akan meninjau pengalaman yang akan Anda kirim, jadi pastikan Anda senang dengan hal tersebut. Anda masih dapat kembali dan menyempurnakan deskripsi pengalaman Anda kapan saja.</p>
+    <h3 class="heading-3">{{$t('reviewAndSubmit')}}</h3>
+    <p class="paragraph-4">{{$t('reviewIntro')}}</p>
     <div class="div-block-4" style="padding-top:40px;padding-bottom:25px;">
       <div class="text-block-2">Jumlah minimum tamu</div>
       <p class="paragraph-3">
@@ -14,27 +14,27 @@
       Saat ini, hanya pembayaran dengan uang tunai yang diterima. Harap terima pembayaran saat tamu Anda datang.
       </p>
     </div>
-    <div class="text-block-2" style="margin-top:40px;">Dengan mengirimkan, saya jamin bahwa ini benar:</div>
+    <div class="text-block-2" style="margin-top:40px;">{{$t('bySubmittingConfirm')}}</div>
     <div class="checkitem-wrapper">
       <label class=container>
         <input type="checkbox" class="default-checkbox" v-model="check1">
         <span class="checkmark"></span>
       </label>
-      <div>Pengalaman saya sesuai dengan hukum setempat. Pelajari lebih lanjut tentang undang-undang lain (seperti lisensi bisnis) yang mungkin berlaku.</div>
+      <div>{{$t('confirmLaw')}}</div>
     </div>
     <div class="checkitem-wrapper">
       <label class=container>
         <input type="checkbox" class="default-checkbox" v-model="check2">
         <span class="checkmark"></span>
       </label>
-      <div>Saya setuju dengan <a target="_blank" href="https://trytickle.com/terms-of-service" class="link" style="padding:0;">Ketentuan Layanan</a> Tickle.</div>
+      <div>{{$t('agreeToTerms')}} <a target="_blank" href="https://trytickle.com/terms-of-service" class="link" style="padding:0;">{{$t('termsOfService')}}</a> Tickle.</div>
     </div>
     <div class="checkitem-wrapper">
       <label class=container>
         <input type="checkbox" class="default-checkbox" v-model="check3">
         <span class="checkmark"></span>
       </label>
-      <div>Saya mengonfirmasi bahwa uraian dan foto saya adalah milik saya, dan secara akurat mencerminkan pengalaman saya.</div>
+      <div>{{$t('confirmCopyright')}}</div>
     </div>
     <div v-if="showError" style="margin-top:20px;margin-bottom:-20px;color:red;">Detail ini tidak ada: {{errorMessage}}</div>
     <input type="submit" :value= buttonTitle class="submit-button" @click.prevent="submitExperience" :disabled="validateChecks">
@@ -53,7 +53,7 @@ export default {
       check3: false,
       errorMessage: null,
       showError: false,
-      buttonTitle: "Kirim Pengalaman"
+      buttonTitle: this.$t('submitExperience')
     };
   },
   methods: {
@@ -130,7 +130,7 @@ export default {
           this.showError = true;
           return;
         }
-        this.buttonTitle = "Mengirimkan...";
+        this.buttonTitle = this.$t('submitting')+"...";
         const status = {
           isDraft: false,
           inReview: true,
@@ -178,7 +178,7 @@ export default {
         }
         console.log(body);
         await this.$axios.$post(process.env.functionsUrl + 'sendSubmissionInReviewEmail', body);
-        this.buttonTitle = "Kirim Pengalaman";
+        this.buttonTitle = this.$t('submitExperience');
         this.$parent.toggleThankyouModal();
 
       } catch (error) {

@@ -1,7 +1,7 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Harga</h3>
-    <p class="paragraph-4">Harga pengalaman Anda selalu terserah Anda. Beberapa host baru menawarkan pengalaman mereka dengan harga lebih rendah di awal untuk menarik tamu ketika mereka belum memiliki ulasan.</p>
+    <h3 class="heading-3">{{$t('price')}}</h3>
+    <p class="paragraph-4">{{$t('priceIntro')}}</p>
     <div class="div-block-4" style="padding-bottom:20px;">
       <div class="text-block-2">Tetapkan ekspektasi</div>
       <p class="paragraph-3">
@@ -12,12 +12,12 @@
       Jika Anda baru, mulailah dari IDR 200,000. Setelah Anda menjalankan pengalaman Anda beberapa kali, sesuaikan harga berdasarkan masukan dari tamu untuk mengontrol jumlah pemesanan yang Anda dapatkan.
       </p>
     </div>
-    <label style="margin-bottom:10px;margin-top:30px;">Tetapkan harga rata-rata Anda</label>
+    <label style="margin-bottom:10px;margin-top:30px;">{{$t("writeAboutPrice")}}</label>
     <div class="price-wrapper">
       <p class="currency-wrapper">{{$store.state.currency.toUpperCase()}}</p>
       <input type="number" maxlength="5" name="price" placeholder="Rp" class="text-field price-input" autocomplete="off" v-model="$store.state.pricePerPax">
     </div>
-    <p>Catatan: Anda dapat mengubah harga di lain waktu untuk setiap tanggal saat mengatur ketersediaan Anda.</p>
+    <p>{{$t('priceNote')}}</p>
     <input type="submit" value="Menyimpan" class="submit-button" @click.prevent="nextClicked" :disabled="$store.state.pricePerPax < 20">
   </div>
 </template>
