@@ -66,6 +66,28 @@ export default {
     whatIsTagline: "Apa tagline pengalaman Anda?",
     yourTagline: "Tagline Anda",
 
+    //step photos
+    addYourPhotos: "Tambahkan foto Anda",
+    addPhotoIntro: "Jika Anda tidak memiliki foto yang sempurna saat ini, jangan khawatir. Gunakan yang terbaik yang Anda miliki. Anda dapat menambahkan lebih dari satu atau mengubahnya nanti.",
+    reviewPhotoStandards: "Tinjau standar foto kami",
+    coverPhoto: "Foto sampul",
+    coverPhotoIntro: "Pilih foto yang mewakili pengalaman Anda. Ini adalah foto pertama yang akan muncul ketika tamu mencari aktivitas yang dapat dilakukan.",
+    addVideo: "Tambahkan Video",
+    addVideoIntro: "Pilih Video yang mewakili pengalaman Anda. Ini adalah foto pertama yang akan muncul ketika tamu mencari aktivitas yang dapat dilakukan.",
+    photoGallery: "Foto galeri (opsional)",
+    galleryIntro: "Tambahkan hingga 9 foto yang menggambarkan apa yang akan Anda lakukan selama pengalaman Anda. Galeri foto Anda akan berada d dalami sini, berurutan dari pertama hingga terakhir (setelah foto sampul Anda).",
+    action: "Tindakan",
+    actionText: "Tampilkan tamu yang terlibat dalam pengalaman Anda",
+    detail: "Detail",
+    detailText: "Abadikan close-up tekstur atau detail menarik",
+    location: "Lokasi",
+    locationText: "Tampilkan adegan penuh dan coba sertakan orang",
+    miscellaneous: "Lain-lain",
+    miscellaneousText: "Tambahkan hingga 9 foto",
+    remove: "Menghapus",
+    replace: "Perubahan",
+    uploading: "Mengunggah",
+
     //stepAbout
     tellAboutYourself: "Jadi, ceritakan tentang diri Anda?",
 

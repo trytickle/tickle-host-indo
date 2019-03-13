@@ -1,10 +1,10 @@
 <template>
   <div class="main-content" style="padding-bottom:100px;">
-    <h3 class="heading-3">Tambahkan foto Anda</h3>
+    <h3 class="heading-3">{{$t('addYourPhotos')}}</h3>
     <p class="paragraph-4">
-     Jika Anda tidak memiliki foto yang sempurna saat ini, jangan khawatir. Gunakan yang terbaik yang Anda miliki. Anda dapat menambahkan lebih dari satu atau mengubahnya nanti.
+     {{$t('addPhotoIntro')}}
       <br/><br/>
-      <button class="pagelink" @click="$parent.toggleInfoModal('photoStandards')">Tinjau standar foto kami</button>
+      <button class="pagelink" @click="$parent.toggleInfoModal('photoStandards')">{{$t('reviewPhotoStandards')}}</button>
     </p>
     
     <div class="div-block-4">
@@ -43,14 +43,14 @@
     <input style="display:none" ref ="picker" type="file" name="pic" accept="image/*" @change="onFileChange">
     <input style="display:none" ref ="videoPicker" type="file" name="pic" accept="video/mp4,video/x-m4v,video/*" @change="onVideoFileChange">
     <section style="margin-top: 40px;">
-      <h4 class="content-heading">Foto sampul</h4>
-      <p>Pilih foto yang mewakili pengalaman Anda. Ini adalah foto pertama yang akan muncul ketika tamu mencari aktivitas yang dapat dilakukan.</p>
+      <h4 class="content-heading">{{$t('coverPhoto')}}</h4>
+      <p>{{$t('coverPhotoIntro')}}</p>
       <div class="cover-photo-wrapper">
         <div :class="{'photo-image': $store.state.photos[0], 'photo-element': !$store.state.photos[0]}" @click="pickPhoto(0, 'add')">
           <div class="image-wrapper">
             <div class="buttons-wrapper">
-              <div class="photo-action-button" @click.stop="pickPhoto(0, 'remove')">Menghapus</div>
-              <div class="photo-action-button" @click.stop="pickPhoto(0, 'replace')">Perubahan</div>
+              <div class="photo-action-button" @click.stop="pickPhoto(0, 'remove')">{{$t('remove')}}</div>
+              <div class="photo-action-button" @click.stop="pickPhoto(0, 'replace')">{{$t('replace')}}</div>
             </div>
             <img :src="$store.state.photos[0]">
           </div>
@@ -76,14 +76,14 @@
       </div>
     </section>
      <section style="margin-top: 40px;">
-      <h4 class="content-heading">Tambahkan Video</h4>
-      <p style="margin-bottom: 30px;">Pilih Video yang mewakili pengalaman Anda. Ini adalah foto pertama yang akan muncul ketika tamu mencari aktivitas yang dapat dilakukan.</p>
+      <h4 class="content-heading">{{$t('addVideo')}}</h4>
+      <p style="margin-bottom: 30px;">{{$t('addVideoIntro')}}</p>
       <div class="cover-photo-wrapper">
         <div :class="{'photo-image': $store.state.photos[1], 'photo-element': !$store.state.photos[1]}" @click="pickVideo()">
           <div class="image-wrapper">
             <div class="buttons-wrapper">
-              <div class="photo-action-button" @click.stop="removeVideo()">Menghapus</div>
-              <div class="photo-action-button" @click.stop="pickVideo()">Perubahan</div>
+              <div class="photo-action-button" @click.stop="removeVideo()">{{$t('remove')}}</div>
+              <div class="photo-action-button" @click.stop="pickVideo()">{{$t('replace')}}</div>
             </div>
              <video class="video" width="200" height="300" v-if="$store.state.photos[1]" ref="videoRef" :src="$store.state.photos[1]" id="video-container"  muted loop autoplay></video>  
           </div>
@@ -92,8 +92,8 @@
     </section>
 
     <section style="margin-top: 90px;">
-      <h4 class="content-heading">Foto galeri (opsional)</h4>
-      <p>Tambahkan hingga 9 foto yang menggambarkan apa yang akan Anda lakukan selama pengalaman Anda. Galeri foto Anda akan berada d dalami sini, berurutan dari pertama hingga terakhir (setelah foto sampul Anda).</p>
+      <h4 class="content-heading">{{$t('photoGallery')}}</h4>
+      <p>{{$t('galleryIntro')}}</p>
       <div class="gallery-grid">
         <!-- <div>
           <div :class="{'photo-image': $store.state.photos[1], 'photo-element': !$store.state.photos[1]}" @click="pickPhoto(1, 'add')">
@@ -111,97 +111,97 @@
           <div :class="{'photo-image': $store.state.photos[2], 'photo-element': !$store.state.photos[2]}" @click="pickPhoto(2, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(2, 'remove')">Menghapus</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(2, 'replace')">Perubahan</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(2, 'remove')">{{$t('remove')}}</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(2, 'replace')">{{$t('replace')}}</div>
               </div>
               <img :src="$store.state.photos[2]">
             </div>
           </div>
-          <p class="photo-caption" ><span style="color:#555;font-weight:900;">Tindakan</span> · Tampilkan tamu yang terlibat dalam pengalaman Anda</p>
+          <p class="photo-caption" ><span style="color:#555;font-weight:900;">{{$t('action')}}</span> · {{$t('actionText')}}</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[3], 'photo-element': !$store.state.photos[3]}" @click="pickPhoto(3, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(3, 'remove')">Menghapus</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(3, 'replace')">Perubahan</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(3, 'remove')">{{$t('remove')}}</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(3, 'replace')">{{$t('replace')}}</div>
               </div>
               <img :src="$store.state.photos[3]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Detail</span> · Abadikan close-up tekstur atau detail menarik</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">{{$t('detail')}}</span> · {{$t('detailText')}}</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[4], 'photo-element': !$store.state.photos[4]}" @click="pickPhoto(4, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(4, 'remove')">Menghapus</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(4, 'replace')">Perubahan</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(4, 'remove')">{{$t('remove')}}</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(4, 'replace')">{{$t('replace')}}</div>
               </div>
               <img :src="$store.state.photos[4]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lokasi</span> · Tampilkan adegan penuh dan coba sertakan orang</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">{{$t('location')}}</span> · {{$t('locationText')}}</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[5], 'photo-element': !$store.state.photos[5]}" @click="pickPhoto(5, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(5, 'remove')">Menghapus</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(5, 'replace')">Perubahan</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(5, 'remove')">{{$t('remove')}}</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(5, 'replace')">{{$t('replace')}}</div>
               </div>
               <img :src="$store.state.photos[5]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lain-lain</span> · Tambahkan hingga 9 foto</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">{{$t('miscellaneous')}}</span> · {{$t('miscellaneousText')}}</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[6], 'photo-element': !$store.state.photos[6]}" @click="pickPhoto(6, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(6, 'remove')">Menghapus</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(6, 'replace')">Perubahan</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(6, 'remove')">{{$t('remove')}}</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(6, 'replace')">{{$t('replace')}}</div>
               </div>
               <img :src="$store.state.photos[6]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lain-lain</span> · Tambahkan hingga 9 foto</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">{{$t('miscellaneous')}}</span> · {{$t('miscellaneousText')}}</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[7], 'photo-element': !$store.state.photos[7]}" @click="pickPhoto(7, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(7, 'remove')">Menghapus</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(7, 'replace')">Perubahan</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(7, 'remove')">{{$t('remove')}}</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(7, 'replace')">{{$t('replace')}}</div>
               </div>
               <img :src="$store.state.photos[7]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lain-lain</span> · Tambahkan hingga 9 foto</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">{{$t('miscellaneous')}}</span> · {{$t('miscellaneousText')}}</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[8], 'photo-element': !$store.state.photos[8]}" @click="pickPhoto(8, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(8, 'remove')">Menghapus</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(8, 'replace')">Perubahan</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(8, 'remove')">{{$t('remove')}}</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(8, 'replace')">{{$t('replace')}}</div>
               </div>
               <img :src="$store.state.photos[8]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lain-lain</span> · Tambahkan hingga 9 foto</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">{{$t('miscellaneous')}}</span> · {{$t('miscellaneousText')}}</p>
         </div>
         <div>
           <div :class="{'photo-image': $store.state.photos[9], 'photo-element': !$store.state.photos[9]}" @click="pickPhoto(9, 'add')">
             <div class="image-wrapper">
               <div class="buttons-wrapper">
-                <div class="photo-action-button" @click.stop="pickPhoto(9, 'remove')">Menghapus</div>
-                <div class="photo-action-button" @click.stop="pickPhoto(9, 'replace')">Perubahan</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(9, 'remove')">{{$t('remove')}}</div>
+                <div class="photo-action-button" @click.stop="pickPhoto(9, 'replace')">{{$t('replace')}}</div>
               </div>
               <img :src="$store.state.photos[9]">
             </div>
           </div>
-          <p class="photo-caption"><span style="color:#555;font-weight:900;">Lain-lain</span> · Tambahkan hingga 9 foto</p>
+          <p class="photo-caption"><span style="color:#555;font-weight:900;">{{$t('miscellaneous')}}</span> · {{$t('miscellaneousText')}}</p>
         </div>
       </div>
     </section>
@@ -217,7 +217,7 @@ export default {
   data() {
     return {
       selectedIndex: 0,
-      buttonTitle: "Menyimpan",
+      buttonTitle: this.$t('save'),
       myCroppa: {}
     };
   },
@@ -237,9 +237,9 @@ export default {
           1
         );
       } catch (ex) {}
-      this.buttonTitle = "Mengunggah...";
+      this.buttonTitle = this.$t('uploading')+"...";
       await this.$store.dispatch("uploadImageToDatabase");
-      this.buttonTitle = "Menyimpan";
+      this.buttonTitle = this.$t('save');
       this.$store.commit("setActivePage", "StepAbout");
       this.$parent.switchComponent();
     },

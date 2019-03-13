@@ -2,6 +2,7 @@
   <div>
     <ThankyouModal v-if="showThankyouModal" :title="Thanks"></ThankyouModal>
     <InfoModal v-if="showInfoModal" :title="infoModalTitle"></InfoModal>
+    <Onboardingmodal v-if="showOnBoardingModal"></Onboardingmodal>
     <div>
       <NavBar/>
       <section class="main-section">
@@ -36,7 +37,7 @@ import StepBookingOptions from '@/components/steps/step-bookingoptions.vue';
 import StepReviewSubmit from '@/components/steps/step-reviewsubmit.vue';
 import InfoModal from '@/components/info-modal.vue';
 import ThankyouModal from '@/components/thankyou-modal.vue';
-
+import Onboardingmodal from '@/components/modals/onboarding-modal.vue';
 import Booking from '@/pages/bookings/_experienceId.vue'
 
 export default {
@@ -45,7 +46,8 @@ export default {
       showInfoModal: false,
       showThankyouModal: false,
       infoModalTitle: '',
-      showCreateModal: true
+      showCreateModal: true,
+      showOnBoardingModal: false,
     }
   },
   computed: {
@@ -85,6 +87,10 @@ export default {
         this.showThankyouModal = true
       }
     },
+    closeOnBoardingModal() {
+      this.showOnBoardingModal = false;
+      localStorage.hasSeenOnboarding = true;
+    },
     async reloadData() {
       if (!this.$store.state.user) {
           await this.$store.dispatch('loadCurrentUser');
@@ -106,6 +112,9 @@ export default {
            this.$router.replace("/");
         }
     });
+    if (!localStorage.hasSeenOnboarding) {
+      this.showOnBoardingModal = true;
+    }
   },
   watch: {
     '$route.query'() {
@@ -134,7 +143,8 @@ export default {
     StepReviewSubmit,
     InfoModal,
     ThankyouModal,
-    Booking
+    Booking,
+    Onboardingmodal
   }
 }
 </script>

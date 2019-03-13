@@ -63,9 +63,30 @@ export default {
     save: "Save",
 
     //steptagline
-    //steptagline
     whatIsTagline: "What is your tagline?",
     yourTagline: "Yout tagline",
+
+    //step photos
+    addYourPhotos: "Add your photos",
+    addPhotoIntro: "If you don’t have the perfect photo right now, don’t worry. Use the best one you have on hand. You can add more or change it later. ",
+    reviewPhotoStandards: "Review our photo standards",
+    coverPhoto: "Cover photo",
+    coverPhotoIntro: "Choose a photo that represents your experience. This is the first photo that will appear when guests browse for things to do.",
+    addVideo: "Add Video",
+    addVideoIntro: "Choose a video that represents your experience. This is the first video that will appear when guests browse for things to do.",
+    photoGallery: "Gallery photos (optional)",
+    galleryIntro: "Add up to 9 additional photos that paint a picture of what you’ll be doing during your experience. Your photo gallery slides will be in this order from first to last (after your cover photo).",
+    action: "Action",
+    actionText: "Show guests engaging in your experience",
+    detail: "Details",
+    detailText: "Capture a close-up of textures or interesting details",
+    location: "Location",
+    locationText: "Show the full scene and try to include people",
+    miscellaneous: "Miscellaneous",
+    miscellaneousText: "Add up to 9 photos",
+    remove: "Remove",
+    replace: "Replace",
+    uploading: "Uploading",
 
     //stepAbout
     tellAboutYourself: "So tell us about yourself?",
