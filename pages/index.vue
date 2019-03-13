@@ -2,7 +2,7 @@
   <div>
     <LocalePicker/>
     <div class="bg"></div>
-    <div class="header-img"><img class="icon-image" src="/images/intro-header.png"></div>
+    <div class="header-img"><img class="icon-image" src="/images/tickleIcon.png"></div>
     <div class="container">
       <h3 class="heading-3" style="margin-bottom:20px;text-align:center;">{{ $t('welcomeTickleHost') }}</h3>
       <p style="text-align:center;">{{ $t('welcomeMessage') }}</p>
@@ -339,8 +339,7 @@ export default {
   z-index: -1;
 }
 .icon-image {
-  width: 800px;
-  height: 250px;
+  width: 200px;  
 }
 .container {
   position: relative;
