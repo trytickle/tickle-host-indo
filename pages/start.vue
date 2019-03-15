@@ -114,7 +114,7 @@ export default {
     });
     if (!localStorage.hasSeenOnboarding) {
       this.showOnBoardingModal = true;
-    }
+   }
   },
   watch: {
     '$route.query'() {

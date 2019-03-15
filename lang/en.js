@@ -1,4 +1,9 @@
 export default {
+
+    //onboarding 
+    onboardingText: "Come on, make your experience now!",
+    onBoardingButtonText: "Ok",
+
     // login screen translations
     welcomeTickleHost: "Welcome Tickle host",
     welcomeMessage: "Sign in to your account to create, edit and manage your Tickle bookings and experiences.",
@@ -8,10 +13,15 @@ export default {
     email: "Email",
     password: "Password",
     login: "Login",
-    signup: "Sing up",
+    signup: "Sign up",
     continueWith: "OR CONTINUE WITH",
     firstName: "First name",
     lastName: "Last name",
+    privacyPolicy: "Privacy Policy",
+    signUpAsHost: "Sign up as a Tickle host",
+    and: "And",
+    resetYourPassword: "Reset your password",
+    resetEmailSent: "Please check your email after resetting your password.",
 
       // sidebar
       personalizeExperience: 'Personalize your experience',

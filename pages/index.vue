@@ -13,7 +13,7 @@
       </p>
       <form v-on:submit.prevent="emailLogin" class="email-wrapper">
         <input type="text" class="text-field" placeholder="Email" spellcheck="false" v-model="emailString"/>
-        <input type="password" class="text-field" placeholder="Kata Sandi" spellcheck="false" v-model="passwordString"/>
+        <input type="password" class="text-field" :placeholder="$t('password')" spellcheck="false" v-model="passwordString"/>
         <button class="submit-button" @click.prevent="emailLogin">{{buttonTitle}}</button>
       </form>
       <div class="error-wrapper" style="margin-bottom:20px;margin-top:20px;" v-if="showError">{{errorMessage}}<br><a class="error-wrapper"  v-if="showSendVerification" href="#" @click.prevent="sendVerificationEmail()"><u>Kirim verifikasi email</u></a></div>
@@ -29,18 +29,18 @@
 
     <div class="overlay" :hidden="!showSignupModal">
       <div class="signup-modal">
-        <h3 style="margin-top:-5px;padding-bottom:20px;">Mendaftar sebagai Host Tickle</h3>
+        <h3 style="margin-top:-5px;padding-bottom:20px;">{{$t('signUpAsHost')}}</h3>
         <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;" @click.prevent="showSignupModal=false"></button>
         <form v-on:submit.prevent="emailSignup">
           <span>{{ $t('email') }}</span>
           <input type="text" class="text-field" style="margin-top:5px;" placeholder="Email" spellcheck="false" v-model="emailString"/>
           <span>{{ $t('password') }}</span>
-          <input type="password" class="text-field" style="margin-top:5px;" placeholder="Kata Sandi" spellcheck="false" v-model="passwordString"/>
+          <input type="password" class="text-field" style="margin-top:5px;" :placeholder="$t('password')" spellcheck="false" v-model="passwordString"/>
           <span>{{ $t('firstName') }}</span>
-          <input type="text" class="text-field" style="margin-top:5px;" placeholder="Nama Depan" spellcheck="false" v-model="firstNameString"/>
+          <input type="text" class="text-field" style="margin-top:5px;" :placeholder="$t('firstName')" spellcheck="false" v-model="firstNameString"/>
           <span>{{ $t('lastName') }}</span>
-          <input type="text" class="text-field" style="margin-top:5px;" placeholder="Nama Keluarga" spellcheck="false" v-model="lastNameString"/>
-          <p style="padding-top:10px;color:#222;">Saya setuju dengan <a target="_blank" href="https://trytickle.com/terms-of-service">Ketentuan Layanan</a> dan <a target="_blank" href="https://trytickle.com/guest-refund-policy">Kebijakan Pengembalian Uang Tamu</a> Tickle.</p>
+          <input type="text" class="text-field" style="margin-top:5px;" :placeholder="$t('lastName')" spellcheck="false" v-model="lastNameString"/>
+          <p style="padding-top:10px;color:#222;">{{$t('agreeToTerms')}} <a target="_blank" href="https://trytickle.com/terms-of-service">{{$t('termsOfService')}}</a> {{$t('and')}} <a target="_blank" href="https://trytickle.com/guest-refund-policy">{{$t('privacyPolicy')}}</a> Tickle.</p>
           <div class="error-wrapper-modal" style="margin-bottom:20px;margin-top:20px;" v-if="showModalError">{{errorMessage}}</div>
           <button class="submit-button" style="margin-top:20px;" @click.prevent="emailSignup">{{signupButtonText}}</button>
         </form>
@@ -48,14 +48,14 @@
     </div>
      <div class="overlay" :hidden="!showForgotPassModal">
       <div class="signup-modal">
-        <h3 style="margin-top:-5px;padding-bottom:20px;">Mereset password Anda</h3>
+        <h3 style="margin-top:-5px;padding-bottom:20px;">{{$t('resetYourPassword')}}</h3>
         <button class="fas fa-times" style="position:absolute;right:20px;top:20px;color:#ccc;margin-right:-5px;outline:none;" @click.prevent="showForgotPassModal=false"></button>
         <form v-on:submit.prevent="sendResetPasswordEmail">
           <span>Email</span>
           <input type="text" class="text-field" style="margin-top:5px;" placeholder="Email" spellcheck="false" v-model="emailString"/>
-          <div  style="margin-bottom:20px;margin-top:5px;" >Silakan periksa email Anda setelah mengatur ulang kata sandi Anda.</div>
+          <div  style="margin-bottom:20px;margin-top:5px;" >{{$t('resetEmailSent')}}</div>
           <div class="error-wrapper-modal" style="margin-bottom:20px;margin-top:20px;" v-if="showModalError">{{errorMessage}}</div>
-          <button class="submit-button" style="margin-top:20px;" @click.prevent="sendResetPasswordEmail">Mereset password</button>
+          <button class="submit-button" style="margin-top:20px;" @click.prevent="sendResetPasswordEmail">{{$t('resetYourPassword')}}</button>
         </form>
       </div>
     </div>

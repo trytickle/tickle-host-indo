@@ -17,7 +17,8 @@
                 <img src="images/Iboy.jpg" style="object-fit:cover;border-radius:5px;">
               </div>
             </div>
-            <h1 class="heading1"  @click="$parent.closeOnBoardingModal()" style="color:rgba(8, 192, 255, 1);width:100%;text-align:center;">This is the title to close</h1>
+            <h1 class="heading2" style="color:rgba(8, 192, 255, 1);width:100%;text-align:center;margin-top:-20px">{{$t('onboardingText')}}</h1>
+            <input type="submit" :value="$t('onBoardingButtonText')" class="submit-button" style="font-size:30px;margin-top:-50px" @click.prevent="$parent.closeOnBoardingModal()" >
       </div>
     
     </div>

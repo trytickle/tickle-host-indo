@@ -1,4 +1,9 @@
 export default {
+    //onboarding 
+    onboardingText: "Ayo buat Experience Kamu Sekarang!",
+    onBoardingButtonText: "Baik",
+  
+
     // login screen translations 
     welcomeTickleHost: 'Selamat datang, host Tickle!',
     welcomeMessage: 'Masuk ke akun Anda untuk membuat, mengubah, dan mengelola pemesanan serta pengalaman Tickle Anda.',
@@ -12,6 +17,11 @@ export default {
     continueWith: "ATAU LANJUTKAN DENGAN",
     firstName: "Nama Depan",
     lastName: "Nama Keluarga",
+    privacyPolicy: "Kebijakan Pengembalian Uang Tamu",
+    signUpAsHost: "Mendaftar sebagai Host Tickle",
+    and: "Dan",
+    resetYourPassword: "Mereset password Anda",
+    resetEmailSent: "Silakan periksa email Anda setelah mengatur ulang kata sandi Anda.",
 
     // sidebar
     personalizeExperience: 'Deskripsikan Experience Anda',
