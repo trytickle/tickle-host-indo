@@ -3,6 +3,7 @@
     <ThankyouModal v-if="showThankyouModal" :title="Thanks"></ThankyouModal>
     <InfoModal v-if="showInfoModal" :title="infoModalTitle"></InfoModal>
     <Onboardingmodal v-if="showOnBoardingModal"></Onboardingmodal>
+    <PaymentModal v-if="showPaymentModal"></PaymentModal>
     <div>
       <NavBar/>
       <section class="main-section">
@@ -15,65 +16,67 @@
 </template>
 
 <script>
-import { db, auth} from '~/plugins/firebase';
-import NavBar from '@/components/navbar.vue';
-import SideBar from '@/components/sidebar.vue';
-import InfoBar from '@/components/infobar.vue';
-import StepTitle from '@/components/steps/step-title.vue';
-import StepTagline from '@/components/steps/step-tagline.vue';
-import StepPhotos from '@/components/steps/step-photos.vue';
-import StepAbout from '@/components/steps/step-about.vue';
-import StepWhatWeDo from '@/components/steps/step-whatwedo.vue';
-import StepWhatIProvide from '@/components/steps/step-whatiprovide.vue';
-import StepWhereWeBe from '@/components/steps/step-wherewebe.vue';
-import StepNotes from '@/components/steps/step-notes.vue';
-import StepWhereWeMeet from '@/components/steps/step-wherewemeet.vue';
-import StepCategory from '@/components/steps/step-category.vue';
-import StepGuestRequirements from '@/components/steps/step-guestrequirements.vue';
-import StepPrice from '@/components/steps/step-price.vue';
-import StepCancellationPolicy from '@/components/steps/step-cancellationpolicy.vue';
-import StepAvailability from '@/components/steps/step-availability.vue';
-import StepBookingOptions from '@/components/steps/step-bookingoptions.vue';
-import StepReviewSubmit from '@/components/steps/step-reviewsubmit.vue';
-import InfoModal from '@/components/info-modal.vue';
-import ThankyouModal from '@/components/thankyou-modal.vue';
-import Onboardingmodal from '@/components/modals/onboarding-modal.vue';
-import Booking from '@/pages/bookings/_experienceId.vue'
+import { db, auth } from "~/plugins/firebase";
+import NavBar from "@/components/navbar.vue";
+import SideBar from "@/components/sidebar.vue";
+import InfoBar from "@/components/infobar.vue";
+import StepTitle from "@/components/steps/step-title.vue";
+import StepTagline from "@/components/steps/step-tagline.vue";
+import StepPhotos from "@/components/steps/step-photos.vue";
+import StepAbout from "@/components/steps/step-about.vue";
+import StepWhatWeDo from "@/components/steps/step-whatwedo.vue";
+import StepWhatIProvide from "@/components/steps/step-whatiprovide.vue";
+import StepWhereWeBe from "@/components/steps/step-wherewebe.vue";
+import StepNotes from "@/components/steps/step-notes.vue";
+import StepWhereWeMeet from "@/components/steps/step-wherewemeet.vue";
+import StepCategory from "@/components/steps/step-category.vue";
+import StepGuestRequirements from "@/components/steps/step-guestrequirements.vue";
+import StepPrice from "@/components/steps/step-price.vue";
+import StepCancellationPolicy from "@/components/steps/step-cancellationpolicy.vue";
+import StepAvailability from "@/components/steps/step-availability.vue";
+import StepBookingOptions from "@/components/steps/step-bookingoptions.vue";
+import StepReviewSubmit from "@/components/steps/step-reviewsubmit.vue";
+import InfoModal from "@/components/info-modal.vue";
+import ThankyouModal from "@/components/thankyou-modal.vue";
+import Onboardingmodal from "@/components/modals/onboarding-modal.vue";
+import PaymentModal from "@/components/modals/payment-modal.vue";
+import Booking from "@/pages/bookings/_experienceId.vue";
 
 export default {
   data() {
     return {
       showInfoModal: false,
       showThankyouModal: false,
-      infoModalTitle: '',
+      infoModalTitle: "",
+      showPaymentModal: false,
       showCreateModal: true,
-      showOnBoardingModal: false,
-    }
+      showOnBoardingModal: false
+    };
   },
   computed: {
     currentComponent() {
       if (this.$store.state.activePage) {
         return this.$store.state.activePage;
       } else {
-        return 'StepTitle';
+        return "StepTitle";
       }
     }
   },
   async fetch({ store, query }) {
-    store.commit('setEmail', query.email);
-    store.commit('setActivePage', query.step);
-    store.commit('setName', query.name);
+    store.commit("setEmail", query.email);
+    store.commit("setActivePage", query.step);
+    store.commit("setName", query.name);
   },
   async created() {
     this.reloadData();
   },
   methods: {
     switchComponent() {
-      this.$router.push({query: {step: this.$store.state.activePage}});
+      this.$router.push({ query: { step: this.$store.state.activePage } });
     },
     toggleInfoModal(title) {
       if (this.showInfoModal) {
-        this.infoModalTitle = '';
+        this.infoModalTitle = "";
         this.showInfoModal = false;
       } else {
         this.infoModalTitle = title;
@@ -82,48 +85,61 @@ export default {
     },
     toggleThankyouModal() {
       if (this.showThankyouModal) {
-        this.showThankyouModal = false
+        this.showThankyouModal = false;
       } else {
-        this.showThankyouModal = true
+        this.showThankyouModal = true;
       }
     },
     closeOnBoardingModal() {
       this.showOnBoardingModal = false;
       localStorage.hasSeenOnboarding = true;
     },
+    togglePaymentMethod() {
+      if (this.showPaymentModal) {
+        this.showPaymentModal = false;
+      } else {
+        this.showPaymentModal = true;
+      }
+    },
     async reloadData() {
       if (!this.$store.state.user) {
-          await this.$store.dispatch('loadCurrentUser');
-          const submissionData = await this.$store.dispatch('createOrLoadSubmissionDoc', { email: this.$store.state.email, name: this.$store.state.firstName });
-          await this.$store.dispatch('loadBookings');
-          await this.$store.dispatch('loadAvailabilities');
+        await this.$store.dispatch("loadCurrentUser");
+        const submissionData = await this.$store.dispatch(
+          "createOrLoadSubmissionDoc",
+          { email: this.$store.state.email, name: this.$store.state.firstName }
+        );
+        await this.$store.dispatch("loadBookings");
+        await this.$store.dispatch("loadAvailabilities");
       } else {
-          const submissionData = await this.$store.dispatch('createOrLoadSubmissionDoc', { email: this.$store.state.email, name: this.$store.state.firstName });
-          await this.$store.dispatch('loadBookings');
-          await this.$store.dispatch('loadAvailabilities');
+        const submissionData = await this.$store.dispatch(
+          "createOrLoadSubmissionDoc",
+          { email: this.$store.state.email, name: this.$store.state.firstName }
+        );
+        await this.$store.dispatch("loadBookings");
+        await this.$store.dispatch("loadAvailabilities");
       }
     }
   },
   mounted() {
     auth.onAuthStateChanged(user => {
       if (user) {
-         this.reloadData();
-        } else {
-           this.$router.replace("/");
-        }
+        this.reloadData();
+      } else {
+        this.$router.replace("/");
+      }
     });
     if (!localStorage.hasSeenOnboarding) {
       this.showOnBoardingModal = true;
-   }
+    }
   },
   watch: {
-    '$route.query'() {
-      this.$store.commit('setActivePage', this.$route.query.step)
+    "$route.query"() {
+      this.$store.commit("setActivePage", this.$route.query.step);
     }
   },
   components: {
     NavBar,
-    SideBar, 
+    SideBar,
     InfoBar,
     StepTitle,
     StepTagline,
@@ -144,9 +160,10 @@ export default {
     InfoModal,
     ThankyouModal,
     Booking,
-    Onboardingmodal
+    Onboardingmodal,
+    PaymentModal
   }
-}
+};
 </script>
 <style scoped>
 .is-active {
@@ -155,7 +172,7 @@ export default {
   height: 100%;
   min-width: 1560px;
   min-height: 950px;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 99999;
   display: grid;
   align-items: center;

@@ -43,7 +43,7 @@
 
 <script>
 import { updateSubmissionField } from "~/services/firebase-service";
-import _ from 'lodash';
+import _ from "lodash";
 
 export default {
   data() {
@@ -53,7 +53,7 @@ export default {
       check3: false,
       errorMessage: null,
       showError: false,
-      buttonTitle: this.$t('submitExperience')
+      buttonTitle: this.$t("submitExperience")
     };
   },
   methods: {
@@ -83,8 +83,8 @@ export default {
         errorStrings.push("Di mana kami berada");
       }
       if (
-        this.$store.state.whereWeMeet &&
-        this.$store.state.whereWeMeet.city === null ||
+        (this.$store.state.whereWeMeet &&
+          this.$store.state.whereWeMeet.city === null) ||
         this.$store.state.whereWeMeet.country === null ||
         this.$store.state.whereWeMeet.streetAddress === null ||
         this.$store.state.whereWeMeet.zipcode === null ||
@@ -96,8 +96,8 @@ export default {
         errorStrings.push("Kategori");
       }
       if (
-        this.$store.state.guestRequirements &&
-        this.$store.state.guestRequirements.minimumAge === null ||
+        (this.$store.state.guestRequirements &&
+          this.$store.state.guestRequirements.minimumAge === null) ||
         this.$store.state.guestRequirements.kidsAllowed === null ||
         this.$store.state.guestRequirements.servesAlcohol === null ||
         this.$store.state.guestRequirements.requireVerified === null ||
@@ -112,15 +112,22 @@ export default {
         errorStrings.push("Kebijakan pembatalan");
       }
       if (
-        this.$store.state.bookingOptions && 
-        this.$store.state.bookingOptions.bookBefore === null ||
+        (this.$store.state.bookingOptions &&
+          this.$store.state.bookingOptions.bookBefore === null) ||
         this.$store.state.maxGuestCount === null ||
         this.$store.state.maxDuration === null
       ) {
         errorStrings.push("Opsi pemesanan");
       }
 
-      this.errorMessage = errorStrings.join(', ');
+      if (
+        this.$store.state.user.settings &&
+        !this.$store.state.user.settings.payoutMethods
+      ) {
+        errorStrings.push("Silakan tambahkan metode pembayaran");
+      }
+
+      this.errorMessage = errorStrings.join(", ");
 
       return errorStrings.length > 0 ? true : false;
     },
@@ -130,7 +137,7 @@ export default {
           this.showError = true;
           return;
         }
-        this.buttonTitle = this.$t('submitting')+"...";
+        this.buttonTitle = this.$t("submitting") + "...";
         const status = {
           isDraft: false,
           inReview: true,
@@ -139,48 +146,68 @@ export default {
         };
         const createdAt = new Date().getTime();
 
-        await updateSubmissionField("status", status, this.$store.state.submissionId);
-        await updateSubmissionField("createdAt", createdAt, this.$store.state.submissionId);
-        await updateSubmissionField("lastEdited", createdAt, this.$store.state.submissionId);
+        await updateSubmissionField(
+          "status",
+          status,
+          this.$store.state.submissionId
+        );
+        await updateSubmissionField(
+          "createdAt",
+          createdAt,
+          this.$store.state.submissionId
+        );
+        await updateSubmissionField(
+          "lastEdited",
+          createdAt,
+          this.$store.state.submissionId
+        );
 
-        const expTitle = _.startCase(this.$store.state.title).trim() + " with " + this.$store.state.name
+        const expTitle =
+          _.startCase(this.$store.state.title).trim() +
+          " with " +
+          this.$store.state.name;
         const context = this.$store;
         const submissionData = {
-            submissionId: context.state.submissionId,
-            title : context.state.title,
-            subtitle : context.state.label,
-            tagline : context.state.tagline,
-            maxDuration : context.state.maxDuration,
-            minDuration : 0,
-            languages : [context.state.language],
-            whatWeDo : context.state.whatWeDo,
-            whatIProvide : context.state.whatIProvide,
-            whereWeBe : context.state.whereWeBe,
-            maxGuestCount : context.state.maxGuestCount,
-            minGuestCount : 0,
-            notes : context.state.notes,
-            bookingOptions : context.state.bookingOptions,
-            cancellationPolicy : context.state.cancellationPolicy,
-            categoryPrimary : context.state.categoryPrimary,
-            categorySecondary : context.state.categorySecondary,
-            currency : context.state.currency,
-            guestRequirements : context.state.guestRequirements,
-            media : context.state.photos,
-            pricePerPax : context.state.pricePerPax,
-            whereWeMeet : context.state.whereWeMeet,
-            aboutHost : {description:context.state.about,hostId: context.state.user.userId}
-        }
+          submissionId: context.state.submissionId,
+          title: context.state.title,
+          subtitle: context.state.label,
+          tagline: context.state.tagline,
+          maxDuration: context.state.maxDuration,
+          minDuration: 0,
+          languages: [context.state.language],
+          whatWeDo: context.state.whatWeDo,
+          whatIProvide: context.state.whatIProvide,
+          whereWeBe: context.state.whereWeBe,
+          maxGuestCount: context.state.maxGuestCount,
+          minGuestCount: 0,
+          notes: context.state.notes,
+          bookingOptions: context.state.bookingOptions,
+          cancellationPolicy: context.state.cancellationPolicy,
+          categoryPrimary: context.state.categoryPrimary,
+          categorySecondary: context.state.categorySecondary,
+          currency: context.state.currency,
+          guestRequirements: context.state.guestRequirements,
+          media: context.state.photos,
+          pricePerPax: context.state.pricePerPax,
+          whereWeMeet: context.state.whereWeMeet,
+          aboutHost: {
+            description: context.state.about,
+            hostId: context.state.user.userId
+          }
+        };
         const body = {
           submissionId: this.$store.state.submissionId,
           firstName: this.$store.state.name,
           email: this.$store.state.email,
           submissionData: submissionData
-        }
+        };
         console.log(body);
-        await this.$axios.$post(process.env.functionsUrl + 'sendSubmissionInReviewEmail', body);
-        this.buttonTitle = this.$t('submitExperience');
+        await this.$axios.$post(
+          process.env.functionsUrl + "sendSubmissionInReviewEmail",
+          body
+        );
+        this.buttonTitle = this.$t("submitExperience");
         this.$parent.toggleThankyouModal();
-
       } catch (error) {
         console.error(error);
       }

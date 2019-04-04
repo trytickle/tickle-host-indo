@@ -41,7 +41,7 @@
       </div>
       <LocalePicker :isMenu="true"/>
       <div>
-        <!-- <a v-if="this.$store.state.user && !this.$store.state.user.settings.payoutMethods" target="_blank" rel="noopener noreferrer" :href=stripeUrl><button class="text-block link">Connect Stripe</button></a> -->
+        <a v-if="this.$store.state.user" target="_blank" rel="noopener noreferrer" ><button @click="$parent.togglePaymentMethod()" class="text-block link">{{$t('addPayoutMethod')}}</button></a>
       </div>
       <!-- <div v-if="$store.state.user && !$store.state.user.isVerified">
         <button class="text-block link"  @click.prevent="showVerifyModel=true">Verifikasi akun</button>
@@ -83,10 +83,10 @@
 </template>
 
 <script>
-import {auth, db} from "~/plugins/firebase";
+import { auth, db } from "~/plugins/firebase";
 import { resizeImage } from "~/services/utility";
-import { uploadImageToVerification } from '~/services/firebase-service';
-import LocalePicker from '~/components/locale-picker';
+import { uploadImageToVerification } from "~/services/firebase-service";
+import LocalePicker from "~/components/locale-picker";
 
 export default {
   data() {
@@ -98,13 +98,13 @@ export default {
       verifyButtonText: "Simpan dan Verifikasi",
       showDeleteExperienceTitle: null,
       deleteSubmission: null,
-      removeButtonTitle:  this.$t("remove"),
+      removeButtonTitle: this.$t("remove"),
       showError: false,
       errorMessage: "Error",
       verifyPhotoSide: 0,
       frontVerifyFile: null,
       backVerifyFile: null
-    }
+    };
   },
   components: {
     LocalePicker
@@ -115,13 +115,13 @@ export default {
       this.$router.replace("/");
     },
     openHome() {
-      this.$router.replace({ path: '/start?step=StepTitle', redirect: '/' })
+      this.$router.replace({ path: "/start?step=StepTitle", redirect: "/" });
       location.reload();
     },
     openBooking(id) {
       localStorage.bookingExperienceId = id;
-      this.$store.commit('setActivePage', 'Booking');
-      this.$store.commit('setBookingExperienceId', id);
+      this.$store.commit("setActivePage", "Booking");
+      this.$store.commit("setBookingExperienceId", id);
       this.$parent.switchComponent();
       // location.reload()
     },
@@ -137,82 +137,100 @@ export default {
       resizeImage(file, (resizedFilePath, outputFile) => {
         //upload
         if (this.verifyPhotoSide == 0) {
-          this.frontVerifyFile = outputFile
+          this.frontVerifyFile = outputFile;
         } else {
-          this.backVerifyFile = outputFile
+          this.backVerifyFile = outputFile;
         }
       });
     },
     async saveAndVerify() {
       if (!this.frontVerifyFile || !this.backVerifyFile) {
-        this.verifyErrorMessage= "Unggah kedua belah pihak."
+        this.verifyErrorMessage = "Unggah kedua belah pihak.";
         this.showVerifyError = true;
         return;
       }
-      this.verifyButtonText = "Penghematan..."
+      this.verifyButtonText = "Penghematan...";
       await uploadImageToVerification("front", this.frontVerifyFile);
       await uploadImageToVerification("back", this.backVerifyFile);
-      await db.collection("users").doc(this.$store.state.user.userId).update({"isVerified": true});
-      location.reload()
+      await db
+        .collection("users")
+        .doc(this.$store.state.user.userId)
+        .update({ isVerified: true });
+      location.reload();
     },
     async openSubmission(submission) {
       localStorage.submissionId = submission.submissionId;
-      this.$router.replace({ path: '/start?step=StepTitle', redirect: '/' })
+      this.$router.replace({ path: "/start?step=StepTitle", redirect: "/" });
       location.reload();
     },
     async createExperience() {
-      this.$router.replace({ path: '/start?step=StepTitle', redirect: '/' })
-      await this.$store.dispatch('createExperience');
+      this.$router.replace({ path: "/start?step=StepTitle", redirect: "/" });
+      await this.$store.dispatch("createExperience");
     },
     getExperienceBookings(experienceId) {
-      if(this.$router.currentRoute.path.includes("bookings")) {
-        return experienceId
-      } 
-      return "bookings/"+experienceId;
+      if (this.$router.currentRoute.path.includes("bookings")) {
+        return experienceId;
+      }
+      return "bookings/" + experienceId;
     },
     showdeleteExperience(title, submission) {
-      this.showDeleteExperienceTitle = title
-      this.showDeleteModal = true
-      this.showError = false
-      this.deleteSubmission = submission
+      this.showDeleteExperienceTitle = title;
+      this.showDeleteModal = true;
+      this.showError = false;
+      this.deleteSubmission = submission;
     },
     async deleteExperience() {
       if (this.deleteSubmission) {
-          this.showError = false
-          this.removeButtonTitle =   this.$t("removing")+"..."
+        this.showError = false;
+        this.removeButtonTitle = this.$t("removing") + "...";
         if (!this.deleteSubmission.status.isApproved) {
-          await this.deleteSubmissionCF()
+          await this.deleteSubmissionCF();
         } else {
-          const existingBookings = await db.collection("bookings").where("experienceId", '==', this.deleteSubmission.submissionId).where("hasFinished", "==", false).where("hasBeenCanceled","==", false).get()
+          const existingBookings = await db
+            .collection("bookings")
+            .where("experienceId", "==", this.deleteSubmission.submissionId)
+            .where("hasFinished", "==", false)
+            .where("hasBeenCanceled", "==", false)
+            .get();
           if (existingBookings.empty) {
-            await this.deleteSubmissionCF()
+            await this.deleteSubmissionCF();
           } else {
-            this.errorMessage = "Your experience has "+ existingBookings.docs.length+ " future bookings and cannot be removed until its over or canceled"
+            this.errorMessage =
+              "Your experience has " +
+              existingBookings.docs.length +
+              " future bookings and cannot be removed until its over or canceled";
             this.showError = true;
-             this.removeButtonTitle =  this.$t("remove")
+            this.removeButtonTitle = this.$t("remove");
           }
         }
       }
     },
     async deleteSubmissionCF() {
-        try {
-          const body = {
-            submissionId: this.deleteSubmission.submissionId,
-          };
-          await this.$axios.$post(process.env.functionsUrl + "/deleteSubmission", body);
-          //localStorage.submissionId = undefined;
-          location.reload();
-        } catch (error) {
-          console.error(error);
-          this.errorMessage = error.message;
-          this.showError = true;
-           this.removeButtonTitle =  this.$t("remove")
-        }
-    } 
+      try {
+        const body = {
+          submissionId: this.deleteSubmission.submissionId
+        };
+        await this.$axios.$post(
+          process.env.functionsUrl + "/deleteSubmission",
+          body
+        );
+        //localStorage.submissionId = undefined;
+        location.reload();
+      } catch (error) {
+        console.error(error);
+        this.errorMessage = error.message;
+        this.showError = true;
+        this.removeButtonTitle = this.$t("remove");
+      }
+    }
   },
   computed: {
-    stripeUrl: function () {
-      return "https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_CtvlrAxzSw8eobieqCrSnFcbjro9kYnG&scope=read_write&redirect_uri="+process.env.functionsUrl+"stripeConnectAccessToken"
+    stripeUrl: function() {
+      return (
+        "https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_CtvlrAxzSw8eobieqCrSnFcbjro9kYnG&scope=read_write&redirect_uri=" +
+        process.env.functionsUrl +
+        "stripeConnectAccessToken"
+      );
     }
   }
 };
@@ -247,7 +265,7 @@ export default {
   display: block;
 }
 .menu-item-cell {
-  display:grid;
+  display: grid;
   grid-template-columns: 320px auto;
   align-items: center;
 }
