@@ -33,7 +33,7 @@
           <img src="images/example4.jpg" width="180" height="250" class="image" style="object-fit:cover;">
         </div>
         <div class="example-wrapper">
-          <img src="images/photo-example-5.jpg" width="180" height="250" class="image" style="object-fit:cover;">
+          <img src="images/photo-example-4.jpg" width="180" height="250" class="image" style="object-fit:cover;">
         </div>
         <div class="example-wrapper">
           <img src="images/photo-example-6.jpg" width="180" height="250" class="image" style="object-fit:cover;">
@@ -217,7 +217,7 @@ export default {
   data() {
     return {
       selectedIndex: 0,
-      buttonTitle: this.$t('save'),
+      buttonTitle: this.$t("save"),
       myCroppa: {}
     };
   },
@@ -237,9 +237,9 @@ export default {
           1
         );
       } catch (ex) {}
-      this.buttonTitle = this.$t('uploading')+"...";
+      this.buttonTitle = this.$t("uploading") + "...";
       await this.$store.dispatch("uploadImageToDatabase");
-      this.buttonTitle = this.$t('save');
+      this.buttonTitle = this.$t("save");
       this.$store.commit("setActivePage", "StepAbout");
       this.$parent.switchComponent();
     },
@@ -465,13 +465,13 @@ button {
   top: 0;
   bottom: 0;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   overflow: hidden;
 }
 .video-container video {
   /* Make video to at least 100% wide and tall */
-  min-width: 100%; 
-  min-height: 100%; 
+  min-width: 100%;
+  min-height: 100%;
 
   /* Setting width & height to auto prevents the browser from stretching or squishing the video */
   width: 200;
@@ -481,7 +481,7 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .video {
   object-fit: cover;

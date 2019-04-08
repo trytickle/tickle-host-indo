@@ -69,9 +69,9 @@ import {
   googleAuthProvider,
   facebookAuthProvider
 } from "~/plugins/firebase";
-import Vue from 'vue';
-import VueI18n from 'vue-i18n';
-import LocalePicker from '~/components/locale-picker';
+import Vue from "vue";
+import VueI18n from "vue-i18n";
+import LocalePicker from "~/components/locale-picker";
 
 export default {
   data() {
@@ -106,8 +106,8 @@ export default {
         this.showVerifySent = false;
         this.showSendVerification = false;
         this.showError = false;
-        this.buttonTitle = this.$t("login")+"...";
-        
+        this.buttonTitle = this.$t("login") + "...";
+
         try {
           const result = await auth.signInWithEmailAndPassword(
             this.emailString,
@@ -123,7 +123,7 @@ export default {
           this.showError = true;
           this.buttonTitle = this.$t("login");
           this.showSignupModal = false;
-          this.signupButtonText = this.$t("signup")
+          this.signupButtonText = this.$t("signup");
         }
       } else {
         if (!this.validateEmail(this.emailString)) {
@@ -139,13 +139,13 @@ export default {
       }
     },
     async emailSignup() {
-       if (
+      if (
         this.validateEmail(this.emailString) &&
-        this.passwordString.length > 5 && 
-        this.firstNameString.length > 0 && 
+        this.passwordString.length > 5 &&
+        this.firstNameString.length > 0 &&
         this.lastNameString.length > 0
       ) {
-        this.signupButtonText = this.$t("signup")+"...";
+        this.signupButtonText = this.$t("signup") + "...";
         this.showModalError = false;
         try {
           const result = await auth.createUserWithEmailAndPassword(
@@ -179,7 +179,7 @@ export default {
           this.signupButtonText = this.$t("signup");
         }
       } else {
-         if (!this.validateEmail(this.emailString)) {
+        if (!this.validateEmail(this.emailString)) {
           this.errorMessage = "Masukkan email yang valid.";
           this.showModalError = true;
           return;
@@ -196,7 +196,7 @@ export default {
         }
         if (this.lastNameString.length == 0) {
           this.errorMessage = "Masukkan nama belakang yang valid";
-           this.showModalError = true;
+          this.showModalError = true;
           return;
         }
       }
@@ -240,7 +240,7 @@ export default {
           process.env.functionsUrl + "/createNewUser",
           body
         );
-        auth.currentUser.sendEmailVerification()
+        auth.currentUser.sendEmailVerification();
         this.takeToStart(isSocialLogin, true);
       } catch (error) {
         if (error.response.status == 400) {
@@ -256,38 +256,41 @@ export default {
       if (auth.currentUser.emailVerified || isSocialLogin) {
         await this.$store.dispatch("loadCurrentUser");
         if (this.$store.state.user) {
-          this.$router.push(this.localePath({name: 'start', params: { step: 'StepTitle' }}));
+          this.$router.push(
+            this.localePath({ name: "start", params: { step: "StepTitle" } })
+          );
         }
       } else {
         if (isSignUp) {
-          console.log("verification email sent")
-          this.sendVerificationEmail()
+          console.log("verification email sent");
+          this.sendVerificationEmail();
         } else {
           this.showSendVerification = true;
           this.showError = true;
-          this.buttonTitle = this.$t("login"),
-          this.signupButtonText = this.$t("signup")
+          (this.buttonTitle = this.$t("login")),
+            (this.signupButtonText = this.$t("signup"));
           this.showSignupModal = false;
-          this.errorMessage = "Email tidak terverifikasi. Anda perlu memverifikasi alamat email Anda sebelum masuk."
+          this.errorMessage =
+            "Email tidak terverifikasi. Anda perlu memverifikasi alamat email Anda sebelum masuk.";
         }
       }
     },
     async sendVerificationEmail() {
-        this.buttonTitle = this.$t("login"),
-        this.signupButtonText = this.$t("signup")
-        this.showSignupModal = false;
-        this.showSendVerification = false;
-        this.showError = false;
-        auth.currentUser.sendEmailVerification()
-        this.showVerifySent = true;
-        auth.signOut();
+      (this.buttonTitle = this.$t("login")),
+        (this.signupButtonText = this.$t("signup"));
+      this.showSignupModal = false;
+      this.showSendVerification = false;
+      this.showError = false;
+      auth.currentUser.sendEmailVerification();
+      this.showVerifySent = true;
+      auth.signOut();
     },
     async sendResetPasswordEmail() {
       if (this.validateEmail(this.emailString)) {
         auth.sendPasswordResetEmail(this.emailString);
         this.showForgotPassModal = false;
         this.showModalError = false;
-        this.emailString = ""
+        this.emailString = "";
       } else {
         this.showModalError = true;
         this.errorMessage = "Masukkan email yang valid";
@@ -295,24 +298,33 @@ export default {
     },
     onLanguageChanged() {
       if (this.selectedLanguage == "English") {
-        this.$router.push(this.switchLocalePath('en'));
+        this.$router.push(this.switchLocalePath("en"));
       } else {
-        this.$router.push(this.switchLocalePath('en'));
+        this.$router.push(this.switchLocalePath("en"));
+      }
+    },
+    isMobile() {
+      if (window.innerWidth <= 600) {
+        window.location.href = "https://trytickle.typeform.com/to/tqjOE2";
+        return true;
+      } else {
+        console.log("desktop");
+        return false;
       }
     }
   },
   mounted() {
-    Vue.use(VueI18n)
+    Vue.use(VueI18n);
+    this.isMobile();
     auth.onAuthStateChanged(user => {
       if (user) {
         //this.takeToStart();
-     
       }
     });
   },
   computed: {
-    availableLocales () {
-      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+    availableLocales() {
+      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale);
     }
   }
 };
@@ -339,7 +351,7 @@ export default {
   z-index: -1;
 }
 .icon-image {
-  width: 200px;  
+  width: 200px;
 }
 .container {
   position: relative;
@@ -454,13 +466,13 @@ export default {
   max-width: 320px;
   overflow: hidden;
   padding-bottom: 4px;
-  margin: 10px
+  margin: 10px;
 }
 .menu-button:hover .menu {
   display: block;
 }
 .menu-item-cell {
-  display:grid;
+  display: grid;
   grid-template-columns: 120px auto;
   align-items: center;
 }

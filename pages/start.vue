@@ -118,9 +118,19 @@ export default {
         await this.$store.dispatch("loadBookings");
         await this.$store.dispatch("loadAvailabilities");
       }
+    },
+    isMobile() {
+      if (window.innerWidth <= 600) {
+        window.location.href = "https://trytickle.typeform.com/to/tqjOE2";
+        return true;
+      } else {
+        console.log("desktop");
+        return false;
+      }
     }
   },
   mounted() {
+    this.isMobile();
     auth.onAuthStateChanged(user => {
       if (user) {
         this.reloadData();
@@ -128,6 +138,7 @@ export default {
         this.$router.replace("/");
       }
     });
+
     if (!localStorage.hasSeenOnboarding) {
       this.showOnBoardingModal = true;
     }

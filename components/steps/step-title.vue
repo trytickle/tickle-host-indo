@@ -6,11 +6,11 @@
      <div class="text-block-2">{{ $t("examples")}}</div>
       <div class="div-block-5">
         <div class="example-wrapper">
-          <div class="text-block-3">Men's Shirt – Japanese Style with Andrina</div><img src="images/example1.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
+          <div class="text-block-3">Jakarta Night Cycle with Oki</div><img src="images/example1.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
         <div class="example-wrapper">
           <div class="text-block-3">Basic DJ Knowledge with DJ Rhino</div><img src="images/example2.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
         <div class="example-wrapper">
-          <div class="text-block-3">Jakarta Night Cycle with Oki</div><img src="images/example3.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
+          <div class="text-block-3">Men's Shirt – Japanese Style with Andrina</div><img src="images/example3.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
        <div class="example-wrapper">
           <div class="text-block-3">Toy Photography with Iboy</div><img src="images/example4.jpg" width="180" height="250" class="image" style="object-fit:cover;"></div>
       </div>
@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import { updateSubmissionField } from '~/services/firebase-service';
-import _ from 'lodash';
+import { updateSubmissionField } from "~/services/firebase-service";
+import _ from "lodash";
 
 export default {
   data() {
@@ -39,13 +39,17 @@ export default {
   methods: {
     nextClicked() {
       if (localStorage.submissionId) {
-        console.log("updating")
-        updateSubmissionField('title', _.startCase(this.$store.state.title).trim(), this.$store.state.submissionId);
-        this.$store.commit('setActivePage', 'StepTagline');
+        console.log("updating");
+        updateSubmissionField(
+          "title",
+          _.startCase(this.$store.state.title).trim(),
+          this.$store.state.submissionId
+        );
+        this.$store.commit("setActivePage", "StepTagline");
         this.$parent.switchComponent();
       } else {
-        console.log("creating")
-        this.$store.dispatch('createExperience', this.$store.state.title);
+        console.log("creating");
+        this.$store.dispatch("createExperience", this.$store.state.title);
       }
     }
   },
@@ -58,7 +62,7 @@ export default {
       }
     }
   }
-}
+};
 </script>
 
 <style scoped>
