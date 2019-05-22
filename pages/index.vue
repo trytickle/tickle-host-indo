@@ -22,8 +22,8 @@
         <span style="align:center;font-size:11px;font-weight:600;color:#ccc;">{{ $t('continueWith')}}</span>
       </div>
       <div style="margin:auto;">
-        <button class="fb-button" style="margin-right:10px;" @click.prevent="fbLogin">{{ isFacebookLogin ? 'Masuk...' : 'Facebook' }}</button>
-        <button id="google" class="google-button" @click.prevent="googleLogin" >{{ isGoogleLogin ? 'Masuk...' : 'Google' }}</button>
+        <button class="fb-button" style="margin-right:10px;" @click.prevent="fbLogin">Facebook</button>
+        <button id="google" class="google-button" @click.prevent="googleLogin" >Google</button>
       </div>
     </div>
 
@@ -91,9 +91,7 @@ export default {
       showForgotPassModal: false,
       showModalError: false,
       selectedLanguage: "Bahasa Indonesia",
-      languages: ["Bahasa ", "English"],
-      isGoogleLogin: false,
-      isFacebookLogin: false
+      languages: ["Bahasa ", "English"]
     };
   },
   components: {
@@ -205,11 +203,9 @@ export default {
     },
     fbLogin() {
       this.socialLogin(facebookAuthProvider);
-      this.isFacebookLogin = true;
     },
     googleLogin() {
       this.socialLogin(googleAuthProvider);
-      this.isGoogleLogin = true;
     },
     async socialLogin(provider) {
       try {
@@ -233,8 +229,6 @@ export default {
       } catch (error) {
         console.error(error);
       }
-      this.isFacebookLogin = false;
-      this.isGoogleLogin = false;
     },
     validateEmail(email) {
       const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
