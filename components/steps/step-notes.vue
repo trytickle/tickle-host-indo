@@ -22,7 +22,7 @@ export default {
       if (this.$store.state.notes.trim().length > 0) {
         updateSubmissionField('notes', this.$store.state.notes.trim(), this.$store.state.submissionId);
       }
-      this.$store.commit('setActivePage', 'StepWhereWeMeet');
+      this.$store.commit('setActivePage', 'StepWhereWeBe');
       this.$parent.switchComponent();
     }
   },
