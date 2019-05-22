@@ -5,18 +5,18 @@
     "lang-id.f26f3b39bb646ebe2a79.js",
     "pages/start.02860738c5eefb9ec9f4.js",
     "pages/bookings/_experienceId.1a464c9342e0dae36bf3.js",
-    "pages/index.747976cfeabdeb6d3ac7.js",
+    "pages/index.43cc53c2ddde47fa3eea.js",
     "layouts/default.7f4b12e52c8a185ba40b.js",
     "lang-en.3790b964b9fbb86d2436.js",
     "vendor.fe0d5964cdfa1f1d234c.js",
     "app.39c88a962ab15c5dd8f5.js",
-    "manifest.b9d8ef2da521b589a0d5.js",
+    "manifest.134f4f500056de3672cc.js",
     "LICENSES",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.b9d8ef2da521b589a0d5.js",
+    "manifest.134f4f500056de3672cc.js",
     "vendor.fe0d5964cdfa1f1d234c.js",
     "app.39c88a962ab15c5dd8f5.js"
   ],
@@ -25,7 +25,7 @@
     "lang-id.f26f3b39bb646ebe2a79.js",
     "pages/start.02860738c5eefb9ec9f4.js",
     "pages/bookings/_experienceId.1a464c9342e0dae36bf3.js",
-    "pages/index.747976cfeabdeb6d3ac7.js",
+    "pages/index.43cc53c2ddde47fa3eea.js",
     "layouts/default.7f4b12e52c8a185ba40b.js",
     "lang-en.3790b964b9fbb86d2436.js"
   ],

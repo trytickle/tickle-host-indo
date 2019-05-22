@@ -3,10 +3,10 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _49706ed0 = () => import('../pages/thankyou.vue' /* webpackChunkName: "pages/thankyou" */).then(m => m.default || m)
-const _c85ee362 = () => import('../pages/start.vue' /* webpackChunkName: "pages/start" */).then(m => m.default || m)
-const _1b27d95c = () => import('../pages/bookings/_experienceId.vue' /* webpackChunkName: "pages/bookings/_experienceId" */).then(m => m.default || m)
-const _2acd8a82 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
+const _20e18f3c = () => import('../pages/thankyou.vue' /* webpackChunkName: "pages/thankyou" */).then(m => m.default || m)
+const _19f242c5 = () => import('../pages/start.vue' /* webpackChunkName: "pages/start" */).then(m => m.default || m)
+const _eeb1ccc8 = () => import('../pages/bookings/_experienceId.vue' /* webpackChunkName: "pages/bookings/_experienceId" */).then(m => m.default || m)
+const _68baef35 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
 
 
@@ -68,42 +68,42 @@ export function createRouter () {
     routes: [
 		{
 			path: "/thankyou",
-			component: _49706ed0,
+			component: _20e18f3c,
 			name: "thankyou___id"
 		},
 		{
 			path: "/en/thankyou",
-			component: _49706ed0,
+			component: _20e18f3c,
 			name: "thankyou___en"
 		},
 		{
 			path: "/start",
-			component: _c85ee362,
+			component: _19f242c5,
 			name: "start___id"
 		},
 		{
 			path: "/en/start",
-			component: _c85ee362,
+			component: _19f242c5,
 			name: "start___en"
 		},
 		{
 			path: "/bookings/:experienceId?",
-			component: _1b27d95c,
+			component: _eeb1ccc8,
 			name: "bookings-experienceId___id"
 		},
 		{
 			path: "/en/bookings/:experienceId?",
-			component: _1b27d95c,
+			component: _eeb1ccc8,
 			name: "bookings-experienceId___en"
 		},
 		{
 			path: "/",
-			component: _2acd8a82,
+			component: _68baef35,
 			name: "index___id"
 		},
 		{
 			path: "/en/",
-			component: _2acd8a82,
+			component: _68baef35,
 			name: "index___en"
 		}
     ],
