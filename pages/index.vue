@@ -206,10 +206,12 @@ export default {
     fbLogin() {
       this.socialLogin(facebookAuthProvider);
       this.isFacebookLogin = true;
+      this.errorMessage = null;
     },
     googleLogin() {
       this.socialLogin(googleAuthProvider);
       this.isGoogleLogin = true;
+      this.errorMessage = null;
     },
     async socialLogin(provider) {
       try {

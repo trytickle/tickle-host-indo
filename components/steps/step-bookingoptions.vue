@@ -78,7 +78,7 @@ export default {
       updateSubmissionField('maxGuestCount', this.$store.state.maxGuestCount, this.$store.state.submissionId);
       updateSubmissionField('maxDuration', this.$store.state.maxDuration * 60, this.$store.state.submissionId);
       updateSubmissionField('bookingOptions', this.$store.state.bookingOptions, this.$store.state.submissionId);
-      this.$store.commit('setActivePage', 'StepReviewSubmit');
+      this.$store.commit('setActivePage', 'StepAvailability');
       this.$parent.switchComponent();
     }
   }
