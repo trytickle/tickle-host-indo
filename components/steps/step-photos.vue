@@ -237,9 +237,11 @@ export default {
           1
         );
       } catch (ex) {}
+      this.$store.state.isUploading = true;
       this.buttonTitle = this.$t("uploading") + "...";
       await this.$store.dispatch("uploadImageToDatabase");
       this.buttonTitle = this.$t("save");
+      this.$store.state.isUploading = false;
       this.$store.commit("setActivePage", "StepAbout");
       this.$parent.switchComponent();
     },

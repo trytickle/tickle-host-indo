@@ -131,6 +131,7 @@ export default {
           this.showError = true;
           return;
         }
+        this.$store.state.isUploading = true;
         this.buttonTitle = this.$t("submitting") + "...";
         const status = {
           isDraft: false,
@@ -201,6 +202,7 @@ export default {
           body
         );
         this.buttonTitle = this.$t("submitExperience");
+        this.$store.state.isUploading = false;
         this.$parent.toggleThankyouModal();
       } catch (error) {
         console.error(error);

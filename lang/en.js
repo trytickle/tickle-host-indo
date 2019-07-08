@@ -66,7 +66,7 @@ export default {
   bankCode: "Bank code",
   accountNumber: "Account number",
   accountHolderName: "Account holder name",
-  addPayoutMethod: "Add payout method",
+  payoutMethod: "Payout Method",
   addPaymentText: "Add an account to receive payments for experiences.",
   addedAccount: "Added account",
   replaceAddedAccount: "Update payment",
@@ -176,7 +176,13 @@ export default {
   submitExperience: "Submit Experience",
   agreeToTerms: "I agree to ",
   termsOfService: "Terms of Service",
-  submitting: "Submitting"
+  submitting: "Submitting",
 
+  hour: "hour",
+  hours: "hours",
+  hoursBefore: "hours before",
+  daysBefore: "days before",
+  weekBefore: "week before",
 
+  uploading: "Uploading"
 }

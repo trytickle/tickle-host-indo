@@ -56,7 +56,8 @@ const store = () => {
       language: null,
       maxGuestCount: null,
       maxDuration: null,
-      bookingExperienceId: null
+      bookingExperienceId: null,
+      isUploading: false
     },
     mutations: {
       setActivePage(state, payload) {

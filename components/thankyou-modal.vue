@@ -9,7 +9,7 @@
       <div class="content-wrapper">
         <p>Kami akan meninjau kiriman Anda sesegera mungkin. Sementara itu, silakan unduh aplikasi seluler Tickle dan daftar.</p>
         <div style="margin-top:40px;">
-        <a class="submit-button" style="width:300px;margin-left:0px;" target="_blank" href="https://tickle.app.link/qaBW2t6k9M">Pdengunduhan Tickle</a>
+        <a class="submit-button" style="width:300px;margin-left:0px;" target="_blank" href="https://tickle.app.link/qaBW2t6k9M">Pengunduhan Tickle</a>
         <a class="submit-button" style="width:300px;margin-left:20px;" target="_blank" @click="createExperience">Ciptakan Pengalaman Anda</a>
         </div>
       </div>

@@ -29,7 +29,7 @@
         <p class="paragraph-5" style="margin-top:-10px;white-space:pre-wrap;">{{$store.state.whatIProvide ? $store.state.whatIProvide : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.'}}</p>
         <div class="div-block-8"></div>
       </div>
-      <div class="content-section" id="notes">
+      <div class="content-section" id="notes" v-if="$store.state.notes">
         <h4 class="content-heading">{{ $t("notes") }}</h4>
         <p class="paragraph-5" style="margin-top:-10px;white-space:pre-wrap;">{{$store.state.notes ? $store.state.notes : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.'}}</p>
         <div class="div-block-8"></div>
@@ -61,11 +61,11 @@
         <p class="paragraph-5" style="margin-top:-30px;">{{cancellationPolicyDescription}}</p>
         <div class="div-block-8"></div>
       </div> -->
-      <div class="content-section">
+      <!-- <div class="content-section">
         <h4 class="heading-5">{{ $t("paymentPolicy") }}</h4>
         <p class="paragraph-5" style="margin-top:-30px;">{{ $t("paymentPolicyText") }}</p>
         <div class="div-block-8"></div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

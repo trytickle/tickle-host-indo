@@ -7,12 +7,12 @@
         <div class="text-block-2" style="margin-bottom:10px;">{{$t('duration')}}</div>
         <p class="paragraph-3">
           <select name="duration" class="menu-dropdown" v-model="$store.state.maxDuration">
-            <option :value="1">1 jam</option>
-            <option :value="2">2 jam</option>
-            <option :value="3">3 jam</option>
-            <option :value="4">4 jam</option>
-            <option :value="5">5 jam</option>
-            <option :value="6">6 jam</option>
+            <option :value="1">1 {{$t('hour')}}</option>
+            <option :value="2">2 {{$t('hours')}}</option>
+            <option :value="3">3 {{$t('hours')}}</option>
+            <option :value="4">4 {{$t('hours')}}</option>
+            <option :value="5">5 {{$t('hours')}}</option>
+            <option :value="6">6 {{$t('hours')}}</option>
           </select>
         </p>
       </div>
@@ -28,24 +28,24 @@
         <div class="text-block-2" style="margin-bottom:10px;">{{$t('latestBookingTime')}}</div>
         <p class="paragraph-3">
           <select name="bookBefore" class="menu-dropdown" v-model="$store.state.bookingOptions.bookBefore">
-            <option :value="1">1 jam sebelumnya</option>
-            <option :value="2">2 jam sebelumnyae</option>
-            <option :value="3">3 jam sebelumnya</option>
-            <option :value="4">4 jam sebelumnya</option>
-            <option :value="5">5 jam sebelumnya</option>
-            <option :value="6">6 jam sebelumnya</option>
-            <option :value="7">7 jam sebelumnya</option>
-            <option :value="8">8 jam sebelumnya</option>
-            <option :value="9">9 jam sebelumnya</option>
-            <option :value="10">10 jam sebelumnya</option>
-            <option :value="11">11 jam sebelumnya</option>
-            <option :value="12">12 jam sebelumnya</option>
-            <option :value="48">2 jam sebelumnya</option>
-            <option :value="72">3 jam sebelumnya</option>
-            <option :value="96">4 jam sebelumnya</option>
-            <option :value="120">5 jam sebelumnya</option>
-            <option :value="144">6 jam sebelumnya</option>
-            <option :value="168">1 jam sebelumnya</option>
+            <option :value="1">1 {{$t('hoursBefore')}}</option>
+            <option :value="2">2 {{$t('hoursBefore')}}</option>
+            <option :value="3">3 {{$t('hoursBefore')}}</option>
+            <option :value="4">4 {{$t('hoursBefore')}}</option>
+            <option :value="5">5 {{$t('hoursBefore')}}</option>
+            <option :value="6">6 {{$t('hoursBefore')}}</option>
+            <option :value="7">7 {{$t('hoursBefore')}}</option>
+            <option :value="8">8 {{$t('hoursBefore')}}</option>
+            <option :value="9">9 {{$t('hoursBefore')}}</option>
+            <option :value="10">10 {{$t('hoursBefore')}}</option>
+            <option :value="11">11 {{$t('hoursBefore')}}</option>
+            <option :value="12">12 {{$t('hoursBefore')}}</option>
+            <option :value="48">2 {{$t('daysBefore')}}</option>
+            <option :value="72">3 {{$t('daysBefore')}}</option>
+            <option :value="96">4 {{$t('daysBefore')}}</option>
+            <option :value="120">5 {{$t('daysBefore')}}</option>
+            <option :value="144">6 {{$t('daysBefore')}}</option>
+            <option :value="168">1 {{$t('weekBefore')}}</option>
           </select>
         </p>
       </div>
