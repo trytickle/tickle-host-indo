@@ -76,6 +76,7 @@
         </form>
       </div>
     </div>
+    <input type="submit" :value="$t('reviewAndSubmit')" class="submit-button" @click.prevent="nextClicked">
   </div>
 </template>
 
@@ -308,7 +309,11 @@ export default {
         this.showError = true;
       }
     },
-    removeAvailability() {}
+    removeAvailability() {},
+    nextClicked() {
+      this.$store.commit("setActivePage", "StepReviewSubmit");
+      this.$parent.switchComponent();
+    }
   },
   mounted() {
     this.$store.dispatch("loadAvailabilities");

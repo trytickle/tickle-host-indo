@@ -45,7 +45,7 @@ export default {
   methods: {
     nextClicked() {
       updateSubmissionField('whatIProvide', this.$store.state.whatIProvide.trim(), this.$store.state.submissionId);
-      this.$store.commit('setActivePage', 'StepWhereWeBe');
+      this.$store.commit('setActivePage', 'StepNotes');
       this.$parent.switchComponent();
     }
   },

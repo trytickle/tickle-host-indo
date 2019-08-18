@@ -29,7 +29,7 @@ export default {
   methods: {
     nextClicked() {
       updateSubmissionField('whereWeBe', this.$store.state.whereWeBe.trim(), this.$store.state.submissionId);
-      this.$store.commit('setActivePage', 'StepNotes');
+      this.$store.commit('setActivePage', 'StepWhereWeMeet');
       this.$parent.switchComponent();
     }
   },

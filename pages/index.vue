@@ -17,7 +17,7 @@
         <button class="submit-button" @click.prevent="emailLogin">{{buttonTitle}}</button>
       </form>
       <div class="error-wrapper" style="margin-bottom:20px;margin-top:20px;" v-if="showError">{{errorMessage}}<br><a class="error-wrapper"  v-if="showSendVerification" href="#" @click.prevent="sendVerificationEmail()"><u>Kirim verifikasi email</u></a></div>
-      <div class="green-wrapper" style="margin-bottom:20px;margin-top:20px;" v-if="showVerifySent">Email verifikasi dikirim. Silakan periksa email Anda dan klik tautan verifikasi di dalamnya.</div>
+      <div class="green-wrapper" style="margin-bottom:20px;margin-top:20px;" v-if="showVerifySent">Email verifikasi dikirim. Perhatikan bahwa mungkin diperlukan hingga 10 menit untuk menerimanya. Silakan periksa email Anda dan klik tautan verifikasi di dalamnya.</div>
       <div style="margin:auto;margin-bottom:10px;margin-top:30px;padding-left:20px;">
         <span style="align:center;font-size:11px;font-weight:600;color:#ccc;">{{ $t('continueWith')}}</span>
       </div>
@@ -203,9 +203,13 @@ export default {
     },
     fbLogin() {
       this.socialLogin(facebookAuthProvider);
+      this.isFacebookLogin = true;
+      this.errorMessage = null;
     },
     googleLogin() {
       this.socialLogin(googleAuthProvider);
+      this.isGoogleLogin = true;
+      this.errorMessage = null;
     },
     async socialLogin(provider) {
       try {

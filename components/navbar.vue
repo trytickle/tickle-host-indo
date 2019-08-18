@@ -12,7 +12,7 @@
         </a>
       </div>
       <div class="menu-button">
-        <button class="text-block link" style="height:100%;"> {{ $t("myExperiences") }}</button>
+        <button class="text-block link" style="height:100%;margin:0;"> {{ $t("myExperiences") }}</button>
         <div class="menu">
           <button class="link" @click="createExperience">{{ $t("createNewExperience") }}<i class="fas fa-plus-circle" style="position:absolute;right:28px;padding-top:2px;"></i></button>
           <div v-for="submission in this.$store.state.submissions" :key="submission.submissionId" :submission="submission">
@@ -26,7 +26,7 @@
       </div>
        <input style="display:none" ref ="picker" type="file" name="pic" accept="image/*" @change="onFileChange">
       <div class="menu-button">
-        <button class="text-block link" style="height:100%;"> {{ $t("myBookings") }}</button>
+        <button class="text-block link" style="height:100%;margin:0;"> {{ $t("myBookings") }}</button>
         <div class="menu">
           <div v-if="this.$store.state.bookingExperiences.length <= 0" style="color:#ccc;padding-left:15px;">{{ $t("noBookingsYet") }}</div>
           <div v-for="(booking, index) in this.$store.state.bookingExperiences" :key="booking.experienceId" :booking="booking">
@@ -41,11 +41,8 @@
       </div>
       <LocalePicker :isMenu="true"/>
       <div >
-        <a class="text-inline link" v-if="this.$store.state.user" target="_blank" rel="noopener noreferrer" ><button @click="$parent.togglePaymentMethod()" class="text-block link">{{$t('addPayoutMethod')}}</button></a>
+        <a v-if="this.$store.state.user" target="_blank" rel="noopener noreferrer" ><button @click="$parent.togglePaymentMethod()" class="text-block link">{{$t('payoutMethod')}}</button></a>
       </div>
-      <!-- <div v-if="$store.state.user && !$store.state.user.isVerified">
-        <button class="text-block link"  @click.prevent="showVerifyModel=true">Verifikasi akun</button>
-      </div> -->
               
       <div class="email-wrapper">
      <button class="link" style="color:red;margin-left:-5px;" @click="signOut">{{ $t("logout") }}</button>        

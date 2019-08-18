@@ -43,8 +43,8 @@ export default {
 
   //navbar and infobar
   whatsATickleExperience: "Apa itu pengalaman Tickle?",
-  myExperiences: "Pengalaman saya",
-  myBookings: "Pemesanan saya",
+  myExperiences: "Pengalaman Saya",
+  myBookings: "Pemesanan Saya",
   createNewExperience: "Ciptakan Pengalaman Anda",
   noBookingsYet: "Belum ada pemesanan",
   draft: "Draf",
@@ -67,7 +67,7 @@ export default {
   accountNumber: "Nomor akun",
   accountHolderName: "Nama pemegang akun",
   addPaymentText: "Tambahkan akun untuk menerima pembayaran untuk pengalaman.",
-  addPayoutMethod: "Tambahkan metode pembayaran",
+  payoutMethod: "Metode Pembayaran",
   addedAccount: "Akun ditambahkan",
   replaceAddedAccount: "Perbarui pembayaran",
 
@@ -176,5 +176,13 @@ export default {
   submitExperience: "Kirim Pengalaman",
   agreeToTerms: "Saya setuju dengan",
   termsOfService: "Ketentuan Layanan",
-  submitting: "Mengirimkan"
+  submitting: "Mengirimkan",
+
+  hour: "jam",
+  hours: "jam",
+  hoursBefore: "jam sebelumnya",
+  daysBefore: "hari sebelumnya",
+  weekBefore: "minggu sebelumnya",
+
+  uploading: "Mengunggah"
 }

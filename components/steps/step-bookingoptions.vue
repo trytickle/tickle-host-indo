@@ -7,12 +7,12 @@
         <div class="text-block-2" style="margin-bottom:10px;">{{$t('duration')}}</div>
         <p class="paragraph-3">
           <select name="duration" class="menu-dropdown" v-model="$store.state.maxDuration">
-            <option :value="1">1 jam</option>
-            <option :value="2">2 jam</option>
-            <option :value="3">3 jam</option>
-            <option :value="4">4 jam</option>
-            <option :value="5">5 jam</option>
-            <option :value="6">6 jam</option>
+            <option :value="1">1 {{$t('hour')}}</option>
+            <option :value="2">2 {{$t('hours')}}</option>
+            <option :value="3">3 {{$t('hours')}}</option>
+            <option :value="4">4 {{$t('hours')}}</option>
+            <option :value="5">5 {{$t('hours')}}</option>
+            <option :value="6">6 {{$t('hours')}}</option>
           </select>
         </p>
       </div>

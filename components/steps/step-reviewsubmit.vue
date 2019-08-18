@@ -8,12 +8,6 @@
        Pengalaman di Tickle memiliki kebijakan minimum 1 tamu. Itu berarti jika satu orang memesan pengalaman Anda, Anda wajib diharapkan untuk menjadi tuan rumah bagi mereka.
       </p>
     </div>
-     <div class="div-block-4" style="padding-top:40px;padding-bottom:25px;background:rgb(191, 239, 255);">
-      <div class="text-block-2" style="font-weight:900;font-size:18px;padding-bottom:5px;">Pembayaran dengan uang tunai saja</div>
-      <p class="paragraph-3" style="color:#000">
-      Saat ini, hanya pembayaran dengan uang tunai yang diterima. Harap terima pembayaran saat tamu Anda datang.
-      </p>
-    </div>
     <div class="text-block-2" style="margin-top:40px;">{{$t('bySubmittingConfirm')}}</div>
     <div class="checkitem-wrapper">
       <label class=container>
@@ -137,6 +131,7 @@ export default {
           this.showError = true;
           return;
         }
+        this.$store.state.isUploading = true;
         this.buttonTitle = this.$t("submitting") + "...";
         const status = {
           isDraft: false,
@@ -207,6 +202,7 @@ export default {
           body
         );
         this.buttonTitle = this.$t("submitExperience");
+        this.$store.state.isUploading = false;
         this.$parent.toggleThankyouModal();
       } catch (error) {
         console.error(error);

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div v-if="$store.state.isUploading" class="progress-overlay"><h3 class="progress-card">{{$t('uploading')}}...</h3></div>
     <ThankyouModal v-if="showThankyouModal" :title="Thanks"></ThankyouModal>
     <InfoModal v-if="showInfoModal" :title="infoModalTitle"></InfoModal>
     <Onboardingmodal v-if="showOnBoardingModal"></Onboardingmodal>
@@ -197,5 +198,21 @@ export default {
   padding: 50px;
   border-radius: 5px;
   animation: 0.3s ease-out 0s 1 slideIn;
+}
+.progress-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress-card {
+  padding: 50px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
 }
 </style>

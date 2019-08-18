@@ -39,12 +39,12 @@ export default {
   methods: {
     nextClicked() {
       if (localStorage.submissionId) {
-        console.log("updating");
         updateSubmissionField(
           "title",
           _.startCase(this.$store.state.title).trim(),
           this.$store.state.submissionId
         );
+        console.log(this.$store.state.title);
         this.$store.commit("setActivePage", "StepTagline");
         this.$parent.switchComponent();
       } else {

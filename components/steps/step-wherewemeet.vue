@@ -21,7 +21,7 @@
       <div class="city-zipcode-wrapper" style="margin-bottom:10px;">
         <div>
           <div class="text-block-2" style="margin-bottom:10px;">{{$t('city')}}</div>
-          <input type="text" maxlength="50" name="city" placeholder="E.g. Jakarta" class="text-field" autocomplete="off" style="color:#000;background:#fff" v-model="$store.state.whereWeMeet.city" readonly>
+          <input type="text" maxlength="50" name="city" placeholder="E.g. Jakarta" class="text-field" autocomplete="off" style="color:#000;background:#fff" value="JABODETABEK" readonly>
         </div>
         <div>
           <div class="text-block-2" style="margin-bottom:10px;">{{$t('zipCode')}}</div>
