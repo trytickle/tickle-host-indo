@@ -40,12 +40,12 @@
             <option :value="10">10 jam sebelumnya</option>
             <option :value="11">11 jam sebelumnya</option>
             <option :value="12">12 jam sebelumnya</option>
-            <option :value="48">2 jam sebelumnya</option>
-            <option :value="72">3 jam sebelumnya</option>
-            <option :value="96">4 jam sebelumnya</option>
-            <option :value="120">5 jam sebelumnya</option>
-            <option :value="144">6 jam sebelumnya</option>
-            <option :value="168">1 jam sebelumnya</option>
+            <option :value="48">2 hari sebelumnya</option>
+            <option :value="72">3 hari sebelumnya</option>
+            <option :value="96">4 hari sebelumnya</option>
+            <option :value="120">5 hari sebelumnya</option>
+            <option :value="144">6 hari sebelumnya</option>
+            <option :value="168">1 hari sebelumnya</option>
           </select>
         </p>
       </div>
@@ -55,11 +55,32 @@
 </template>
 
 <script>
-import { updateSubmissionField } from '~/services/firebase-service'
+import { updateSubmissionField } from "~/services/firebase-service";
 export default {
-    data() {
+  data() {
     return {
-      guests: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+      guests: [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
     };
   },
   mounted() {
@@ -68,21 +89,33 @@ export default {
       this.$store.state.maxGuestCount === null &&
       this.$store.state.bookingOptions.bookBefore === null
     ) {
-      this.$store.commit('setDuration', 2);
-      this.$store.commit('setGuestCount', 10);
-      this.$store.commit('setBookingOptions', { bookBefore: 1 });
+      this.$store.commit("setDuration", 2);
+      this.$store.commit("setGuestCount", 10);
+      this.$store.commit("setBookingOptions", { bookBefore: 1 });
     }
   },
   methods: {
     nextClicked() {
-      updateSubmissionField('maxGuestCount', this.$store.state.maxGuestCount, this.$store.state.submissionId);
-      updateSubmissionField('maxDuration', this.$store.state.maxDuration * 60, this.$store.state.submissionId);
-      updateSubmissionField('bookingOptions', this.$store.state.bookingOptions, this.$store.state.submissionId);
-      this.$store.commit('setActivePage', 'StepReviewSubmit');
+      updateSubmissionField(
+        "maxGuestCount",
+        this.$store.state.maxGuestCount,
+        this.$store.state.submissionId
+      );
+      updateSubmissionField(
+        "maxDuration",
+        this.$store.state.maxDuration * 60,
+        this.$store.state.submissionId
+      );
+      updateSubmissionField(
+        "bookingOptions",
+        this.$store.state.bookingOptions,
+        this.$store.state.submissionId
+      );
+      this.$store.commit("setActivePage", "StepReviewSubmit");
       this.$parent.switchComponent();
     }
   }
-}
+};
 </script>
 
 <style scoped>

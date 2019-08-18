@@ -56,7 +56,7 @@ export default {
   removing: "Menghapus",
   logout: "Keluar",
   guest: "tamu",
-  duration: "Lamanya",
+  duration: "Durasi",
   groupSizeUpto: "Ukuran grup hingga",
   paymentPolicy: "Bayar dengan uang tunai",
   paymentPolicyText: "Saat ini, hanya pembayaran dengan uang tunai yang diterima. Harap bayar host pada saat kedatangan.",
@@ -107,10 +107,10 @@ export default {
   uploading: "Mengunggah",
 
   //stepAbout
-  tellAboutYourself: "Jadi, ceritakan tentang diri Anda?",
+  tellAboutYourself: "Jadi, ceritakan tentang kamu",
 
   //stepWhatWeDo
-  writeAboutWhatWeDo: "Tuliskan setiap aktivitas dalam urutan yang akan Anda lakukan",
+  writeAboutWhatWeDo: "Tuliskan berurutan setiap aktivitas yang akan kamu lakukan ",
 
   //whatIProvide
   writeWhatYouProvide: "Apa yang akan Anda berikan untuk tamu?",
@@ -153,9 +153,9 @@ export default {
   priceNote: "Catatan: Anda dapat mengubah harga di lain waktu untuk setiap tanggal saat mengatur ketersediaan Anda.",
 
   //bookingOption
-  bookingOptionIntro: "Beberapa pengaturan akhir. Tetapkan berapa lama Anda merencanakan pengalaman Anda untuk bertahan, jumlah tamu yang dapat Anda tampung pada satu waktu, dan berapa lama sebelum pengalaman dimulai, seorang tamu harus memesan.",
-  guestCount: "Jumlah tamu",
-  latestBookingTime: "Waktu Pemesanan terbaru",
+  bookingOptionIntro: "Tentukan berapa lama experience kamu akan berlangsung, jumlah peserta maksimal, dan batas pemesanan terakhir.",
+  guestCount: "Jumlah Peserta",
+  latestBookingTime: "Batas Akhir Pemesanan",
 
   //availability
   selectDates: "Pilih tanggal",

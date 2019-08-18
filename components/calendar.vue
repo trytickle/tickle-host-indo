@@ -144,99 +144,266 @@ export default {
       nextOneMonthContext: moment().add(1, "months"),
       nextTwoMonthContext: moment().add(2, "months"),
       hoverdAvails: [],
-      days: ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"],
-      guests: ["1","2","3","4","5","6","7","8","9","10", "11", "12", "13", "14", "15", "16","17", "18", "19", "20"],
-      times: ["12:00 AM", "12:30 AM", "01:00 AM", "01:30 AM", "02:00 AM", "02:30 AM", "03:00 AM", "03:30 AM", "04:00 AM", "04:30 AM", "05:00 AM", "05:30 AM", "06:00 AM", "06:30 AM", "07:00 AM", "07:30 AM", "08:00 AM", "08:30 AM", "09:00 AM", "09:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM","12:00 PM", "12:30 PM", "01:00 PM", "01:30 PM", "02:00 PM", "02:30 PM", "03:00 PM", "03:30 PM", "04:00 PM", "04:30 PM", "05:00 PM", "05:30 PM", "06:00 PM", "06:30 PM", "07:00 PM", "07:30 PM", "08:00 PM", "08:30 PM", "09:00 PM", "09:30 PM", "10:00 PM", "10:30 PM", "11:00 PM", "11:30 PM"],
-      timeFormat : ["00:00", "00:30", "01:00", "01:30", "02:00", "02:30", "03:00", "03:30", "04:00", "04:30", "05:00", "05:30", "06:00", "06:30", "07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00", "23:30"],
+      days: ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"],
+      guests: [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20"
+      ],
+      times: [
+        "12:00 AM",
+        "12:30 AM",
+        "01:00 AM",
+        "01:30 AM",
+        "02:00 AM",
+        "02:30 AM",
+        "03:00 AM",
+        "03:30 AM",
+        "04:00 AM",
+        "04:30 AM",
+        "05:00 AM",
+        "05:30 AM",
+        "06:00 AM",
+        "06:30 AM",
+        "07:00 AM",
+        "07:30 AM",
+        "08:00 AM",
+        "08:30 AM",
+        "09:00 AM",
+        "09:30 AM",
+        "10:00 AM",
+        "10:30 AM",
+        "11:00 AM",
+        "11:30 AM",
+        "12:00 PM",
+        "12:30 PM",
+        "01:00 PM",
+        "01:30 PM",
+        "02:00 PM",
+        "02:30 PM",
+        "03:00 PM",
+        "03:30 PM",
+        "04:00 PM",
+        "04:30 PM",
+        "05:00 PM",
+        "05:30 PM",
+        "06:00 PM",
+        "06:30 PM",
+        "07:00 PM",
+        "07:30 PM",
+        "08:00 PM",
+        "08:30 PM",
+        "09:00 PM",
+        "09:30 PM",
+        "10:00 PM",
+        "10:30 PM",
+        "11:00 PM",
+        "11:30 PM"
+      ],
+      timeFormat: [
+        "00:00",
+        "00:30",
+        "01:00",
+        "01:30",
+        "02:00",
+        "02:30",
+        "03:00",
+        "03:30",
+        "04:00",
+        "04:30",
+        "05:00",
+        "05:30",
+        "06:00",
+        "06:30",
+        "07:00",
+        "07:30",
+        "08:00",
+        "08:30",
+        "09:00",
+        "09:30",
+        "10:00",
+        "10:30",
+        "11:00",
+        "11:30",
+        "12:00",
+        "12:30",
+        "13:00",
+        "13:30",
+        "14:00",
+        "14:30",
+        "15:00",
+        "15:30",
+        "16:00",
+        "16:30",
+        "17:00",
+        "17:30",
+        "18:00",
+        "18:30",
+        "19:00",
+        "19:30",
+        "20:00",
+        "20:30",
+        "21:00",
+        "21:30",
+        "22:00",
+        "22:30",
+        "23:00",
+        "23:30"
+      ]
     };
   },
   methods: {
+    replaceIndoMonthWithEngMonth(month) {
+      switch (month) {
+        case "Agt":
+          month = "Aug";
+          break;
+        case "Okt":
+          month = "Oct";
+          break;
+        case "Okt":
+          month = "Oct";
+          break;
+        case "Des":
+          month = "Dec";
+          break;
+        case "May":
+          month = "Mei";
+          break;
+      }
+      return month;
+    },
     checkIfDateExists(date, month, year) {
-        let match = false;
-        let now = moment(year+"-"+month+"-"+ date, "YYYY-MMM-DD");
-        this.$store.state.selectedDates.forEach(d => {
-            if (d.valueOf() == now.valueOf()) { match = true}
-        })
-        return match
+      month = this.replaceIndoMonthWithEngMonth(month);
+      let match = false;
+      let now = moment(year + "-" + month + "-" + date, "YYYY-MMM-DD");
+      this.$store.state.selectedDates.forEach(d => {
+        if (d.valueOf() == now.valueOf()) {
+          match = true;
+        }
+      });
+      return match;
     },
     getAvailabilitiesOnDate(date, month, year) {
-        this.hoverdAvails = []
-        let now = moment(year+"-"+month+"-"+ date,  "YYYY-MMM-DD").format("YYYY/MM/DD");
-        this.$store.state.currentAvailabilties.forEach(d => {
-            if (d.date == now) {
-              this.hoverdAvails.push(d)
-            }
-        })
+      month = this.replaceIndoMonthWithEngMonth(month);
+      this.hoverdAvails = [];
+      let now = moment(year + "-" + month + "-" + date, "YYYY-MMM-DD").format(
+        "YYYY/MM/DD"
+      );
+      this.$store.state.currentAvailabilties.forEach(d => {
+        if (d.date == now) {
+          this.hoverdAvails.push(d);
+        }
+      });
     },
     checkIfAvailabilityExists(date, month, year) {
-        let match = false;
-        let now = moment(year+"-"+month+"-"+ date,  "YYYY-MMM-DD").format("YYYY/MM/DD");
-        this.$store.state.currentAvailabilties.forEach(d => {
-            if (d.date == now) { match = true}
-        })
-        return match
+      month = this.replaceIndoMonthWithEngMonth(month);
+      let match = false;
+      let now = moment(year + "-" + month + "-" + date, "YYYY-MMM-DD").format(
+        "YYYY/MM/DD"
+      );
+      this.$store.state.currentAvailabilties.forEach(d => {
+        if (d.date == now) {
+          match = true;
+        }
+      });
+      return match;
     },
     setEditAvailability(avail) {
-      this.showEditModel = true
-      this.editAvailabilityId = avail.availabilityId
-      this.editAvailabilityStarttime = this.times[this.timeFormat.indexOf(avail.startTime)]
-      this.editAvailabilityEndTime = this.times[this.timeFormat.indexOf(avail.endTime)]
-      this.editAvailabilityGuestCount = avail.spotsLeft+""
-      this.editAvailabilityPrice = avail.price/100
-      console.log(this.editAvailabilityId)
-
+      this.showEditModel = true;
+      this.editAvailabilityId = avail.availabilityId;
+      this.editAvailabilityStarttime = this.times[
+        this.timeFormat.indexOf(avail.startTime)
+      ];
+      this.editAvailabilityEndTime = this.times[
+        this.timeFormat.indexOf(avail.endTime)
+      ];
+      this.editAvailabilityGuestCount = avail.spotsLeft + "";
+      this.editAvailabilityPrice = avail.price / 100;
+      console.log(this.editAvailabilityId);
     },
     async saveAvailability() {
-       if (this.editAvailabilityStarttime.length <= 0) {
+      if (this.editAvailabilityStarttime.length <= 0) {
         this.errorMessage = "Enter a valid start time.";
         this.showError = true;
         return;
       }
-     if (this.editAvailabilityEndTime.length <= 0) {
-        this.errorMessage = "Enter a valid end time."
-        this.showError = true
-        return
-      }  
-     if (this.times.indexOf(this.editAvailabilityStarttime) >= this.times.indexOf(this.editAvailabilityEndTime)) {
-        this.errorMessage = "End time must be ahead of Start time"
-        this.showError = true
-        return
+      if (this.editAvailabilityEndTime.length <= 0) {
+        this.errorMessage = "Enter a valid end time.";
+        this.showError = true;
+        return;
       }
-     if (!this.editAvailabilityPrice || this.editAvailabilityPrice.length < 2) {
-         this.errorMessage = "Price must be $10 or above."
-         this.showError = true
-        return
+      if (
+        this.times.indexOf(this.editAvailabilityStarttime) >=
+        this.times.indexOf(this.editAvailabilityEndTime)
+      ) {
+        this.errorMessage = "End time must be ahead of Start time";
+        this.showError = true;
+        return;
+      }
+      if (
+        !this.editAvailabilityPrice ||
+        this.editAvailabilityPrice.length < 2
+      ) {
+        this.errorMessage = "Price must be $10 or above.";
+        this.showError = true;
+        return;
       }
       let obj = {
-        startTime: this.timeFormat[this.times.indexOf(this.editAvailabilityStarttime)],
-        endTime: this.timeFormat[this.times.indexOf(this.editAvailabilityEndTime)],
+        startTime: this.timeFormat[
+          this.times.indexOf(this.editAvailabilityStarttime)
+        ],
+        endTime: this.timeFormat[
+          this.times.indexOf(this.editAvailabilityEndTime)
+        ],
         price: this.editAvailabilityPrice * 100,
-        spotsLeft: this.editAvailabilityGuestCount * 1,
-      }
-      console.log(obj)
-      const res = await db.collection("submissions").doc(localStorage.submissionId).collection("availability").doc(this.editAvailabilityId).update(obj)
-      console.log(res)
-      location.reload()
-
+        spotsLeft: this.editAvailabilityGuestCount * 1
+      };
+      console.log(obj);
+      const res = await db
+        .collection("submissions")
+        .doc(localStorage.submissionId)
+        .collection("availability")
+        .doc(this.editAvailabilityId)
+        .update(obj);
+      console.log(res);
+      location.reload();
     },
     async deleteAvailability() {
       const body = {
         submissionId: localStorage.submissionId,
-        availabilityIds : [this.editAvailabilityId]
-      }
-       try {
-        this.deleteText = "Menghapus..."
+        availabilityIds: [this.editAvailabilityId]
+      };
+      try {
+        this.deleteText = "Menghapus...";
         await this.$axios.$post(
           process.env.functionsUrl + "/deleteSubmissionAvailability",
           body
         );
-        if (localStorage.isApproved === 'true') {
-          await this.$store.dispatch('saveSubmissionAndExperience')
+        if (localStorage.isApproved === "true") {
+          await this.$store.dispatch("saveSubmissionAndExperience");
         }
-        this.deleteText = "Menghapus"
+        this.deleteText = "Menghapus";
         location.reload();
       } catch (error) {
-        this.deleteText = "Menghapus"
+        this.deleteText = "Menghapus";
         this.errorMessage = error.message;
         this.showError = true;
       }
@@ -244,8 +411,14 @@ export default {
     addMonth() {
       if (this.dateContext.diff(this.today) < 7689600000) {
         this.dateContext = moment(this.dateContext).add(1, "month");
-        this.nextOneMonthContext = moment(this.nextOneMonthContext).add(1, "month");
-        this.nextTwoMonthContext = moment(this.nextOneMonthContext).add(1, "month");
+        this.nextOneMonthContext = moment(this.nextOneMonthContext).add(
+          1,
+          "month"
+        );
+        this.nextTwoMonthContext = moment(this.nextOneMonthContext).add(
+          1,
+          "month"
+        );
       }
     },
     subtractMonth() {
@@ -262,27 +435,39 @@ export default {
       }
     },
     dateSelected(date) {
-      const momentDate = moment(this.year + "-" + this.month + "-" + date,  "YYYY-MMM-DD");
-      if (this.checkIfDateExists(date, this.month, this.year)) {
-        this.$store.commit('removeSelectedDate', momentDate);
+      var month = this.replaceIndoMonthWithEngMonth(this.month);
+      const momentDate = moment(
+        this.year + "-" + month + "-" + date,
+        "YYYY-MMM-DD"
+      );
+      if (this.checkIfDateExists(date, month, this.year)) {
+        this.$store.commit("removeSelectedDate", momentDate);
       } else {
-        this.$store.commit('addSelectedDate', momentDate) ;
+        this.$store.commit("addSelectedDate", momentDate);
       }
     },
     dateSelectedOneMonth(date) {
-    const momentDate = moment(this.year1 + "-" + this.month1 + "-" + date,  "YYYY-MMM-DD");
-      if (this.checkIfDateExists(date, this.month1, this.year1)) {
-        this.$store.commit('removeSelectedDate', momentDate);
+      var month = this.replaceIndoMonthWithEngMonth(this.month1);
+      const momentDate = moment(
+        this.year1 + "-" + month + "-" + date,
+        "YYYY-MMM-DD"
+      );
+      if (this.checkIfDateExists(date, month, this.year1)) {
+        this.$store.commit("removeSelectedDate", momentDate);
       } else {
-        this.$store.commit('addSelectedDate', momentDate);
+        this.$store.commit("addSelectedDate", momentDate);
       }
     },
     dateSelectedTwoMonth(date) {
-      const momentDate = moment(this.year2 + "-" + this.month2 + "-" + date,  "YYYY-MMM-DD");
-      if (this.checkIfDateExists(date, this.month2, this.year2)) {
-        this.$store.commit('removeSelectedDate', momentDate);
+      var month = this.replaceIndoMonthWithEngMonth(this.month2);
+      const momentDate = moment(
+        this.year2 + "-" + month + "-" + date,
+        "YYYY-MMM-DD"
+      );
+      if (this.checkIfDateExists(date, month, this.year2)) {
+        this.$store.commit("removeSelectedDate", momentDate);
       } else {
-        this.$store.commit('addSelectedDate', momentDate);
+        this.$store.commit("addSelectedDate", momentDate);
       }
     }
   },

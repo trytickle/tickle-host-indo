@@ -40,15 +40,18 @@
         </div>  
       </div>
       <LocalePicker :isMenu="true"/>
-      <div>
-        <a v-if="this.$store.state.user" target="_blank" rel="noopener noreferrer" ><button @click="$parent.togglePaymentMethod()" class="text-block link">{{$t('addPayoutMethod')}}</button></a>
+      <div >
+        <a class="text-inline link" v-if="this.$store.state.user" target="_blank" rel="noopener noreferrer" ><button @click="$parent.togglePaymentMethod()" class="text-block link">{{$t('addPayoutMethod')}}</button></a>
       </div>
       <!-- <div v-if="$store.state.user && !$store.state.user.isVerified">
         <button class="text-block link"  @click.prevent="showVerifyModel=true">Verifikasi akun</button>
       </div> -->
+              
       <div class="email-wrapper">
-        <span class="text-block">{{this.$store.state.user && this.$store.state.user.email}}</span>
-        <button class="link" style="color:red;margin-left:-5px;" @click="signOut">{{ $t("logout") }}</button>
+     <button class="link" style="color:red;margin-left:-5px;" @click="signOut">{{ $t("logout") }}</button>        
+      </div>
+    <div class="email-wrapper" style="margin-top:20px">
+     <span>{{this.$store.state.user && this.$store.state.user.email}}</span>
       </div>
     </div>
     <div class="modal-overlay" :hidden="!showDeleteModal">

@@ -30,7 +30,7 @@
 export default {
   methods: {
     changeStep(e) {
-      this.$store.commit('setActivePage', e.currentTarget.id);
+      this.$store.commit("setActivePage", e.currentTarget.id);
       this.$parent.switchComponent();
     }
   },
@@ -48,10 +48,16 @@ export default {
       return true;
     },
     validateCategories() {
-      if (this.$store.state.categoryPrimary === null || this.$store.state.categorySecondary === null) {
+      if (
+        this.$store.state.categoryPrimary === null ||
+        this.$store.state.categorySecondary === null
+      ) {
         return false;
       }
-      if (this.$store.state.categoryPrimary === this.$store.state.categorySecondary) {
+      if (
+        this.$store.state.categoryPrimary ===
+        this.$store.state.categorySecondary
+      ) {
         return false;
       }
       return true;
@@ -82,12 +88,12 @@ export default {
     },
     validateAvailability() {
       if (this.$store.state.currentAvailabilties.length > 0) {
-        return true
+        return true;
       }
-      return false
+      return false;
     }
   }
-}
+};
 </script>
 
 <style scoped>
