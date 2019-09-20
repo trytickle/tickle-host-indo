@@ -20,7 +20,7 @@ const store = () => {
       submissionId: '',
       title: '',
       tagline: '',
-      label:'Pesta makan malam',
+      label: 'Pesta makan malam',
       photos: [null, null, null, null, null, null, null, null, null],
       photoFiles: [null, null, null, null, null, null, null, null, null],
       coverThumbnail: null,
@@ -109,13 +109,13 @@ const store = () => {
       },
       addSelectedDate(state, payload) {
         state.selectedDates.push(payload);
-        state.selectedDates.sort(((a,b) => {
+        state.selectedDates.sort(((a, b) => {
           return a.valueOf() - b.valueOf()
         }))
       },
       removeSelectedDate(state, payload) {
         state.selectedDates.splice(state.selectedDates.findIndex(v => v.valueOf() === payload.valueOf()), 1);
-        state.selectedDates.sort(((a,b) => {
+        state.selectedDates.sort(((a, b) => {
           return a.valueOf() - b.valueOf()
         }))
       },
@@ -184,19 +184,19 @@ const store = () => {
         if (auth.currentUser) {
           const submissionDocs = await db.collection("submissions").where('aboutHost.hostId', '==', auth.currentUser.uid).orderBy("lastEdited", "desc").get();
           if (submissionDocs.empty) {
-               try {
-                const body = {
-                  title: "Pengalaman baru dengan " + context.state.user.firstName,
-                  userId: auth.currentUser.uid
-                };
-                await this.$axios.$post(process.env.functionsUrl + "/createSubmission", body);
-                localStorage.submissionId = undefined;
-                localStorage.isApproved = false;
-                location.reload();
-              } catch (error) {
-                console.error(error);
-              }
-           
+            try {
+              const body = {
+                title: "Pengalaman baru dengan " + context.state.user.firstName,
+                userId: auth.currentUser.uid
+              };
+              await this.$axios.$post(process.env.functionsUrl + "/createSubmission", body);
+              localStorage.submissionId = undefined;
+              localStorage.isApproved = false;
+              location.reload();
+            } catch (error) {
+              console.error(error);
+            }
+
           } else {
             let submissions = [];
             let submissionData = submissionDocs.docs[0].data();
@@ -226,7 +226,7 @@ const store = () => {
             context.commit('setLanguage', submissionData.languages ? submissionData.languages[0] : null);
             context.commit('setCancellationPolicy', submissionData.cancellationPolicy != null ? submissionData.cancellationPolicy : null);
             context.commit('setCoverThumbnailUrl', submissionData.coverThumbnail ? submissionData.coverThumbnail : '');
-    
+
             if (submissionData.guestRequirements) {
               context.commit('setGuestRequirements', submissionData.guestRequirements);
             }
@@ -316,14 +316,14 @@ const store = () => {
         }
       },
       async loadAvailabilities(context) {
-       if (localStorage.submissionId) {
-         const availDocs = await db.collection("submissions").doc(localStorage.submissionId).collection("availability").get();
-         let avails = []
-         availDocs.forEach(avail => {
-          avails.push(avail.data())
-         })
-         context.commit('setCurrentAvailabilities', avails)
-       }
+        if (localStorage.submissionId) {
+          const availDocs = await db.collection("submissions").doc(localStorage.submissionId).collection("availability").get();
+          let avails = []
+          availDocs.forEach(avail => {
+            avails.push(avail.data())
+          })
+          context.commit('setCurrentAvailabilities', avails)
+        }
       },
       async loadCurrentUser(context) {
         if (auth.currentUser) {
@@ -339,31 +339,31 @@ const store = () => {
         try {
           const body = {
             submissionId: context.state.submissionId,
-            title : context.state.title,
-            subtitle : context.state.label,
-            tagline : context.state.tagline,
-            maxDuration : context.state.maxDuration,
-            minDuration : 0,
-            languages : [context.state.language],
-            whatWeDo : context.state.whatWeDo,
-            whatIProvide : context.state.whatIProvide,
-            whereWeBe : context.state.whereWeBe,
-            maxGuestCount : context.state.maxGuestCount,
-            minGuestCount : 0,
-            notes : context.state.notes,
-            bookingOptions : context.state.bookingOptions,
-            cancellationPolicy : context.state.cancellationPolicy,
-            categoryPrimary : context.state.categoryPrimary,
-            categorySecondary : context.state.categorySecondary,
-            currency : context.state.currency,
-            guestRequirements : context.state.guestRequirements,
-            media : context.state.photos,
-            pricePerPax : context.state.pricePerPax,
-            whereWeMeet : context.state.whereWeMeet,
-            aboutHost : {description:context.state.about,hostId: auth.currentUser.uid}
+            title: context.state.title,
+            subtitle: context.state.label,
+            tagline: context.state.tagline,
+            maxDuration: context.state.maxDuration * 60,
+            minDuration: 0,
+            languages: [context.state.language],
+            whatWeDo: context.state.whatWeDo,
+            whatIProvide: context.state.whatIProvide,
+            whereWeBe: context.state.whereWeBe,
+            maxGuestCount: context.state.maxGuestCount,
+            minGuestCount: 0,
+            notes: context.state.notes,
+            bookingOptions: context.state.bookingOptions,
+            cancellationPolicy: context.state.cancellationPolicy,
+            categoryPrimary: context.state.categoryPrimary,
+            categorySecondary: context.state.categorySecondary,
+            currency: context.state.currency,
+            guestRequirements: context.state.guestRequirements,
+            media: context.state.photos,
+            pricePerPax: context.state.pricePerPax * 100,
+            whereWeMeet: context.state.whereWeMeet,
+            aboutHost: { description: context.state.about, hostId: auth.currentUser.uid }
           };
           console.log(body);
-           await this.$axios.$post(process.env.functionsUrl + "/updateSubmissionAndExperience", body);
+          await this.$axios.$post(process.env.functionsUrl + "/updateSubmissionAndExperience", body);
         } catch (error) {
           console.error(error);
         }
